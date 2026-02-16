@@ -1,0 +1,3612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Services Hero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  rel="stylesheet"/>
+
+
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-item span {
+  transition: 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu a {
+  display: block;
+  color: #aaa;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.submenu-item {
+  padding: 12px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.child-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.child-submenu a {
+  display: block;
+  padding: 8px 0;
+  color: #888;
+  text-decoration: none;
+}
+
+.child-submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.blog-card {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-content h3 {
+  font-size: 14px;
+  color: #111;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1535378620166-273708d44e4c");
+  background-repeat: no-repeat ;
+  background-size:cover;
+  background-position: center top;
+  overflow: hidden;
+  
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  padding: 70px 24px;
+}
+
+/* TEXT STYLE */
+.hero h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.hero h2 {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.hero p {
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.7;
+  font-size: 20px;
+  color: #ddd;
+}
+
+/* SLIDE FROM RIGHT */
+.slide-from-right {
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 120px;
+
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+/* SECTION BACKGROUND */
+.slider-section {
+  background: #000;
+  padding: 60px 20px;
+  text-align: center;
+ 
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+/* SLIDER LAYOUT */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SLIDES WRAPPER */
+.slides {
+  width: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* SINGLE BOX */
+.slide {
+  background: #111;
+  padding: 28px;
+  border-radius: 18px;
+  display: none;
+  animation: slideFromRight 0.5s ease;
+  cursor: pointer;
+}
+
+/* ACTIVE (BLUE) */
+.slide.active {
+  display: block;
+  background: #0a5cff;
+}
+
+/* TEXT */
+.slide h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* ARROWS */
+.arrow {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes slideFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
+
+
+.stats-section {
+  background: radial-gradient(circle at top, #0a0f2c, #000);
+  padding: 50px 15px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.stats-box {
+  min-width: 220px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 22px;
+  padding: 30px 25px;
+  text-align: left;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.stats-box.active,
+.stats-box:hover {
+  background: #0b5cff;
+  color: #fff;
+}
+
+.stats-box h2 {
+
+  font-size: 34px;
+  margin: 15px 0 6px;
+  font-weight: 700;
+}
+
+.stats-box p {
+text-align: left;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.icon {
+  font-size: 34px;
+}
+
+.experience-section {
+  background: radial-gradient(circle at top, #0a0f2c, #000);
+  padding: 60px 20px 30px;
+}
+
+.experience-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.experience-content p {
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+
+
+
+.ai-services-section {
+  background: #0d0d0d;
+  padding: 50px 16px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.ai-text-content {
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.ai-text-content h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.ai-text-content p {
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+.ai-services-btn {
+  background: transparent;
+  border: 1px solid #2b2b2b;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Layout */
+.ai-services-layout {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* LEFT TABS */
+.ai-service-tabs {
+  min-width: 260px;
+}
+
+.service-tab {
+  position: relative;
+  padding: 14px 14px 14px 22px;
+  font-size: 16px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.service-tab:hover {
+  color: #fff;
+}
+
+.active-bar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background: #2f80ff;
+  border-radius: 4px;
+  transition: height 0.3s;
+}
+
+.service-tab.active {
+  color: #fff;
+}
+
+.service-tab.active .active-bar {
+  height: 70%;
+}
+
+/* RIGHT CARDS */
+.business-apps {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.app-card {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 16px;
+}
+
+.app-icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.app-title {
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ai-services-layout {
+    flex-direction: column;
+  }
+}
+
+.our-offerings-section {
+  background: #0d0d0d;
+  padding: 40px 16px 20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.our-offerings-content {
+  max-width: 700px;
+}
+
+.our-offerings-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.our-offerings-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+.our-offerings-content .highlight {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+.ai-full-section {
+  background: #0b0b0b;
+  padding: 40px 16px 60px;
+  font-family: Arial, sans-serif;
+}
+
+/* WHITE CARD */
+.ai-investment-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px 22px 22px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.ai-investment-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.ai-investment-card p {
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.ai-btn {
+  display: inline-block;
+  background: #1769ff;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.ai-bot-img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* STATS */
+.ai-stats {
+  max-width: 720px;
+  margin: 40px auto 0;
+}
+
+.stat-item {
+  margin-bottom: 40px;
+}
+
+.stat-item h3 {
+  color: #1769ff;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stat-item h4 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+
+
+.roi-full-section {
+  margin-top: 10px;
+  background: #0b0b0b;
+  padding: 40px 16px 60px;
+  font-family: Arial, sans-serif;
+}
+
+/* CARD */
+.roi-card {
+  max-width: 720px;
+  margin: auto;
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  border: 1px solid #3a3a3a;
+  border-radius: 18px;
+  padding: 32px 22px;
+}
+
+/* CARD TEXT */
+.roi-card h2 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 28px;
+}
+
+/* BUTTON */
+.roi-btn {
+  display: inline-block;
+  background: #1769ff;
+  color: #ffffff;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* BELOW CONTENT */
+.roi-below-content {
+  max-width: 720px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.roi-below-content h3 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 18px;
+}
+
+.roi-below-content p {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* MOBILE TUNE */
+@media (max-width: 480px) {
+  .roi-card h2 {
+    font-size: 24px;
+  }
+
+  .roi-below-content h3 {
+    font-size: 24px;
+  }
+}
+
+
+
+
+.ai-solutions-section {
+  background: #000;
+  padding: 30px 16px 60px;
+  font-family: Arial, sans-serif;
+}
+
+.ai-item {
+  display: flex;
+  gap: 16px;
+  padding: 28px 0;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+}
+
+/* LEFT VERTICAL LINE */
+.ai-item::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #2a2a2a;
+}
+
+.ai-number {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  min-width: 32px;
+}
+
+.ai-content {
+  padding-left: 16px;
+}
+
+.ai-content h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.ai-content p {
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .ai-content h3 {
+    font-size: 20px;
+  }
+
+  .ai-content p {
+    font-size: 14.5px;
+  }
+}
+
+
+
+
+body {
+  background: #0b0b0b;
+  font-family: Arial, sans-serif;
+}
+
+.why-appinventiv-section {
+  padding: 20px;
+}
+
+.why-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* TOP IMAGE AREA */
+.why-top {
+  background: linear-gradient(135deg, #0b2c5f, #000);
+  padding: 30px 20px;
+  color: #fff;
+}
+
+.why-icon {
+  width: 42px;
+  margin-bottom: 14px;
+}
+
+.why-top h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.why-top p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ACCORDION AREA */
+.why-bottom {
+  background: #fff;
+}
+
+.acc-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.acc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px;
+  cursor: pointer;
+}
+
+.acc-header span {
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.acc-header h4 {
+  color: black;
+  flex: 1;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.acc-header i {
+  color: blue;
+  transition: 0.3s;
+}
+
+.acc-content {
+  display: none;
+  padding: 0 18px 16px 68px;
+  font-size: 14px;
+  color: #444;
+}
+
+.acc-item.active .acc-content {
+  display: block;
+}
+
+.acc-item.active i {
+  transform: rotate(90deg);
+}
+
+
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.ai-roi-wrapper{
+  background:#000;
+  padding:60px 15px;
+  display:flex;
+  justify-content:center;
+}
+
+.ai-roi-card{
+  width:100%;
+  max-width:420px;
+  background:#0a58ff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* Image Section */
+.ai-roi-image img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Content Section */
+.ai-roi-content{
+  padding:32px 24px 36px;
+  color:#fff;
+}
+
+.ai-roi-subtitle{
+  font-size:15px;
+  opacity:0.9;
+  display:block;
+  margin-bottom:10px;
+}
+
+.ai-roi-title{
+  font-size:40px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:16px;
+}
+
+.ai-roi-text{
+  font-size:18px;
+  line-height:1.5;
+  margin-bottom:26px;
+}
+
+/* Button */
+.ai-roi-btn{
+  text-decoration: none;
+  background:#fff;
+  color:#000;
+  border:none;
+  padding:15px 28px;
+  font-size:16px;
+  font-weight:600;
+  border-radius:40px;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.ai-roi-btn:hover{
+  text-decoration: none;
+  background:#eaeaea;
+}
+
+
+
+
+
+
+.case-section{
+  background:#000;
+  padding:40px 15px;
+  font-family: Arial, sans-serif;
+  color:#fff; /* FORCE WHITE */
+}
+
+.case-section *{
+  color:#fff; /* 🔥 IMPORTANT FIX */
+}
+
+.case-heading{
+  font-size:26px;
+  text-align:center;
+  margin-bottom:15px;
+  font-weight:600;
+}
+
+.case-subtext{
+  font-size:15px;
+  text-align:center;
+  opacity:0.8;
+  margin-bottom:30px;
+}
+
+.case-slider{
+  position:relative;
+  overflow:hidden;
+}
+
+.case-track{
+  display:flex;
+  transition:transform 0.5s ease-in-out;
+}
+
+.case-card{
+  min-width:100%;
+  background:#111;
+  border-radius:18px;
+  padding-bottom:20px;
+}
+
+.case-card img{
+  width:100%;
+  border-radius:18px;
+  display:block;
+}
+
+.case-card h3{
+  margin:18px 15px 8px;
+  font-size:22px;
+  font-weight:600;
+}
+
+.case-card p{
+  margin:0 15px 15px;
+  font-size:15px;
+  opacity:0.85;
+}
+
+.stats{
+  margin:0 15px;
+  padding-top:12px;
+  border-top:1px solid #333;
+  font-weight:600;
+  font-size:15px;
+}
+
+/* Arrow Buttons */
+.nav-btn{
+  position:absolute;
+  top:40%;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  font-size:20px;
+  z-index:5;
+}
+
+.nav-btn.left{
+  left:10px;
+  background:#fff;
+  color:#000;
+}
+
+.nav-btn.right{
+  right:10px;
+  background:#0a58ff;
+  color:#000;
+}
+
+.nav-btn{
+  background: white;
+  color: #000;
+  border: 2px solid #1e6bff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ACTIVE (click ke baad) */
+.nav-btn.active{
+  background: #1e6bff;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+.industries-section{
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  padding: 60px 16px;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.industries-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.industries-desc{
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  color: #cfcfcf;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.industries-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.industry-card{
+  background: linear-gradient(145deg, #0f0f0f, #050505);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.industry-card span{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.industry-card .icon{
+  font-size: 22px;
+}
+
+/* ACTIVE / CLICK STATE */
+.industry-card.active{
+  border: 2px solid #1e6bff;
+  box-shadow: 0 0 0 1px rgba(30,107,255,0.4);
+}
+
+
+
+
+
+
+
+.ai-industry-slider{
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  padding: 60px 16px;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.slider-title{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.slider-desc{
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.slider-arrows{
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.arrow{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrow.active{
+  background: #1e6bff;
+  border-color: #1e6bff;
+}
+
+.slider-viewport{
+  overflow: hidden;
+}
+
+.slider-track{
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.card-pair{
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ai-card{
+  background: linear-gradient(145deg, #0f0f0f, #050505);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.ai-card h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  text-align: center;
+}
+
+.ai-card p{
+  color: #d1d1d1;
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== AI TECH STACK SECTION ===== */
+.ai-tech-stack {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #0a0a0a, #000);
+}
+
+.ai-tech-stack h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.ai-tech-stack .description {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto 60px;
+  color: #dcdcdc;
+}
+
+/* Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+/* Item */
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.tech-item i {
+  font-size: 22px;
+  color: #fff;
+}
+
+/* ===== ROADMAP SECTION ===== */
+.roadmap {
+  padding: 80px 0;
+  background: #000;
+}
+
+.roadmap h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.roadmap p {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .ai-tech-stack h2,
+  .roadmap h2 {
+    font-size: 26px;
+  }
+
+  .tech-item {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+.ai-roadmap {
+  background: #000;
+  padding: 60px 0 100px;
+}
+
+.ai-roadmap .container {
+  max-width: 1200px;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.roadmap-card {
+  margin-top: 10px;
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  border: 1px solid #2c2c2c;
+  border-radius: 18px;
+  padding: 30px 26px 34px;
+}
+
+.roadmap-card .icon {
+  margin-bottom: 22px;
+}
+
+.roadmap-card .icon i {
+  font-size: 26px;
+  color: #fff;
+}
+
+.roadmap-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.roadmap-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #d8d8d8;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 768px) {
+  .roadmap-card h3 {
+    font-size: 22px;
+  }
+
+  .roadmap-card p {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+.cloud-partners {
+  background: #000;
+  padding: 70px 0 100px;
+}
+
+.cloud-partners .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* BIG TOP CARD */
+.cloud-main-card {
+  background: radial-gradient(circle at top left, #0b1430, #05070d);
+  border-radius: 22px;
+  padding: 40px 28px 45px;
+}
+
+.cloud-main-card h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.cloud-main-card p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+/* SMALL CARDS */
+.cloud-card {
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  border: 1px solid #2c2c2c;
+  border-radius: 18px;
+  padding: 34px 26px 36px;
+}
+
+.cloud-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+/* ICONS */
+.cloud-icon {
+  margin-bottom: 22px;
+}
+
+.cloud-icon i {
+  font-size: 44px;
+  color: #fff;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .cloud-main-card h2 {
+    font-size: 26px;
+  }
+
+  .cloud-main-card p,
+  .cloud-card p {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+.awards-section{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.awards-section h2{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.awards-section p{
+  max-width:600px;
+  margin:0 auto 40px;
+  font-size:15px;
+  color:#ccc;
+}
+
+
+  .awards-slider{
+  overflow:hidden;
+  width:100%;
+  padding-right:20px;
+}
+
+
+.award-item{
+  min-width:180px;
+}
+
+.award-item img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  filter:100%;
+  opacity:1;
+}
+
+
+
+
+
+.award-track{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  animation: slideAwards 8s linear forwards;
+}
+
+@keyframes slideAwards{
+  from{
+    transform:translateX(100%);
+  }
+  to{
+    transform:translateX(-100%);
+  }
+}
+
+
+@media(max-width:768px){
+  .award-item{
+    min-width:140px;
+  }
+}
+
+
+
+
+.conversation-section{
+  min-height:100vh;
+  padding:80px 20px;
+  background: linear-gradient(135deg,#020202,#0b1b2a,#000);
+  color:#fff;
+  font-family: Arial, sans-serif;
+}
+
+.conversation-content{
+  max-width:600px;
+}
+
+.conversation-content h1{
+  font-size:34px;
+  line-height:1.3;
+  margin-bottom:40px;
+}
+
+.step{
+  display:flex;
+  gap:16px;
+  margin-bottom:32px;
+}
+
+.faq-icon{
+  min-width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#fff;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.step h3{
+  margin:0;
+  font-size:20px;
+}
+
+.step p{
+  margin-top:6px;
+  color:#cfcfcf;
+  font-size:15px;
+  line-height:1.6;
+}
+
+
+
+
+
+
+
+
+
+.mobile-menu {
+  background: linear-gradient(180deg, #000, #061a3a);
+  padding: 20px;
+}
+
+.menu-item {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+/* HEADER */
+.menu-header {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+/* + / - icon */
+.menu-header .icon {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+/* SUBMENU */
+.submenu {
+  display: none;
+  list-style: none;
+  padding: 10px 0 20px 0;
+  margin: 0;
+  width: 100%;
+
+  /* 🔥 IMPORTANT FIX */
+  position: static;
+  float: none;
+  text-align: left;
+}
+
+/* submenu links */
+.submenu li a {
+  display: block;
+  padding: 8px 0;
+  color: #cfd8e3;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  color: #ffffff;
+}
+
+
+
+/* FORCE COLUMN LAYOUT */
+.menu-item {
+  display: block !important;
+}
+
+/* HEADER */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* SUBMENU — HEADING KE NEECH */
+.submenu {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+
+  /* 🔥 MOST IMPORTANT */
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  float: none !important;
+  clear: both !important;
+
+  text-align: left !important;
+}
+
+/* submenu list */
+.submenu li {
+  display: block;
+}
+
+/* submenu links */
+.submenu li a {
+  display: block;
+  padding: 8px 0;
+  margin-left: 0;
+  color: #cfd8e3;
+}
+
+
+
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+    text-align: center;
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+    text-align: center;
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+    text-align: center;
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  text-align: center;
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+    
+   <header class="header">
+  <h2 class="logo">I.H</h2>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Slide Menu -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    I.H<span>˅</span>
+  </div>
+  
+  <div class="submenu">
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    Explore AI Tech <span>˅</span>
+  </div>
+  <div class="child-submenu">
+    <a href="explore-ai.html">AI Services & Solutions</a>
+    <a href="">AI Development</a>
+      <a href="">AI Consulting</a>
+      <a href="">AI Chatbot Development</a>
+     <a href="">Generative AI Development </a>
+    <a href="">Generative AI Consulting</a>
+     <a href=""> AI Agent Development</a>
+      <a href="">AI Integration  </a>
+     <a href="">ML Development </a>
+     <a href="">computer Vision </a>
+     <a href="">AI Copilot Development  </a>
+  </div>
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    AI Knowledge Hub <span>˅</span>
+  </div>
+  <div class="child-submenu">
+      <div class="blog-card" onclick="openBlog('digital.html')">
+    <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Choose the Best AI Agent Development Company for Businesses</h3>
+      </a>
+     
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+      <h3>25+ Disruptive AI Agent Business Ideas in 2026 you should Launch in 2026</h3>
+            </a>
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog3.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1676299081847-824916de030a
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Hire the Best AI Developer for Your Custom  Project? Key steps,Costs, and more</h3>
+          </a>
+    </div>
+  </div>
+      
+      
+       <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+    <h3>How to Build a <br>AI App?Steps,Features,Costs,Trends</h3>
+            </a>
+    </div>
+  </div> 
+      
+ <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI Blog">
+    <div class="blog-content">
+      <h3>AI in Transpotation:<br>Benefits and use cases for modern enterprise </h3>
+            </a>
+    </div>
+  </div> 
+      
+      
+      
+    
+  </div>
+
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    About <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="home.html">About I.H</a>
+    <a href="#">Our Core Team </a>
+    <a href="who.html">How We Work and Function  </a>
+    <a href="#"> Client Portfolio</a>
+    <a href="#"> Client Testimonials</a>
+     <a href="#"> Corporate social responsibility</a>
+    <a href="career.html">Start your career with us </a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Services <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="#">AI Development </a>
+    <a href="#">Machine Learning</a>
+ <a href="#">Chatbot & NLP</a>
+  <a href="#">Deep Learning</a>
+   <a href="#">App & Web AI</a>
+      <a href="#">Data Science</a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Industries <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="healthcare .html">Healthcare</a>
+    <a href="fitness.html">Fitness</a>
+ <a href="logistics.html">Logistics</a>
+  <a href="realestate.html">Real Estate</a>
+    <a href="banking.html">Banking</a>
+     <a href="fintech.html">FinTech</a>
+  </div>
+
+</div>
+ 
+    
+    
+    
+    
+    
+    
+    
+
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content slide-from-right">
+    <h1>Accelerating Business Growth</h1>
+    <h2>With Our Time-Tested AI Services & Solutions</h2>
+
+    <p>
+      Our AI services and solutions are built for enterprises that need systems
+      to perform reliably in production, not just in pilots.
+    </p>
+  </div>
+</section>
+
+
+<!-- SECTION 3 / 4 / 5 SAME STRUCTURE -->
+<section class="slider-section">
+
+  <h2 class="section-title">Our AI delivery capabilities include:</h2>
+
+  <div class="slider">
+    <button class="arrow left" onclick="prevSlide()">&#8592;</button>
+
+    <div class="slides">
+
+      <div class="slide active">
+        <h3>Secure, compliant AI architectures</h3>
+        <p>Aligned with regulatory requirements</p>
+      </div>
+
+      <div class="slide">
+        <h3>Custom AI model development</h3>
+        <p>Across enterprise platforms</p>
+      </div>
+
+      <div class="slide">
+        <h3>Long-term AI lifecycle management</h3>
+        <p>Support, optimization & scaling</p>
+      </div>
+
+    </div>
+
+    <button class="arrow right" onclick="nextSlide()">&#8594;</button>
+  </div>
+
+</section>
+
+
+
+<section class="experience-section">
+  <div class="experience-content">
+    <p>
+      With over <strong>10 years of experience</strong>, these outcomes reflect
+      consistent delivery and trusted partnerships across industries.
+    </p>
+    
+    
+      <div class="stats-container">
+
+    <div class="stats-box active">
+      <div class="icon">⚙️</div>
+      <h2>300+</h2>
+      <p>AI Solutions Delivered</p>
+    </div>
+
+    <div class="stats-box">
+      <div class="icon">👨‍💻</div>
+      <h2>200+</h2>
+      <p>AI Experts Onboard</p>
+    </div>
+
+    <div class="stats-box">
+      <div class="icon">🤝</div>
+      <h2>150+</h2>
+      <p>Enterprise Clients</p>
+    </div>
+
+    <div class="stats-box">
+      <div class="icon">🌍</div>
+      <h2>20+</h2>
+      <p>Countries Served</p>
+    </div>
+
+    <!-- NEW BOX – SAME STYLE -->
+    <div class="stats-box">
+      <div class="icon">🧠</div>
+      <h2>50+</h2>
+      <p>Bespoke LLM's Fine-tuned</p>
+    </div>
+
+    <!-- NEW BOX – SAME STYLE -->
+    <div class="stats-box">
+      <div class="icon">🏭</div>
+      <h2>35+</h2>
+      <p>Industries Mustered</p>
+    </div>
+
+  </div>
+    
+    
+    
+  </div>
+</section>
+
+<section class="ai-services-section">
+
+  <!-- Heading -->
+  <div class="ai-text-content">
+    <h2>Scale Smarter With Our Suite of Artificial Intelligence Services</h2>
+    <p>
+      Explore our comprehensive suite of AI services designed to drive profitable
+      innovations and deliver tangible outcomes. From consulting to development and beyond,
+      our extensive artificial intelligence services are tailored to meet unique business needs.
+    </p>
+  </div>
+
+  <button class="ai-services-btn">AI Services</button>
+
+  <div class="ai-services-layout">
+
+    <!-- LEFT: Service Options -->
+    <div class="ai-service-tabs">
+      <div class="service-tab active" onclick="changeService('consulting', this)">
+        <span class="active-bar"></span>
+        AI Consulting
+      </div>
+
+      <div class="service-tab" onclick="changeService('development', this)">
+        <span class="active-bar"></span>
+        AI Development
+      </div>
+
+      <div class="service-tab" onclick="changeService('genai', this)">
+        <span class="active-bar"></span>
+        Generative AI Consulting
+      </div>
+
+      <div class="service-tab" onclick="changeService('ml', this)">
+        <span class="active-bar"></span>
+        Generative AI Development
+      </div>
+      
+            <div class="service-tab" onclick="changeService('genaiDev', this)">
+        <span class="active-bar"></span>
+        Machine Learning Development
+      </div>
+      
+     <div class="service-tab" onclick="changeService('computerVision', this)">
+        <span class="active-bar"></span>
+        Computer Vision Software Development
+      </div>
+      
+ <div class="service-tab" onclick="changeService('dataScience', this)">
+        <span class="active-bar"></span>
+    Data Science amd Analytics
+      </div>
+      
+<div class="service-tab" onclick="changeService('responsibleAI', this)">
+        <span class="active-bar"></span>
+        Responsible AI Development
+      </div>
+      
+    <div class="service-tab" onclick="changeService('secureAI', this)">
+        <span class="active-bar"></span>
+        Secure AI 
+      </div>
+      
+    <div class="service-tab" onclick="changeService('aiopsMlops', this)">
+        <span class="active-bar"></span>
+         AIOps and MLOps
+      </div>
+      
+    </div>
+
+    <!-- RIGHT: Business Applications -->
+    <div class="business-apps" id="businessApps"></div>
+
+  </div>
+</section>
+
+<section class="our-offerings-section">
+  <div class="our-offerings-content">
+    <h3>// Our Offerings</h3>
+
+    <p>
+      Unlock the full creative potential of gen AI with our
+      <span class="highlight">Generative AI consulting</span> services.
+      Our tech experts work closely with your team to craft tailored
+      roadmaps that seamlessly integrate generative AI into your business
+      strategy, pinpointing high-impact use cases that drive innovation
+      and efficiency.
+    </p>
+  </div>
+</section>
+
+
+<section class="ai-full-section">
+
+  <!-- WHITE CARD -->
+  <div class="ai-investment-card">
+
+    <h2>Turn AI Investment Into Business Results</h2>
+
+    <p>
+      As an AI service provider, we can help you define, build, and scale AI
+      systems that support growth, efficiency, and long-term competitiveness.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="ai-btn">Start Your AI Consultation</a>
+
+<img class="ai-bot-img" src="https://images.unsplash.com/photo-1677756119517-756a188d2d94"
+      alt="AI Bot" height="100" width="50"
+    />
+  </div>
+
+  <!-- STATS SECTION -->
+  <div class="ai-stats">
+
+    <div class="stat-item">
+      <h3>35+</h3>
+      <h4>Industries Mastered</h4>
+      <p>
+        With our agility & engineering expertise, we equip your critical
+        business functions with customised tech.
+      </p>
+    </div>
+
+    <div class="stat-item">
+      <h3>1500+</h3>
+      <h4>Tech Evangelists</h4>
+      <p>
+        We are a dynamic team of technology enthusiasts driven to achieve
+        the best results for our clients.
+      </p>
+    </div>
+
+    <div class="stat-item">
+      <h3>3000+</h3>
+      <h4>Solutions Designed & Delivered</h4>
+      <p>
+        We have empowered businesses with futuristic solutions that help
+        them grow and scale.
+      </p>
+    </div>
+
+    <div class="stat-item">
+      <h3>500+</h3>
+      <h4>Legacy Processes Transformed</h4>
+      <p>
+        Seamlessly integrating cutting-edge technologies into legacy systems.
+      </p>
+    </div>
+
+    <div class="stat-item">
+      <h3>05+</h3>
+      <h4>Strategic Federal Partnerships</h4>
+      <p>
+        Building long-term strategic partnerships across industries.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="roi-full-section">
+
+  <!-- CARD -->
+  <div class="roi-card">
+    <h2>
+      With an eagle eye on<br>
+      quality, innovation, and<br>
+      ROIs.
+    </h2>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="ai-btn" class="roi-btn">Partner With Us</a>
+  </div>
+
+  <!-- TEXT BELOW CARD -->
+  <div class="roi-below-content">
+    <h3>AI Solutions We Deliver<br>Across Business Functions</h3>
+
+    <p>
+      We design and deploy AI solutions that solve operational, customer,
+      and decision-level problems, not abstract use cases. Each solution
+      is shaped around real workflows, data constraints, and scale
+      requirements.
+    </p>
+  </div>
+
+</section>
+
+<section class="ai-solutions-section">
+
+  <div class="ai-item">
+    <span class="ai-number">01</span>
+    <div class="ai-content">
+      <h3>Intelligent Chatbots and Virtual Assistants</h3>
+      <p>
+        Our conversational systems are built to operate across customer-facing
+        and internal workflows. They handle high-volume interactions, escalate
+        complexity when needed, and improve response consistency without
+        breaking context or user trust.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">02</span>
+    <div class="ai-content">
+      <h3>Personalized Recommendation Engines</h3>
+      <p>
+        We build recommendation frameworks that adapt continuously to user
+        behavior and business signals. This allows organizations to tailor
+        experiences at scale while avoiding rigid rules that fail as demand
+        patterns change.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">03</span>
+    <div class="ai-content">
+      <h3>Fraud Detection and Risk Intelligence</h3>
+      <p>
+        Our risk models examine transactions and behavioral patterns in real
+        time to identify anomalies before they escalate. These AI technology
+        solutions help organizations limit exposure while keeping legitimate
+        activity uninterrupted.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">04</span>
+    <div class="ai-content">
+      <h3>Customer Service Automation</h3>
+      <p>
+        We streamline service operations by automating repeatable decision
+        paths and routing logic. Support teams gain more time for complex
+        cases while service quality remains consistent under scale.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">05</span>
+    <div class="ai-content">
+      <h3>Computer Vision and Visual Intelligence</h3>
+      <p>
+        We convert visual inputs into structured insight across images, video,
+        and motion data. This capability supports monitoring, classification,
+        and behavioral analysis in environments where manual review does not
+        scale.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">06</span>
+    <div class="ai-content">
+      <h3>Data Science and Advanced Analytics</h3>
+      <p>
+        We build data pipelines that turn fragmented information into
+        decision-ready insight. Leaders use these systems to forecast trends,
+        monitor performance, and act in real time across business functions.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">07</span>
+    <div class="ai-content">
+      <h3>Secure and Responsible AI Systems</h3>
+      <p>
+        We architect platforms with governance, transparency, and regulatory
+        alignment embedded at the system level. This ensures accountability,
+        audit readiness, and long-term trust as usage expands.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">08</span>
+    <div class="ai-content">
+      <h3>AIOps and Intelligent Operations</h3>
+      <p>
+        We apply automation across monitoring, incident detection, and
+        resource optimization. Operations teams gain better visibility and
+        faster response without adding manual overhead to already complex
+        environments.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">09</span>
+    <div class="ai-content">
+      <h3>Predictive Analytics Software</h3>
+      <p>
+        We develop forecasting systems that surface likely outcomes before
+        they materialize. By analyzing historical and live signals together,
+        teams gain the time and confidence needed to adjust plans early.
+      </p>
+    </div>
+  </div>
+
+  <div class="ai-item">
+    <span class="ai-number">10</span>
+    <div class="ai-content">
+      <h3>Natural Language Processing Software</h3>
+      <p>
+        We enable systems to work with language the way businesses actually
+        use it, across documents, conversations, and support channels. This
+        allows organizations to extract meaning at scale without relying on
+        manual review.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="why-appinventiv-section">
+
+  <div class="why-card">
+
+    <!-- TOP IMAGE CONTENT -->
+    <div class="why-top">
+      <img src="https://cdn-icons-png.flaticon.com/512/6819/6819196.png" class="why-icon">
+
+      <h2>Why Choose Appinventiv as Your Ideal AI Solutions Company</h2>
+
+      <p>
+        We work with enterprises that need clarity, control, and long-term
+        value from advanced technology initiatives. Our teams combine deep
+        technical judgment with real-world execution experience to help
+        organizations move confidently from AI ideas to systems that work
+        in production. The focus stays on reliability, governance, and
+        outcomes that hold up as scale, complexity, and expectations grow.
+      </p>
+    </div>
+
+    <!-- ACCORDION AREA (SAME CARD) -->
+    <div class="why-bottom">
+
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>01/</span>
+          <h4>Comprehensive and Tailored AI Services</h4>
+          <i>▶</i>
+        </div>
+        <div class="acc-content">
+          <p>
+            Our holistic approach integrates all aspects of  AI specifically to your custom business needs, from artificial intelligence consulting and development to deployment and maintenance.As a renowned artificial intelligence solution provider, we ensure your product align with your business goals and prevent redundant capability development.
+          </p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>02/</span>
+          <h4>Compliance-First Approach</h4>
+          <i>▶</i>
+        </div>
+        <div class="acc-content">
+          <p>
+            Being a reputed artificial intelligence solution company, we prioritize global compliance measures at every stage of your AI journey. From data privacy policies to system integrity, our strategic approach ensures your AI systems are  protected  against potential threads and compliant with all industries standards of top regulatory bodies like EU GDPR, OECD, and G7.
+          </p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>03/</span>
+          <h4>Innovation-Inclusive Culture</h4>
+          <i>▶</i>
+        </div>
+        <div class="acc-content">
+          <p>
+            Innovation is at the core of everything we do. Our yeam of 1600+ yech evangelists thrives on exploring the latest advancements in AI technology, ensuring that we bring cutting-edge solutions tailored to your businesses needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>04/</span>
+          <h4>Proven Track Record</h4>
+          <i>▶</i>
+        </div>
+        <div class="acc-content">
+            <p>Our proven track record speaks volumes for our unmatched excellencein delivering succesful AI based project.  </p>
+          <p>
+            3000+ digital deliveries demonstrate our reliability
+            and execution strength.
+          </p>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>05/</span>
+          <h4>In-House AI Accelerator</h4>
+          <i>▶</i>
+        </div>
+        <div class="acc-content">
+            <p> I.H's digital accelerator is specifically designed to fast-track  your AI initiatives with advanced, ready-to-deploy solution.</p>
+          <p>
+            Accelerated experimentation, deployment, and optimization
+            using our proprietary AI frameworks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="ai-roi-wrapper">
+  <div class="ai-roi-card">
+
+    <!-- Image -->
+    <div class="ai-roi-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS5BcrNd0uJmHWfivYzPcX4LDBxfrwhMj2cHMcmOiujQ&s=10" alt="AI ROI Growth">
+    </div>
+
+    <!-- Content -->
+    <div class="ai-roi-content">
+      <span class="ai-roi-subtitle">AI-mature companies see</span>
+
+      <h2 class="ai-roi-title">3X FASTER ROI</h2>
+
+      <p class="ai-roi-text">
+        WHERE DOES YOUR<br>
+        ORGANIZATION STAND?
+      </p>
+
+    
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="ai-btn"> Get Your AI Maturity Report </a>
+      
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<section class="case-section">
+  <h2 class="case-heading">
+    See How These Leaders Became Our Proof Of AI Excellence
+  </h2>
+
+  <p class="case-subtext">
+    As one of the leading artificial intelligence service providers, our work is best understood through the outcomes we’ve achieved with our clients.
+  </p>
+
+  <div class="case-slider">
+    <button class="nav-btn left" onclick="prevSlide()">&#10094;</button>
+
+    <div class="case-track">
+
+      <div class="case-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLjyQbJsiiWIJPp1rfV7l8t9Op1wcSyV6HjiqYq3EAnA&s=10">
+        <h3>Mudra</h3>
+        <p>AI chatbot-driven budget management tool.</p>
+        <div class="stats">12+ Countries Launched</div>
+      </div>
+
+      <div class="case-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+        <h3>JobGet</h3>
+        <p>AI-driven employment platform.</p>
+        <div class="stats">$52M Funding Raised</div>
+      <div class="stats">2+  Mobile App Download </div>
+      </div>
+      
+      
+            <div class="case-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjLGSvfp63NsNqz3XpJdjCidRdvtCpZJIW7Ae3QT1yFw&s=10">
+        <h3>Vyrb</h3>
+        <p>We develop Vyrb,an innovative AI powerd social media app that allows sameless audio meassaging through Bluetooth wearables</p>
+        <div class="stats">$1 million Funding Received</div>
+      </div>
+
+    </div>
+
+    <button class="nav-btn right" onclick="nextSlide()">&#10095;</button>
+  </div>
+</section>
+
+
+
+
+<section class="industries-section">
+
+  <h2 class="industries-title">
+    Industries We Empower and Transform with Our AI Services
+  </h2>
+
+  <p class="industries-desc">
+    Our experts can help industries develop AI platforms that guarantee to drive
+    innovation, improve efficiency, and unlock new growth opportunities.
+  </p>
+
+  <div class="industries-grid">
+
+    <div class="industry-card active">
+      <i class="icon">❤</i>
+      <span>Healthcare</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">$</i>
+      <span>Finance</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🍽</i>
+      <span>Restaurant</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🛒</i>
+      <span>eCommerce</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🔋</i>
+      <span>Electric Vehicle (EV)</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">⚙</i>
+      <span>SaaS</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">✈</i>
+      <span>Travel</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🎵</i>
+      <span>Entertainment</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">👥</i>
+      <span>On-Demand</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">💬</i>
+      <span>Social Media</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🚚</i>
+      <span>Logistics</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🎓</i>
+      <span>Education</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🏠</i>
+      <span>Real Estate</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🛫</i>
+      <span>Aviation</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">🌱</i>
+      <span>Agriculture</span>
+    </div>
+
+    <div class="industry-card">
+      <i class="icon">📡</i>
+      <span>Telecom</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="ai-industry-slider">
+
+  <h2 class="slider-title">
+    Leverage Our AI Solutions and Services for Business across Industries
+  </h2>
+
+  <p class="slider-desc">
+    Harness the benefits of our cutting-edge AI solutions and services to drive
+    innovation and efficiency in your business. Our AI capabilities help you
+    enhance customer experiences, streamline operations, and achieve sustainable growth.
+  </p>
+
+  <!-- ARROWS -->
+  <div class="slider-arrows">
+    <button class="arrow left" onclick="prevCards()">&#10094;</button>
+    <button class="arrow right" onclick="nextCards()">&#10095;</button>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="slider-viewport">
+    <div class="slider-track">
+
+      <!-- ROW 1 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Food</h3>
+          <p>
+            Adopt AI technology in food for quality control and demand forecasting.
+            This helps reduce waste and drive efficiency in supply chain management.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in eCommerce</h3>
+          <p>
+            Leverage AI to deliver personalized shopping experiences and optimize
+            inventory management to prevent stockouts.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Banking</h3>
+          <p>
+            Deploy AI solutions for fraud detection, risk assessment, and automated
+            customer interactions to enhance security.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in Social Media</h3>
+          <p>
+            Utilize AI for content creation, personalized feeds, and targeted
+            advertising to boost engagement.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Healthcare</h3>
+          <p>
+            Enable predictive diagnostics, patient monitoring, and workflow automation
+            for improved healthcare delivery.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in Sports</h3>
+          <p>
+            Use AI for performance analytics, injury prediction, and fan engagement
+            optimization.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 4 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Stock Trading</h3>
+          <p>
+            Implement AI-driven trading algorithms, risk analysis, and market
+            forecasting tools.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in Real Estate</h3>
+          <p>
+            Apply AI for property valuation, demand forecasting, and virtual tours.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 5 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Oil and Gas</h3>
+          <p>
+            Optimize exploration, predictive maintenance, and operational efficiency
+            using AI models.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in Telecom</h3>
+          <p>
+            Enhance network optimization, customer support automation, and fraud
+            detection.
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 6 -->
+      <div class="card-pair">
+        <div class="ai-card">
+          <h3>AI in Product Development</h3>
+          <p>
+            Accelerate product innovation through AI-driven insights, testing, and
+            user behavior analysis.
+          </p>
+        </div>
+
+        <div class="ai-card">
+          <h3>AI in Education</h3>
+          <p>
+            Enable personalized learning, automated assessments, and intelligent
+            content delivery systems.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="ai-tech-stack">
+  <div class="container">
+
+    <h2>AI Tech Stack Cluster We Use for Intelligent Model Development</h2>
+
+    <p class="description">
+      Our AI-based solutions for businesses are meticulously crafted using an ideal
+      technology stack tailored to meet every requirement of your business.
+      From advanced machine learning frameworks to cloud-based platforms,
+      we utilize the best tools to ensure scalable, stable, efficient, and
+      innovative AI-oriented outcomes.
+    </p>
+
+    <div class="tech-grid">
+
+      <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="tech-item"><i class="fa-solid fa-database"></i> Big Data</div>
+
+      <div class="tech-item"><i class="fa-solid fa-brain"></i> Machine Learning</div>
+      <div class="tech-item"><i class="fa-solid fa-gears"></i> ETL</div>
+
+      <div class="tech-item"><i class="fa-solid fa-layer-group"></i> Databricks</div>
+      <div class="tech-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+
+      <div class="tech-item"><i class="fa-solid fa-chart-line"></i> Scikit-learn</div>
+      <div class="tech-item"><i class="fa-solid fa-table"></i> Pandas</div>
+
+      <div class="tech-item"><i class="fa-solid fa-chart-simple"></i> Tableau</div>
+      <div class="tech-item"><i class="fa-solid fa-microchip"></i> TensorFlow</div>
+
+      <div class="tech-item"><i class="fa-solid fa-gauge-high"></i> Grafana</div>
+      <div class="tech-item"><i class="fa-brands fa-microsoft"></i> Azure</div>
+
+      <div class="tech-item"><i class="fa-brands fa-aws"></i> AWS</div>
+      <div class="tech-item"><i class="fa-solid fa-code"></i> API</div>
+
+      <div class="tech-item"><i class="fa-solid fa-infinity"></i> DevOps</div>
+      <div class="tech-item"><i class="fa-solid fa-database"></i> Oracle</div>
+
+      <div class="tech-item"><i class="fa-solid fa-book"></i> Jupyter</div>
+      <div class="tech-item"><i class="fa-solid fa-network-wired"></i> Kubernetes</div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- NEXT SECTION START -->
+<section class="roadmap">
+  <div class="container">
+    <h2>AI Solution Development Roadmap We Offer</h2>
+
+    <p>
+      Implementing AI in business requires a structured approach to ensure seamless
+      integration, reliability, and measurable outcomes. Keeping this in mind,
+      we follow a structured process that focuses on leveraging AI to unlock new
+      business opportunities while maintaining security and compliance.
+    </p>
+  </div>
+</section>
+<section class="ai-roadmap">
+  <div class="container">
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+      <h3>Analyze Business Needs</h3>
+      <p>
+        First, we assess your business needs and existing tech ecosystem to
+        determine if AI-driven solutions are the right investment and how they
+        will add value to your operational growth.
+      </p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+      <h3>Evaluate Data Sources</h3>
+      <p>
+        Next, we explore and evaluate data sources, including corporate assets
+        and public databases. This step ensures we have relevant and high-quality
+        data for AI model development.
+      </p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-box-archive"></i></div>
+      <h3>Design the Product</h3>
+      <p>
+        As one of the premium artificial intelligence services companies, we
+        choose the best tech stack, craft the product's architecture, and outline
+        an implementation plan. We also offer a PoC to validate feasibility and
+        viability.
+      </p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-brain"></i></div>
+      <h3>Develop AI Solution</h3>
+      <p>
+        Eventually, our AI developers conduct data preprocessing, model
+        training, and ensemble modeling processes to ensure optimal AI
+        performance.
+      </p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
+      <h3>Deploy AI Model</h3>
+      <p>
+        Here comes the most vital step of the process. We integrate the trained
+        AI software solutions into the existing architecture or the cloud at
+        this stage.
+      </p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="icon"><i class="fa-solid fa-circle-question"></i></div>
+      <h3>Ongoing Support</h3>
+      <p>
+        As an elite AI service provider, we also provide post-launch support,
+        data retraining, and ongoing maintenance to ensure uninterrupted AI
+        performance and continuous model refinement.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="cloud-partners">
+  <div class="container">
+
+    <!-- TOP BIG CARD -->
+    <div class="cloud-main-card">
+      <h2>Fueling Our AI Services With Powerful Cloud Providers</h2>
+      <p>
+        We empower businesses to build robust cloud-based AI platforms, enabling
+        rapid development and deployment of AI models into live environments.
+        Our strategic partnerships with Microsoft AWS, Azure, and Google Cloud
+        platforms ensure that your AI applications are scalable and efficient.
+      </p>
+    </div>
+
+    <!-- AWS CARD -->
+    <div class="cloud-card">
+      <div class="cloud-icon aws">
+        <i class="fa-brands fa-aws"></i>
+      </div>
+      <p>
+        Our partnership with AWS enables us to leverage its robust cloud
+        infrastructure, ensuring reliable and scalable AI development tailored
+        to your business needs.
+      </p>
+    </div>
+
+    <!-- AZURE CARD -->
+    <div class="cloud-card">
+      <div class="cloud-icon azure">
+        <i class="fa-brands fa-microsoft"></i>
+      </div>
+      <p>
+        By collaborating with Azure, we integrate powerful AI and cloud
+        capabilities, providing secure, flexible, and innovative artificial
+        intelligence as a service that drives business success.
+      </p>
+    </div>
+
+    <!-- GCP CARD -->
+    <div class="cloud-card">
+      <div class="cloud-icon gcp">
+        <i class="fa-solid fa-cloud"></i>
+      </div>
+      <p>
+        Our collaboration with GCP empowers us to leverage Google’s cutting-edge
+        cloud technology, ensuring that our solutions deliver maximum efficiency,
+        performance, and impact for your organization.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="awards-section">
+  <h2>The Critics Responded Well <br> To Our Commitment To Excellence</h2>
+
+  <p>
+    We have bagged multiple industry awards and global recognitions,
+    which reflect our dedication to drive success.
+  </p>
+
+  <div class="awards-slider">
+    <div class="award-track">
+
+      <div class="award-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk-HpSzfjh2Y-fG920ZEIBwNZTJc8GrUKI5qn-Pf58Yw&s=10" alt="Clutch Award">
+      </div>
+
+      <div class="award-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmKJg_PJwSy08JGs8PRaACGJn6S6BOpvnQBYrEAg8tXQ&s=10" alt="Business of Apps">
+      </div>
+
+      <div class="award-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPW9W0jMsW1O8l9ZGvrThpLLJm_ApX5wsGJPOct9FOYQ&s=10" alt="GoodFirms">
+      </div>
+
+      <div class="award-item">
+        <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/india-growth-logo.svg" alt="Top App Developer">
+      </div>
+      
+      
+  </div>
+</section>
+
+
+
+<section class="conversation-section">
+  <div class="conversation-content">
+
+    <h1>Let's Spark A Transformative Conversation</h1>
+
+    <div class="step">
+      <span class="faq-icon">▶</span>
+      <div>
+        <h3>Get A Consultation</h3>
+        <p>
+          Discuss your project idea with our AI solution provider to know the
+          intricacies of your project.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="faq-icon">▶</span>
+      <div>
+        <h3>Get A Quotation</h3>
+        <p>
+          Based on your project, we will share a proposal for cost and timeline
+          estimates.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+     <span class="faq-icon">▶</span>
+      <div>
+        <h3>Project Kickoff</h3>
+        <p>
+          Sign the contract and form a partnership with us to kick-start your
+          project.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<div class="mobile-menu">
+
+  <div class="menu-item">
+    <button class="menu-header">
+      Our Company
+      <span class="icon">+</span>
+    </button>
+
+    <ul class="submenu">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="digital.html">Digital</a></li>
+    <li><a href="policy.html">Privacy policy</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-item">
+    <button class="menu-header">
+      Services
+      <span class="icon">+</span>
+    </button>
+    <ul class="submenu">
+     <li><a href="ai-devlopment.html">AI Development</a></li>
+      <li><a href="machine.html">Machine Learning</a></li>
+      <li><a href="ai app-web.html">App & web AI </a></li>
+    <li> <a href="nlp-chatbot.html">Chatbot & NLP</a></li> 
+   <li> <a href="deep Learning.html">Deep Learning</a></li> 
+    </ul>
+  </div>
+
+  <div class="menu-item">
+    <button class="menu-header">
+      Industries
+      <span class="icon">+</span>
+    </button>
+    <ul class="submenu">
+     <li><a href="healthcare .html">Healthcare</a></li>
+     <li><a href="logistics.html">Logistics </a></li>
+     <li><a href="banking.html">Banking</a></li>
+     <li><a href="fintech.html">FinTech</a></li>
+     
+     <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+  </div>
+  
+    <div class="menu-item">
+    <button class="menu-header">
+      Solutions
+      <span class="icon">+</span>
+    </button>
+    <ul class="submenu">
+    <li><a href="healthcare.html">Healthcare AI</a></li>
+     <li><a href="enterprise.html"> Enterprise Automation</a></li>
+     <li><a href="e-commerce.html">E-Commerce AI</a></li>
+     <li><a href="finance.html">Finance & Banking</a></li>
+     <li><a href="automotive.html">Automotive & IoT</a></li>
+     <li><a href="Ed-Tech.html">EdTech AI</a></li>
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+ 
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="Policy.html">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+alert("JS working");
+
+    
+      function openMenu() {
+  document.getElementById("sideMenu").classList.add("active");
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("active");
+  document.getElementById("overlay").style.display = "none";
+}
+
+function toggleMenu(element) {
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  allSubmenus.forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+    function openBlog(page) {
+  window.location.href = page;
+}
+
+  }
+}
+
+  function toggleMenu(element) {
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggleSubMenu(element) {
+  let childMenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".child-submenu").forEach(menu => {
+    if (menu !== childMenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (childMenu.style.display === "block") {
+    childMenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    childMenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".slider-box");
+  const next = document.querySelector(".arrow.right");
+  const prev = document.querySelector(".arrow.left");
+
+  let index = 0;
+
+  function showBox(i) {
+    boxes.forEach(box => box.classList.remove("active"));
+    boxes[i].classList.add("active");
+  }
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % boxes.length;
+    showBox(index);
+  });
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + boxes.length) % boxes.length;
+    showBox(index);
+  });
+});
+
+
+  
+  
+  
+  
+  
+  
+    
+    
+
+
+
+const boxes = document.querySelectorAll('.stats-box');
+
+boxes.forEach(box => {
+  box.addEventListener('click', () => {
+    boxes.forEach(b => b.classList.remove('active'));
+    box.classList.add('active');
+  });
+});
+
+
+
+
+
+const appData = {
+  consulting: [
+    { icon: "🗺️", title: "Custom Roadmaps Creation" },
+    { icon: "🤖", title: "AI-Driven Automation Opportunities" },
+    { icon: "⚖️", title: "AI Governance & Compliance" },
+    { icon: "🧠", title: "Responsible AI Frameworks" }
+  ],
+  development: [
+    { icon: "🔧", title: "Predictive Maintenance" },
+    { icon: "💬", title: "Chatbot & Virtual Assistant" },
+    { icon: "📊", title: "Recommendation Engines" }
+  ],
+  genai: [
+    { icon: "✍️", title: "Content Generation" },
+    { icon: "📄", title: "Document Intelligence" },
+    { icon: "🧑‍💼", title: "Enterprise AI Assistants" }
+  ],
+  genaiDev: [
+  { icon: "🧠", title: "AI Copilot Development" },
+  { icon: "✍️", title: "Content & Code Generation Systems" },
+  { icon: "💬", title: "Conversational AI Solutions" },
+  { icon: "📚", title: "Enterprise Knowledge Assistants" },
+  { icon: "🖼️", title: "Multimodal AI Applications" }
+],
+
+  ml: [
+    { icon: "🕵️", title: "Fraud Detection" },
+    { icon: "📈", title: "Demand Forecasting" },
+    { icon: "👥", title: "Customer Analytics" }
+  ],
+ computerVision: [
+  { icon: "📷", title: "Image & Video Recognition Systems" },
+  { icon: "👁️", title: "Facial Recognition Solutions" },
+  { icon: "🏭", title: "Quality Inspection Automation" },
+  { icon: "🚦", title: "Smart Surveillance Systems" },
+  { icon: "🧾", title: "OCR & Document Processing" }
+],
+
+ dataScience: [
+  { icon: "📊", title: "Predictive Analytics Solutions" },
+  { icon: "📈", title: "Business Intelligence Dashboards" },
+  { icon: "🧮", title: "Customer Behavior Analysis" },
+  { icon: "💰", title: "Revenue & Demand Forecasting" },
+  { icon: "🔍", title: "Data-driven Decision Support" }
+],
+
+  responsibleAI: [
+  { icon: "⚖️", title: "AI Ethics Framework Implementation" },
+  { icon: "🧩", title: "Bias Detection & Mitigation" },
+  { icon: "🔎", title: "Model Explainability & Transparency" },
+  { icon: "📜", title: "Regulatory Compliance Solutions" },
+  { icon: "🛡️", title: "Trustworthy AI Systems" }
+],
+
+ secureAI: [
+  { icon: "🔐", title: "AI Security Risk Assessment" },
+  { icon: "🛡️", title: "Adversarial Attack Prevention" },
+  { icon: "🔑", title: "Secure Model Deployment" },
+  { icon: "📁", title: "Data Privacy & Protection" },
+  { icon: "🚨", title: "AI Threat Monitoring Systems" }
+],
+  aiopsMlops: [
+  { icon: "⚙️", title: "Automated Model Deployment" },
+  { icon: "🔄", title: "Continuous Model Monitoring" },
+  { icon: "📉", title: "Performance Drift Detection" },
+  { icon: "☁️", title: "Scalable AI Infrastructure" },
+  { icon: "🚀", title: "CI/CD Pipelines for AI Models" }
+],
+
+};
+
+function changeService(service, element) {
+  document.querySelectorAll('.service-tab').forEach(tab =>
+    tab.classList.remove('active')
+  );
+  element.classList.add('active');
+
+  const container = document.getElementById('businessApps');
+  container.innerHTML = '';
+
+  appData[service].forEach(app => {
+    container.innerHTML += `
+      <div class="app-card">
+        <div class="app-icon">${app.icon}</div>
+        <div class="app-title">${app.title}</div>
+      </div>
+    `;
+  });
+}
+
+/* Default Load */
+changeService('consulting', document.querySelector('.service-tab.active'));
+
+
+
+
+
+
+  
+  document.querySelectorAll(".acc-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+
+      document.querySelectorAll(".acc-item").forEach(i => {
+        if (i !== item) i.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  let index = 0;
+  const track = document.querySelector('.case-track');
+  const slides = document.querySelectorAll('.case-card');
+  const leftBtn = document.querySelector('.nav-btn.left');
+  const rightBtn = document.querySelector('.nav-btn.right');
+
+  function updateButtons(activeBtn){
+    leftBtn.classList.remove('active');
+    rightBtn.classList.remove('active');
+    activeBtn.classList.add('active');
+  }
+
+  window.nextSlide = function(){
+    index = (index + 1) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateButtons(rightBtn);
+  }
+
+  window.prevSlide = function(){
+    index = (index - 1 + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateButtons(leftBtn);
+  }
+
+});
+
+
+
+
+
+document.querySelectorAll('.industry-card').forEach(card => {
+  card.addEventListener('click', () => {
+
+    document.querySelectorAll('.industry-card')
+      .forEach(c => c.classList.remove('active'));
+
+    card.classList.add('active');
+
+  });
+});
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  let index = 0;
+  const track = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.card-pair');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+
+  if(!track || slides.length === 0){
+    console.error("Slider elements not found");
+    return;
+  }
+
+  function updateArrows(active){
+    leftArrow.classList.remove('active');
+    rightArrow.classList.remove('active');
+    active.classList.add('active');
+  }
+
+  window.nextCards = function(){
+    index = (index + 1) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateArrows(rightArrow);
+  }
+
+  window.prevCards = function(){
+    index = (index - 1 + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateArrows(leftArrow);
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const track = document.getElementById("awardTrack");
+  if (!track) return; // safety check
+
+  let position = 0;
+  const speed = 1;
+
+  // duplicate only once
+  if (!track.dataset.cloned) {
+    track.innerHTML += track.innerHTML;
+    track.dataset.cloned = "true";
+  }
+
+  function slideAwards() {
+    position -= speed;
+
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+      position = 0;
+    }
+
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(slideAwards);
+  }
+
+  slideAwards();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const headers = document.querySelectorAll(".menu-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const submenu = header.nextElementSibling;
+      const icon = header.querySelector(".icon");
+
+      // Close others
+      headers.forEach(h => {
+        if (h !== header) {
+          h.nextElementSibling.style.display = "none";
+          h.querySelector(".icon").textContent = "+";
+        }
+      });
+
+      // Toggle current
+      if (submenu.style.display === "block") {
+        submenu.style.display = "none";
+        icon.textContent = "+";
+      } else {
+        submenu.style.display = "block";
+        icon.textContent = "−";
+      }
+    });
+  });
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</script>
+</body>
+</html>

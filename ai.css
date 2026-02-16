@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #f5f8fc;
+    color: #222;
+}
+
+.hero{
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #3b63ff, #1b2f91);
+    color: white;
+}
+
+.hero h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p{
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.btn{
+    display: inline-block;
+    background: #ff9800;
+    padding: 12px 25px;
+    margin-top: 25px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .4s;
+}
+
+.btn:hover{
+    background: #e57e00;
+    transform: scale(1.05);
+}
+
+.section{
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.section h2{
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.section p{
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-size: 17px;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+ul.process li{
+    padding: 8px 0;
+    font-size: 18px;
+}
+
+.dark{
+    background: black;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.cta{
+    text-align: center;
+    padding: 50px;
+}

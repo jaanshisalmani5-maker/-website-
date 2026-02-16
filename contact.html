@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Innovations House Technologies</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-headset"></i> Contact Us</h1>
+    </header><form id="ContactForm">
+
+
+    <section class="container">
+
+        <div class="intro-card">
+            <h2>Innovations House Technologies Private Limited</h2>
+            <p>
+                At Innovations House Technologies Private Limited, we believe meaningful partnerships start with meaningful conversations.
+            </p>
+            <p>
+                We welcome inquiries from enterprises, startups, academic institutions, government bodies, and research organizations across India and beyond.
+            </p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-envelope"></i> Send Us a Message</h2>
+<form method="post" action="">
+
+        
+        
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor"
+width="100%" height="600" frameborder="0"></iframe>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h2 class="section-title"><i class="fa-solid fa-user-tie"></i> Leadership Team</h2>
+
+        <div class="profile-card">
+            <h3>Sumit Kumar Sharma</h3>
+            <p>
+                <b>Lead AI Consultant & Innovator</b>
+            </p>
+            <p>
+                📞 +91 9911746448 | 📧 Info@innovationhouse.in
+            </p>
+        </div>
+
+        <div class="profile-card">
+            <h3>Upendra Singh</h3>
+            <p>
+                <b>CEO & Senior Research Partner</b>
+            </p>
+            <p>
+                📞 +91 (92294 98554) | 📧 Info@innovationhouse.in
+            </p>
+        </div>
+
+        <h2 class="section-title"><i class="fa-solid fa-building"></i> Corporate Office</h2>
+
+        <div class="info-box">
+            <p>
+                📍 H No. 101 North Delhi 110040
+            </p>
+            <p>
+                📧 info@innovationhouse.in
+            </p>
+            <p>
+                🌐 www.innovationhouse.in
+            </p>
+        </div>
+
+
+
+
+
+    </section>
+
+    <script>
+        
+        const scriptURL "https://script.google.com/macros/s/AKfycbyAAfZQokbtaIWpsu6k7lhlp2euM3RG4_8v1ob9sgAZzErPFyITqWa_FDh0Cx6cGpsp/exec";
+
+        document.getElementById("ContactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            let data = Object.fromEntries(formData);
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(res => {
+                document.getElementById("formMessage").innerText = "✔ Successfully Submitted!";
+                document.getElementById("contactForm").reset();
+            })
+            .catch(error => {
+                document.getElementById("formMessage").innerText = "❌ Error! Try Again.";
+            });
+        });
+    </script>
+        <!-- Footer -->
+    <footer class="main-footer">
+
+  <!-- Top Info -->
+  <div class="footer-top">
+    <p>3000+ digital deliveries for 35+ industries.</p>
+    <a href="#" class="explore-btn">EXPLORE NOW</a>
+  </div>
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>InventivAI</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+</body>
+</html>

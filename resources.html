@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources Menu</title>
+  <link rel="stylesheet" href="resources.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">I.H</div>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <h3>Resources</h3>
+    <button onclick="closeMenu()">✕</button>
+  </div>
+
+  <!-- MAIN OPTIONS -->
+  <ul class="main-menu">
+    <li onclick="openSub('blogs')" id="blogs-tab" class="active">Blogs <span>→</span></li>
+    <li onclick="openSub('guides')" id="guides-tab">Guides <span>→</span></li>
+    <li onclick="openSub('press')" id="press-tab">Press Releases <span>→</span></li>
+  </ul>
+
+  <!-- SUB SECTIONS -->
+  
+<div class="submenu show" id="blogs">
+  <h4>RECOMMENDED BLOGS</h4>
+
+  <a href="scanner-app.html" class="item">
+    How To Build A Product Scanner App
+  </a>
+
+  <a href="custom.html" class="item">
+    How to Build a Custom Multilingual Chatbot
+  </a>
+
+  <a href="delivery.html" class="item">
+    The Real Cost of Delivery Management Software
+  </a>
+</div>
+
+  
+  
+  
+
+  <div class="submenu show" id="guides">
+    <h4>RECOMMENDED GUIDES</h4>
+    <a href=" #"class="item">How to Develop an LLM Model</a>
+    <a href="#"class="item">AI Strategy Guide for Enterprises</a>
+  </div>
+
+  <div class="submenu show" id="press">
+    <h4>PRESS RELEASES</h4>
+    <a href="#" class="item">Appinventiv Wins Global AI Award</a>
+    <a href="#"class="item">Company Expansion Announcement</a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>Discover how our expertise can solve your most complex business challenges.</p>
+    <button>Talk to Experts</button>
+  </div>
+</div>
+<!-- Resources Section -->
+<section class="resources">
+
+
+<!-- Card -->
+<article class="resource-card">
+<div class="card-image red"></div>
+<div class="card-content">
+<span class="tag">Guides</span>
+<h2>Mobile App Development Explained: The Ultimate Step‑by‑Step Guide</h2>
+<p>What began as a small collection of utilities and games has now become a cornerstone of digital life...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+
+<article class="resource-card">
+<div class="card-image blue"></div>
+<div class="card-content">
+<span class="tag">App Development</span>
+<h2>How Much Does It Cost to Develop an App in 2026?</h2>
+<p>When it comes to mobile app development, a million‑dollar question (sometimes literally)...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+
+<article class="resource-card">
+<div class="card-image red"></div>
+<div class="card-content">
+<span class="tag">App Development</span>
+<h2>How to Build an MVP and Raise Funding in 2025</h2>
+<p>Facebook, TikTok, Tinder, Uber, Instagram, Zoom, Spotify — today, all these big players...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+
+<article class="resource-card">
+<div class="card-image yellow"></div>
+<div class="card-content">
+<span class="tag">IoT Development</span>
+<h2>10 Plus Ways IoT Is Transforming the Insurance Sector</h2>
+<p>IoT in insurance moves decisions from static risk estimates to real‑time insights...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+
+<article class="resource-card">
+<div class="card-image red"></div>
+<div class="card-content">
+<span class="tag">Data Science</span>
+<h2>How to Hire Data Engineers for Your Enterprise</h2>
+<p>Hiring data engineers individually slows execution and increases operational cost...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+
+<article class="resource-card">
+<div class="card-image red"></div>
+<div class="card-content">
+<span class="tag">Food & Beverage</span>
+<h2>Hyperlocal Delivery App Development – Benefits, Features & Cost</h2>
+<p>Hyperlocal delivery is really about keeping things close and delivering faster...</p>
+<span class="author">Jaanshi</span>
+</div>
+</article>
+
+<script>
+function openMenu(){
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeMenu(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+function openSub(id){
+  document.querySelectorAll('.submenu').forEach(s=>s.classList.remove('show'));
+  document.getElementById(id).classList.add('show');
+
+  document.querySelectorAll('.main-menu li').forEach(li=>li.classList.remove('active'));
+  document.getElementById(id+'-tab').classList.add('active');
+}
+
+</script>
+
+
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+  <div class="footer-top">
+    <p>3000+ digital deliveries for 35+ industries.</p>
+    <a href="#" class="explore-btn">EXPLORE NOW</a>
+  </div>
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>InventivAI</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

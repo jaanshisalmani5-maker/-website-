@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f4f8ff,#ffffff);
+}
+
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-item span {
+  transition: 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu a {
+  display: block;
+  color: #aaa;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.submenu-item {
+  padding: 12px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.child-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.child-submenu a {
+  display: block;
+  padding: 8px 0;
+  color: #888;
+  text-decoration: none;
+}
+
+.child-submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.blog-card {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-content h3 {
+  font-size: 14px;
+  color: #111;
+  line-height: 1.4;
+}
+
+
+
+
+/* Privacy Section */
+.privacy{
+    padding:40px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.privacy h1{
+    color: blue;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.privacy p{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:20px;
+    color:#333;
+}
+
+.toc-box{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    border:1px solid #eee;
+    padding:35px 30px;
+    background-color:#e6f0ff;
+    
+}
+    
+
+.toc-box h2{
+    color: black;
+    text-align: center;
+    font-size:32px;
+    margin-bottom:25px;
+}
+
+.toc-box ul{
+    list-style: :disc;
+    padding-left:20px;
+    list-style-type: disc;
+}
+
+.toc-box li{
+    color: black;
+    display:list-item;
+    margin-bottom:18px;
+}
+
+.toc-box a{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
+    transition:0.2s;
+}
+
+.toc-box a:hover{
+    color:#0a84ff;
+}
+
+.toc-box a.active{
+    color:#0a84ff;
+    font-weight:500;
+}
+
+
+
+.info-section{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    padding:10px 5px 20px;
+    
+}
+
+    
+
+
+.info-section h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.intro{
+    color: black;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.point{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:28px;
+}
+
+.icon{
+    background:#fff3ec;
+    color:#ff6a3d;
+    border:2px solid #ff6a3d;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    flex-shrink:0;
+}
+
+.point h3{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.point p{
+    font-size:17px;
+    line-height:1.7;
+    color:#444;
+}
+
+.note{
+    color: darkblue;
+    margin-top:10px;
+    font-size:20px;
+    line-height:1.8;
+}
+
+
+.cookies-section{
+    width:100%;
+    background:#fff;
+    padding:10px 20px;
+}
+
+.cookies-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.cookies-container h2{
+    font-size:38px;
+    font-weight:600;
+    margin-bottom:20px;
+    color:darkorange;
+    text-transform:capitalize;
+}
+
+.cookies-container p{
+    font-size:17px;
+    line-height:1.9;
+    color:#444;
+    margin-bottom:22px;
+}
+
+.cookies-container .last-line{
+    margin-top:10px;
+}
+
+
+.cookie-types{
+    max-width:900px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.cookie-types .intro{
+    font-size:20px;
+    color:#444;
+    margin-bottom:35px;
+}
+
+.cookie-item{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:40px;
+}
+
+.cookie-item .icon{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:2px solid #ff7a59;
+    color:#ff7a59;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    font-weight:700;
+    flex-shrink:0;
+}
+
+.cookie-item h3{
+    font-size:20px;
+    font-weight:600;
+    color:darkorange;
+    margin-bottom:10px;
+}
+
+.cookie-item p{
+    font-size:16px;
+    line-height:1.9;
+    color:#444;
+}
+
+
+.info-usage-section{
+  padding: 20px 50px;
+  background:#fff;
+  margin-bottom: 50px;
+}
+
+.section-title{
+  font-size:28px;
+  font-weight:700;
+  color:orange;
+  margin-bottom:16px;
+  text-align: center;
+}
+
+.section-text{
+  font-size:16px;
+  line-height:1.8;
+  color:#555;
+  margin-bottom:24px;
+  text-align: center;
+}
+
+.info-list{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.info-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.check-icon{
+  min-width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#fff;
+  color:#ff6b3d;
+  border:2px solid #ff6b3d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:bold;
+  margin-top:4px;
+}
+
+.info-item p{
+  font-size:16px;
+  line-height:1.8;
+  color:#444;
+  margin: 0;
+  
+}
+
+
+.privacy-content{
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.privacy-block{
+    margin-bottom: 80px;
+    margin-top: 50px;
+}
+
+.privacy-block h2{
+    font-size: 35px;
+    font-weight: 1000;
+    color: orange;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-align:center;
+}
+
+.privacy-block p{
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 13px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px){
+    .privacy-block h2{
+        font-size: 35px;
+    }
+
+    .privacy-block p{
+        font-size: 20px;
+    }
+}
+
+
+
+.policy-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 16px;
+}
+
+.policy-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.policy-container h2 {
+    text-align: center;
+  font-size: 35px;
+  font-weight: 1000;
+  color: orange;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.policy-container p {
+    text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 18px;
+}
+
+
+
+.accordion-menu {
+  width: 100%;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #444;
+}
+
+.accordion-header {
+  width: 100%;
+  background: black;
+  border: none;
+  color: orange;
+  font-size: 22px;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-header .icon {
+  font-size: 26px;
+}
+
+.accordion-content {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content li {
+background-color: black;
+color: orange;
+  padding: 10px 0;
+}
+
+.accordion-content a {
+  color: #cfd8ff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+    text-align: center;
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+    text-align: center;
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+    text-align: center;
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  text-align: center;
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+
+
+
+
+
+
+</style>
+<body>
+
+<header class="header">
+  <h2 class="logo">I.H</h2>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Slide Menu -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    I.H<span>˅</span>
+  </div>
+  
+  <div class="submenu">
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    Explore AI Tech <span>˅</span>
+  </div>
+  <div class="child-submenu">
+    <a href="ai service solution.html">AI Services & Solutions</a>
+    <a href="AI development.html">AI Development</a>
+      <a href="">AI Consulting</a>
+      <a href="">AI Chatbot Development</a>
+     <a href="">Generative AI Development </a>
+    <a href="">Generative AI Consulting</a>
+     <a href=""> AI Agent Development</a>
+      <a href="">AI Integration  </a>
+     <a href="">ML Development </a>
+     <a href="">computer Vision </a>
+     <a href="">AI Copilot Development  </a>
+  </div>
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    AI Knowledge Hub <span>˅</span>
+  </div>
+  <div class="child-submenu">
+      <div class="blog-card" onclick="openBlog('digital.html')">
+    <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Choose the Best AI Agent Development Company for Businesses</h3>
+      </a>
+     
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+      <h3>25+ Disruptive AI Agent Business Ideas in 2026 you should Launch in 2026</h3>
+            </a>
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog3.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1676299081847-824916de030a
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Hire the Best AI Developer for Your Custom  Project? Key steps,Costs, and more</h3>
+          </a>
+    </div>
+  </div>
+      
+      
+       <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+    <h3>How to Build a <br>AI App?Steps,Features,Costs,Trends</h3>
+            </a>
+    </div>
+  </div> 
+      
+ <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI Blog">
+    <div class="blog-content">
+      <h3>AI in Transpotation:<br>Benefits and use cases for modern enterprise </h3>
+            </a>
+    </div>
+  </div> 
+      
+      
+      
+    
+  </div>
+
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    About <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="home.html">About I.H</a>
+    <a href="#">Our Core Team </a>
+    <a href="who.html">How We Work and Function  </a>
+    <a href="#"> Client Portfolio</a>
+    <a href="#"> Client Testimonials</a>
+     <a href="#"> Corporate social responsibility</a>
+    <a href="career.html">Start your career with us </a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Services <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="#">AI Development </a>
+    <a href="#">Machine Learning</a>
+ <a href="#">Chatbot & NLP</a>
+  <a href="#">Deep Learning</a>
+   <a href="#">App & Web AI</a>
+      <a href="#">Data Science</a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Industries <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="healthcare .html">Healthcare</a>
+    <a href="fitness.html">Fitness</a>
+ <a href="logistics.html">Logistics</a>
+  <a href="realestate.html">Real Estate</a>
+    <a href="banking.html">Banking</a>
+     <a href="fintech.html">FinTech</a>
+  </div>
+
+</div>
+
+
+<section class="privacy">
+    <h1>Privacy Policy</h1>
+
+    <p>
+        At I.H Foundation, we are dedicated to shielding and preserving the privacy of our
+        clients and visitors. This statement aims to provide a detailed overview of how
+        I.H Foundation will use and process your personal data. Please note that by visiting,
+        seeing, and using our website, you accept our policy, terms & conditions, and practices
+        mentioned in this Privacy Policy page.
+    </p>
+
+    <p>
+        This Privacy Policy explains how we utilize the personal information you provide
+        or collect from you while you visit our website. Also, we periodically update this
+        policy page, and we encourage you to review it regularly for any changes.
+    </p>
+</section>
+<section class="toc-box">
+
+<h2>Table of content</h2>
+
+<ul>
+<li><a href="#info" onclick="setActive(this)">Information that we collect from you.</a></li>
+<li><a href="#cookies" onclick="setActive(this)">Use of cookies</a></li>
+<li><a href="#usage" onclick="setActive(this)">Use Of your information that we collect</a></li>
+<li><a href="#saving" onclick="setActive(this)">Saving your personal information</a></li>
+<li><a href="#disclose" onclick="setActive(this)">Disclosing your data</a></li>
+<li><a href="#thirdparty" onclick="setActive(this)">Imbibing third party links or websites</a></li>
+ <li><a href="#embedded-sharing-widget">Embedded Sharing Widgets</a></li>
+<li><a href="#amend" onclick="setActive(this)">Amendments to this privacy policy</a></li>
+<li><a href="#acceptance" onclick="setActive(this)">Your acceptance to this privacy policy and terms.</a></li>
+
+</ul>
+
+</section>
+
+
+<section id="info" class="info-section">
+
+<h2 class="highlight">Information that we collect from you</h2>
+
+<p class="intro">
+While visiting our website, we may collect and process the below mentioned
+information about you:
+</p>
+
+<div class="point">
+    <span class="icon">✔</span>
+    <div>
+        <h3 class="highlight">Why you are visiting our website?</h3>
+        <p>
+        This involves collecting information about your visits, including the pages you
+        viewed and the resources you accessed. This information encompasses traffic data,
+        communication data, and location data.
+        </p>
+    </div>
+</div>
+
+<div class="point">
+    <span class="icon">✔</span>
+    <div>
+        <h3 class="highlight">Information Voluntarily Shared By You</h3>
+        <p>
+        Your voluntarily provided data is an essential component of our personalized service,
+        guaranteeing that your data is handled securely in compliance with our privacy policies.
+        </p>
+    </div>
+</div>
+
+<div class="point">
+    <span class="icon">✔</span>
+    <div>
+        <h3 class="highlight">Data That You Provide While You Contact Us</h3>
+        <p>
+        Your communication with us encompasses sharing essential data and fostering a transparent
+        exchange of information that is treated with utmost confidentiality and in compliance with
+        our privacy standards.
+        </p>
+    </div>
+</div>
+
+<p class="note">
+<span class="mark">NOTE:</span> We DO NOT save any payment details, including your financial details,
+credit card, or bank account details while processing any kind of payment.
+</p>
+
+</section>
+
+<section id="cookies" class="cookies-section">
+    <div class="cookies-container">
+        <h2>Use of cookies</h2>
+
+        <p>
+            Cookies provide information regarding the operating system used by a visitor. 
+            We may use cookies to gather data about your system so that it can assist us 
+            in enhancing our website. By using the cookie feature, we may also collect 
+            information about general Internet use. As we said earlier, the information 
+            we save will not identify you personally. It's just statistical data and does 
+            not identify any personal details whatsoever. If you don't want us to save 
+            your data, you can adjust the settings on your computer to decline the cookies 
+            if you wish.
+        </p>
+
+        <p class="last-line">
+            Here are some of the cookies that we utilize for different purposes:
+        </p>
+    </div>
+</section>
+
+<section class="cookie-types">
+
+    
+
+    <div class="cookie-item">
+        <span class="icon">✓</span>
+        <div class="content">
+            <h3>Technical Cookies</h3>
+            <p>
+                These cookies manage functions like logging in, filling out forms, and
+                modifying privacy settings necessary for optimal website functionality.
+                Certain site features may not display and perform properly if your browser
+                is set to block these cookies.
+            </p>
+        </div>
+    </div>
+
+    <div class="cookie-item">
+        <span class="icon">✓</span>
+        <div class="content">
+            <h3>Customization Cookies</h3>
+            <p>
+                These cookies help us improve website personalization and functionality,
+                whether established by us or third-party providers. If you disable these
+                cookies, some services on our pages might not work as intended, impacting
+                your customized experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="cookie-item">
+        <span class="icon">✓</span>
+        <div class="content">
+            <h3>Behavioral Advertising Cookies</h3>
+            <p>
+                These cookies are used to build a user profile for targeted advertising on
+                other websites set by our advertising partners. If you reject these
+                cookies, you might see less tailored advertisements when you browse the
+                internet.
+            </p>
+        </div>
+    </div>
+
+    <div class="cookie-item">
+        <span class="icon">✓</span>
+        <div class="content">
+            <h3>Performance Cookies</h3>
+            <p>
+                These cookies allow us to measure and enhance the performance of our site
+                by tracking the number of visits and traffic sources. If you disable these
+                cookies, it will prevent us from tracking your site visits and improve the
+                website's performance as a whole.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="usage" class="usage-section">
+  <h2 class="section-title" >Use of the Information That We Collect</h2>
+
+  <p class="section-text">
+    We just use the data we collect from you to provide you with our services.
+    Additionally, we may use the information for one or more of the
+    below-mentioned purposes:
+  </p>
+
+  <div class="info-list">
+
+    <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        To quickly provide you the glance of information that you requested from
+        us related to our products or services
+      </p>
+    </div>
+
+    <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        To help you provide the information related to other products that may
+        interest you. However, such additional information will only be sent to
+        you if you have consented to receive the information
+      </p>
+    </div>
+
+    <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        To notify you of the changes to our website, services, and products
+      </p>
+    </div>
+
+    <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        We may also send you the information and details of our products or
+        services if you have previously availed any of them
+      </p>
+    </div>
+
+    <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        With your prior consent, we may permit the chosen third parties to use
+        your information to provide details about product and services that may intrest  you
+      </p>
+    </div>
+    
+    
+    
+    
+    
+        <div class="info-item">
+      <span class="check-icon">✔</span>
+      <p>
+        you have the option to withdraw your consent at any time 
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section id="saving" class="saving-section">
+
+  <div class="privacy-block">
+    <h2><b>Saving your personal information</b></h2>
+    <p>
+      By providing your personal information, you agree to this access.
+      We do our best to ensure that all the required steps are taken to
+      save your data securely. Unfortunately, the information you send
+      online is not fully secure and can be intercepted easily.
+    </p>
+    <p>
+      We cannot guarantee the security of the data sent to us
+      electronically because sending such information is completely
+      at your own risk.
+    </p>
+  </div>
+  </section>
+  
+  <section id="disclose" class="disclose-section">
+<div class="privacy-block">
+    <h2>Disclosing your data</h2>
+    <p>
+      We do not sell, trade, or rent our end-users' personal or identity
+      information to third parties. We may share the generic aggregated
+      information, which is not related to any personal identification
+      information regarding visitors and users, with our trusted
+      affiliates, business partners, and advertisers for marketing
+      purposes.
+    </p>
+  </div>
+</section>
+
+
+
+<section id="thirdparty"class="thirdparty-section">
+  <div class="privacy-block">
+    <h2>Imbibing Third-Party Links or Websites</h2>
+    <p>
+      Sometimes, we may include links to third parties on the website.
+      Even though we may provide a link to third parties, that does not
+      mean we endorse or approve our site’s policy towards visitor
+      privacy.
+    </p>
+    <p>
+      It is imperative that users independently evaluate these
+      third-party websites' privacy policies because they may have
+      different privacy standards.
+    </p>
+    <p>
+      When navigating any external website from our platform, we advise
+      you to use it cautiously and familiarize yourself with its
+      privacy policies.
+    </p>
+  </div>
+</section>
+
+
+
+<section id="embedded-sharing-widget" class="embedded-sharing-widget-section">
+  <div class="privacy-block">
+    <h2>Embedded Sharing Widgets</h2>
+    <p>
+      Certain pages might have widgets or embedded share buttons that
+      let you share content with friends on other social networking
+      sites.
+    </p>
+    <p>
+      These social media platforms might use cookies that could allow
+      them to identify you uniquely.
+    </p>
+  </div>
+</section>
+
+<section id="amend" class="amend-section">
+  <div class="privacy-block">
+    <h2>Amendments to this privacy policy</h2>
+    <p>
+      We hold the right to update this privacy policy anytime, and any
+      amendments will be reflected by revising the updated date on the
+      page.
+    </p>
+    <p>
+      We encourage users to check the page frequently for any changes so
+      that they can stay informed about the steps we are taking to
+      protect the personal information that we collect.
+    </p>
+    <p>
+        Thus,we consider that you acknowladge and agree that it's solely your responsibility to check and review the privacy policy frequently and periodically and remain aware of the updates and latest modifications.
+    </p>
+  </div>
+
+</section>
+
+
+<section class="acceptance-section" id="acceptance">
+  <div class="policy-container">
+    <h2>Your Acceptance of this Policy’s Terms and Conditions</h2>
+
+    <p>
+      If you are using our website, you signify your acceptance of this privacy policy.
+      And, if you don't agree to the policy, please do not use Appinventiv's site.
+    </p>
+
+    <p>
+      Your continued use of Appinventiv's site following the sharing of changes to
+      this privacy policy will be deemed as your acceptance of those updates and changes.
+    </p>
+  </div>
+</section>
+
+
+<div class="accordion-menu">
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Our Company
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="digital.html">Digital</a></li>
+    <li><a href="policy.html">Privacy policy</a></li>
+
+
+
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Services
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+      <li><a href="ai-devlopment.html">AI Development</a></li>
+      <li><a href="machine.html">Machine Learning</a></li>
+      <li><a href="ai app-web.html">App & web AI </a></li>
+    <li> <a href="nlp-chatbot.html">Chatbot & NLP</a></li> 
+   <li> <a href="deep Learning.html">Deep Learning</a></li> 
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Industries
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare .html">Healthcare</a></li>
+     <li><a href="logistics.html">Logistics </a></li>
+     <li><a href="banking.html">Banking</a></li>
+     <li><a href="fintech.html">FinTech</a></li>
+     
+     <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Solutions
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare.html">Healthcare AI</a></li>
+     <li><a href="enterprise.html"> Enterprise Automation</a></li>
+     <li><a href="e-commerce.html">E-Commerce AI</a></li>
+     <li><a href="finance.html">Finance & Banking</a></li>
+     <li><a href="automotive.html">Automotive & IoT</a></li>
+     <li><a href="Ed-Tech.html">EdTech AI</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+ 
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="Policy.html">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+    alert("JS working");
+    
+    function openMenu() {
+  document.getElementById("sideMenu").classList.add("active");
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("active");
+  document.getElementById("overlay").style.display = "none";
+}
+
+function toggleMenu(element) {
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  allSubmenus.forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+    function openBlog(page) {
+  window.location.href = page;
+}
+
+  }
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+function toggleMenu(element) {
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggleSubMenu(element) {
+  let childMenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".child-submenu").forEach(menu => {
+    if (menu !== childMenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (childMenu.style.display === "block") {
+    childMenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    childMenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+  
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+  const headers = document.querySelectorAll(".accordion-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector(".icon");
+
+      header.classList.toggle("active");
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.textContent = "+";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
+
+
+
+
+
+function setActive(el){
+    let links = document.querySelectorAll(".toc-box a");
+    links.forEach(link => link.classList.remove("active"));
+    el.classList.add("active");
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I.H Digital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg,#ff9df5,#c77dff);
+            color: #000;
+            padding: 12px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+        }
+
+        .hero-text {
+            width: 45%;
+        }
+
+        .hero-text h1 {
+            font-size: 70px;
+            line-height: 1;
+            color: #b6ff3b;
+        }
+
+        .hero-text h1 span {
+            font-style: italic;
+        }
+
+        .hero-text h2 {
+            margin-top: 20px;
+            font-size: 36px;
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            margin-top: 30px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #cfcfcf;
+        }
+
+        /* 3D LETTER */
+        .hero-3d {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        .letter {
+            font-size: 260px;
+            font-weight: 900;
+            color: #cfa24a;
+            transform-style: preserve-3d;
+            transform: rotateY(-25deg) rotateX(10deg);
+            text-shadow:
+            10px 10px 0 #7a4f18,
+            20px 20px 0 #5a3811,
+            30px 30px 0 #3a240a;
+        }
+
+
+
+        .services-section {
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .small-title {
+            color: #c7ff00;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .main-title span {
+            font-style: italic;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0 40px;
+            color: #ddd;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            margin-bottom: 15px;
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 14px;
+            padding: 18px 22px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .accordion-header .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #111;
+            border-radius: 0 0 14px 14px;
+            padding: 0 22px;
+        }
+
+        .accordion-content ul {
+            padding: 15px 0;
+            margin: 0;
+        }
+
+        .accordion-content li {
+            font-size: 14px;
+            padding: 6px 0;
+            color: #ccc;
+        }
+
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.hero-box {
+  width: 420px;
+  border-radius: 26px;
+  padding: 40px 28px 50px;
+  background: linear-gradient(180deg, #ff7a00, #ff5c00);
+  color: #000;
+}
+
+.hero-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.hero-box .highlight {
+  color: #d6ff2b;
+  font-style: italic;
+}
+
+.hero-box p {
+  margin-top: 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: #fff;
+  cursor: pointer;
+}
+
+.phone-area {
+  position: relative;
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  width: 190px;
+  border-radius: 20px;
+}
+
+.stat {
+  position: absolute;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.stat b {
+  font-size: 14px;
+}
+
+.stat1 {
+  top: 10px;
+  left: 0;
+}
+
+.stat2 {
+  top: 40px;
+  right: -10px;
+}
+
+.stat3 {
+  bottom: 30px;
+  left: 20px;
+}
+
+.industries {
+  max-width: 420px;
+  margin: auto;
+  padding: 30px 20px 60px;
+}
+
+.top-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.top-line .line {
+  flex: 1;
+  height: 1px;
+  background: #fff;
+  opacity: 0.4;
+}
+
+h1 {
+  margin-top: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.vision {
+  color: #ccff00;
+  font-style: italic;
+}
+
+.impact {
+  position: relative;
+  color: #ccff00;
+  font-style: italic;
+}
+
+.impact::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 120%;
+  height: 60%;
+  border: 2px solid #1e90ff;
+  border-radius: 50%;
+  transform: translateY(-50%) rotate(-4deg);
+}
+.desc {
+  margin-top: 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.cards {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 22px;
+  padding: 26px 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #333;
+}
+
+
+.growth-card {
+  width: 340px;
+  margin: 40px auto;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #caff00;
+}
+
+/* ILLUSTRATION AREA */
+.illustration {
+  background: #fff;
+  height: 260px;
+}
+
+.illustration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* CONTENT */
+.growth-content {
+  background: #1e63ff;
+  padding: 34px 26px 38px;
+  color: #fff;
+}
+
+.growth-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.growth-content p {
+  margin-top: 14px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+
+.buzzword-card {
+  width: 340px;
+  margin: 40px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.buzz-illustration {
+  height: 200px;
+}
+
+.buzz-illustration svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.buzz-content {
+  padding: 22px;
+}
+
+.buzz-content h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.buzz-content p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+
+.ai-services {
+  max-width: 900px;
+  margin: 60px auto;
+  font-family: serif;
+}
+
+.service-item {
+  border-bottom: 2px solid #ddd;
+  padding: 28px 0;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.num {
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.service-header h3 {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.service-content {
+  display: none;
+  margin-top: 18px;
+  max-width: 700px;
+}
+
+.service-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.service-item.active .service-content {
+  display: block;
+}
+
+.digital-agency {
+  background: #000;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.title span {
+  color: #c6ff00;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 15px auto 50px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 28px;
+  padding: 35px 25px;
+  max-width: 360px;
+  margin: auto;
+}
+
+.card h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.card img {
+  width: 160px;
+  margin-bottom: 25px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.growth-stage-section {
+  background: #0b0f14;
+  padding: 80px 20px;
+  color: #ffffff;
+}
+
+.growth-container  {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.growth-subtitle {
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.growth-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.growth-highlight {
+  color: #7CFF9B;
+}
+
+.growth-cards {
+
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.growth-card {
+  background: #111827;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.growth-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.growth-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.growth-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.growth-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+
+.sprint-card-section {
+  background-color: #000;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sprint-card {
+  width: 340px;
+  background-color: #ff0000;
+  padding: 40px 24px;
+  border-radius: 0;
+}
+
+.sprint-card h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.sprint-card h2 span {
+  color: #c8ff00;
+  font-style: italic;
+}
+
+.sprint-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+
+.growth-steps {
+  background: #111;
+  padding: 40px 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #777;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.content h3 {
+  color: #fff;
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.content p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.line {
+  width: 2px;
+  height: 40px;
+  background: #333;
+  margin: 6px 0 6px 21px;
+}
+
+/* ACTIVE STATE */
+.step.active .circle {
+  background: #b6ff00;
+  border-color: #b6ff00;
+  color: #000;
+}
+
+.step.active + .line {
+  background: #b6ff00;
+}
+
+
+.app-footer {
+  background: linear-gradient(180deg, #0d0d0d, #111);
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.footer-content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #2f80ff, #00c6ff);
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.logo-text .brand {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logo-text .sub {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.footer-email .label {
+  display: block;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.footer-email a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text,.hero-3d {
+                width: 100%;
+            }
+            .letter {
+                font-size: 200px;
+                margin-top: 40px;
+            }
+        }
+    </style>
+
+    
+    
+</head>
+
+<body>
+
+    
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>I.H <span>Digital</span></h1>
+            <h2>Drive.</h2>
+            <p>
+                We are not your traditional marketing agency.
+                We modernize digital ecosystems backed by AI and
+                advanced technologies that drive compounding growth.
+                <br><br>
+                From brand positioning to conversion optimization,
+                from content creation to performance marketing —
+                we deliver everything.
+            </p>
+        </div>
+
+        <div class="hero-3d">
+            <div class="letter">
+                I
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-section">
+        <h6 class="small-title">Our Services</h6>
+        <h1 class="main-title">Your Brand's <span>Growth</span><br>Engine</h1>
+
+        <p class="description">
+            We are brand architects by trade, storytellers by nature, and growth engineers at our core.
+            Our mission is to take visionary brands and amplify them on the global stage.
+        </p>
+
+        <!-- Accordion -->
+        <div class="accordion">
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Digital Strategy & Consulting
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p>
+                        Our foundation is in data-driven strategy. We align your business objectives with a clear digital roadmap, ensuring every dollar and every action contributes to your bottom line.
+                    </p>
+
+
+                    <ul>
+                        <li>Holistic Growth Strategy</li>
+                        <li>MarTech Stack; AI Integration</li>
+                        <li>Analytics; Business Intelligence (BI)</li>
+                        <li>Agile Digital Transformation Roadmaps</li>
+                        <li>Data Privacy; Compliance Strategy (GDPR, CCPA)</li>
+                        <li>Customer-Centric Digital Strategy</li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    UI & UX Design
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <p>
+                            Going beyond pure aesthetics, our human-centered approach ensures your every digital touchpoint, from websites to complex applications, is functional, intuitive, and engineered to achieve your core business objectives.
+                        </p>
+
+                        <li>User Research; Persona Development</li>
+                        <li>Information Architecture (IA); User Flows</li>
+                        <li>Wireframing and Interactive Prototyping</li>
+                        <li>User Interface (UI) and Visual Design Systems</li>
+                        <li>Usability Testing; Heuristic Evaluation</li>
+                        <li>Conversion-Centered Design (CCD)</li>
+                        <li>Interaction Design; Microinteractions</li>
+                        <li>Accessibility (WCAG) Compliance; Inclusive Design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Social & Reputation Management
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <p>
+                            We cultivate and protect your brand's voice and standing, driving meaningful engagement and authority with your target audience (TG) across all social platforms.>
+                        </p>
+
+                        <li>ocial Media Management</li>
+                        <li>Influencer; Partnership Marketing</li>
+                        <li>Online Reputation Management (ORM)</li>
+                        <li>Social Listening; Sentiment Analysis</li>
+                        <li>Real-Time Brand Crisis Management</li>
+                        <li>Social Commerce Strategy</li>
+                        <li>Influencer Partnership Optimization</li>
+                        <li>Reputation Recovery Strategy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Search Engine Optimization
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <ul>
+                        <p>
+                            We build products and content that are "SEO-native" from the ground up, making organic traffic a core feature and ensuring your brand is found by the right people at the precise moment they are looking to buy.
+                        </p>
+<li>Technical SEO  </li>
+ <li>Programmatic SE</li>
+<li>AI and Generative SEO  </li>
+  <li>GEO-Targeted SE </li>
+<li>Voice Search Optimization (VSO) </li>
+<li>Mobile-First SEO</li>
+<li>Zero-Click Search Optimization </li>
+     </ul>
+    </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            header.classList.toggle("active");
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+</script>
+
+<div class="hero-wrapper">
+  <div class="hero-box">
+
+    <h1>
+      Impressed by <br>
+      <span class="highlight">I.H’s<br>Marketing Journey?</span><br>
+      We're Ready to Spill the Tea.
+    </h1>
+
+    <p>
+      We don't just talk the talk; we've walked the walk.
+      The very team that built <b>Appinventiv</b> into a global tech leader—with
+      a massive digital footprint—is now your partner in growth.
+    </p>
+
+
+
+
+    <div class="phone-area">
+      <img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=600&q=80" class="phone" alt="phone">
+
+      <div class="stat stat1">
+        <b>639,704</b><br>
+        Followers
+      </div>
+
+      <div class="stat stat2">
+        <b>146.8K+</b><br>
+        Daily Website Traffic
+      </div>
+
+      <div class="stat stat3">
+        <b>13.2K</b><br>
+        Followers
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<section class="industries">
+
+  <div class="top-line">
+    <span class="star">✴</span>
+    <span>SHAPING INDUSTRIES</span>
+    <div class="line"></div>
+  </div>
+
+  <h1>
+    Turning Your<br>
+    <span class="vision">Vision</span> Into
+    <span class="impact">Impact</span>
+  </h1>
+
+  <p class="desc">
+    Every industry has its own language, challenges, and opportunities.
+    That's why we've built specialized expertise from regulation-driven
+    fintech to life-saving healthcare innovations.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🏛</div>
+      <h3>Financial Technology & Banking</h3>
+      <p>We know why 73% of fintech apps got deleted within a week (and how to be in the 27%).</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚕</div>
+      <h3>Healthcare & Medical Devices</h3>
+      <p>We've decoded what makes patients & providers trust new medical technology enough to actually use it.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Software & Technology</h3>
+      <p>We've cracked the code on making your regular B2B software feel like the next big thing.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛒</div>
+      <h3>E-commerce & Retail</h3>
+      <p>Creating shopping experiences that convert window shoppers into buyers and customers into advocates.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>Real Estate & PropTech</h3>
+      <p>Making million-dollar decisions feel as easy as swiping right.</p>
+    </div>
+
+<div class="card">
+      <div class="icon">🎓</div>
+      <h3>Education & EdTech</h3>
+      <p>Making learning accessible, engaging, and measurable for students and professionals worldwide.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏭</div>
+      <h3>Manufacturing & Industrial</h3>
+      <p>Bringing traditional industries into the digital age with smart manufacturing and supply chain solutions.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Energy & Sustainability</h3>
+      <p>Promoting clean energy adoption and sustainable practices through compelling digital narratives.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⌚</div>
+      <h3>Wearables & Hardware</h3>
+      <p>We simplify complex technology, crafting compelling stories that drive market adoption and user engagement.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="growth-card">
+
+  <!-- TOP ILLUSTRATION (SIMILAR IMAGE) -->
+  <div class="illustration">
+    <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+      <!-- background blobs -->
+      <circle cx="60" cy="40" r="90" fill="#d7ff00"/>
+      <circle cx="340" cy="60" r="90" fill="#d7ff00"/>
+      <circle cx="200" cy="220" r="110" fill="#d7ff00"/>
+
+      <!-- arrow -->
+      <path d="M200 210 L200 70 L170 100 L200 30 L230 100 L200 70"
+            fill="#2bb3a3" stroke="#000" stroke-width="8"/>
+
+      <!-- coins -->
+      <circle cx="80" cy="120" r="28" fill="#eaff00" stroke="#000" stroke-width="5"/>
+      <circle cx="320" cy="140" r="28" fill="#eaff00" stroke="#000" stroke-width="5"/>
+      <text x="72" y="128" font-size="28" font-weight="700">$</text>
+      <text x="312" y="148" font-size="28" font-weight="700">$</text>
+    </svg>
+  </div>
+
+  <!-- BLUE CONTENT -->
+  <div class="growth-content">
+    <h2>
+      The Future of Your<br>
+      Growth Starts Now
+    </h2>
+
+    <p>
+      There are two kinds of companies: those that react to market shifts
+      and those that define them. Let's make sure you're in the second group.
+    </p>
+
+    
+  </div>
+
+</section>
+
+<section class="buzzword-card">
+
+  <!-- COLORFUL IMAGE -->
+  <div class="buzz-illustration">
+    <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- gradient background -->
+      <defs>
+        <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6366f1"/>
+          <stop offset="100%" stop-color="#22c55e"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="340" height="200" rx="24" fill="url(#bgGrad)"/>
+
+      <!-- floating shapes -->
+      <circle cx="60" cy="50" r="35" fill="#fde047"/>
+      <circle cx="290" cy="70" r="40" fill="#fb7185"/>
+      <circle cx="220" cy="160" r="45" fill="#38bdf8"/>
+
+      <!-- growth arrow -->
+      <path d="M90 140 L160 80 L200 110 L260 50"
+            stroke="#ffffff" stroke-width="8"
+            fill="none" stroke-linecap="round"/>
+
+      <polygon points="255,45 280,50 265,70"
+               fill="#ffffff"/>
+
+      <!-- device card -->
+      <rect x="125" y="70" width="90" height="110"
+            rx="16" fill="#0f172a"/>
+      <rect x="140" y="90" width="60" height="12" rx="6" fill="#22c55e"/>
+      <rect x="140" y="115" width="45" height="12" rx="6" fill="#38bdf8"/>
+      <rect x="140" y="140" width="55" height="12" rx="6" fill="#facc15"/>
+
+    </svg>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="buzz-content">
+    <h3>Beyond the Buzzword</h3>
+
+    <p>
+      Technology isn’t just about trends. It’s about solving real problems
+      with clarity, purpose, and impact.
+    </p>
+  </div>
+
+</section>
+
+<section class="ai-services">
+
+  <div class="service-item active" data-id="one">
+    <div class="service-header">
+      <span class="num">01</span>
+      <h3>Autonomous Marketing & Sales Automation</h3>
+    </div>
+
+    <div class="service-content">
+      <p>
+        We build intelligent, automated systems that reduce manual effort and
+        execute complex campaigns with precision and speed.
+      </p>
+
+      <p><strong>Custom Audience Builders:</strong> AI algorithms that analyze your
+        first-party data to build and sync high-performing audience segments
+        to your ad platforms.</p>
+
+      <p><strong>Intelligent Journey Orchestration:</strong> We design and implement
+        systems where AI, not static rules, determines the next best action
+        for each user in their journey.</p>
+    </div>
+  </div>
+
+  <div class="service-item" data-id="two">
+    <div class="service-header">
+      <span class="num">02</span>
+      <h3>Predictive Revenue Modeling</h3>
+    </div>
+
+    <div class="service-content">
+      <p>
+        We go beyond historical analytics. We build custom ML models that live
+        inside your infrastructure to forecast and influence future revenue.
+      </p>
+
+      <p><strong>Proprietary LTV Prediction:</strong> Forecast the lifetime value of a
+        customer segment from the first interaction, allowing for smarter ad spend.</p>
+
+      <p><strong>AI-Powered Churn Prevention:</strong> Identify at-risk users based on
+        subtle behavioral shifts and trigger automated retention campaigns
+        before they leave.</p>
+
+      <p><strong>Lead & Deal Scoring:</strong> Our models analyze thousands of data points
+        to score inbound leads, allowing your sales team to focus only on
+        high-intent prospects.</p>
+    </div>
+  </div>
+
+  <div class="service-item" data-id="three">
+    <div class="service-header">
+      <span class="num">03</span>
+      <h3>High-Tempo Creative & Copy Intelligence</h3>
+    </div>
+
+    <div class="service-content">
+      <p>
+        We use generative AI not as a replacement for strategy, but as an engine
+        for scaled experimentation. This allows us to test at a velocity that
+        is impossible for traditional teams.
+      </p>
+
+      <p><strong>Automated Ad Variant Generation:</strong> We use AI to generate and test
+        thousands of ad copy and creative variations, rapidly identifying the
+        combinations that drive performance.</p>
+
+      <p><strong>Dynamic Landing Page Optimization:</strong> AI-driven personalization
+        that adapts landing page content in real-time based on user data,
+        traffic source, and intent.</p>
+    </div>
+  </div>
+
+</section>
+
+
+  
+
+
+<section class="digital-agency">
+  <h1 class="title">Digital <span>Agency</span></h1>
+  <p class="subtitle">
+    Most agencies offer either strategic advice or creative execution.
+    We are built to do both, with a powerful technical foundation.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Beyond Surface-<br>Level Analytics</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="">
+      <p>
+        We don't just provide reports; we build the
+        <b>data infrastructure</b> to connect every dollar spent
+        to every customer gained.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Faster, Smarter<br>Campaigns</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="">
+      <p>
+        Our in-house <b>engineering</b> allows us to optimize
+        at a speed that's impossible for traditional teams.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Actionable<br>Intelligence</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="">
+      <p>
+        We embed custom <b>AI and machine learning</b>
+        models directly into your systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>True<br>Ownership</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="">
+      <p>
+        You own your data, systems, and outcomes —
+        no black boxes, no lock-ins.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="growth-stage-section">
+  <div class="growth-container">
+    <p class="growth-subtitle">DESIGNED FOR YOUR</p>
+    <h2 class="growth-title">
+      <span class="growth-highlight">Growth Stage</span>
+    </h2>
+
+    <div class="growth-cards">
+
+      <div class="growth-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Growth Accelerator">
+        <h3>Growth Accelerator</h3>
+        <p>
+          Perfect for startups and emerging businesses. We set up your core
+          marketing and analytics foundation, ensuring you have the data and
+          systems needed to find your first wins and optimize your core funnel.
+        </p>
+      </div>
+
+      <div class="growth-card">
+        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312" alt="Market Scaler">
+        <h3>Market Scaler</h3>
+        <p>
+          For established companies ready to expand. This package includes
+          everything in the Accelerator, plus advanced analytics, predictive
+          modeling, and automated systems to help you scale efficiently.
+        </p>
+      </div>
+
+      <div class="growth-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Enterprise Solution">
+        <h3>Enterprise Solution</h3>
+        <p>
+          Our most comprehensive offering for market leaders. You get a
+          dedicated team of experts and custom-built solutions, including
+          bespoke AI models, to maintain and extend your competitive advantage.
+        </p>
+      </div>
+
+      <div class="growth-card">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" alt="Fuel Your Growth">
+        <h3>Fuel Your Growth Your Way</h3>
+        <p>
+          Your next level of growth deserves a bespoke strategy. Request a
+          custom quote and access a solution designed only for your business.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sprint-card-section">
+  <div class="sprint-card">
+    <h2>
+      Our <span>4-Step Sprint</span><br>
+      to Scalable Growth
+    </h2>
+
+    <p>
+      We help businesses break through to their next level of growth.
+      Our process is designed to find your most powerful opportunities
+      and turn them into a self-sustaining growth engine.
+      Here's a quick look at how we get it done.
+    </p>
+  </div>
+</section>
+
+ 
+ <section class="growth-steps">
+  <div class="step active">
+    <div class="circle">01</div>
+    <div class="content">
+      <h3>Discovery & Audit</h3>
+      <p>We perform a comprehensive analysis of your entire digital presence.</p>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="step">
+    <div class="circle">02</div>
+    <div class="content">
+      <h3>Strategy & Planning</h3>
+      <p>We develop a detailed, integrated strategy and roadmap.</p>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="step">
+    <div class="circle">03</div>
+    <div class="content">
+      <h3>Full-Service Execution</h3>
+      <p>Campaigns executed with continuous monitoring and optimization.</p>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="step">
+    <div class="circle">04</div>
+    <div class="content">
+      <h3>Automate & Scale</h3>
+      <p>We turn strategies into automated growth engines.</p>
+    </div>
+  </div>
+</section>
+
+ 
+ <footer class="app-footer">
+  <div class="footer-content">
+
+    <div class="footer-logo">
+      <span class="logo-icon">I.H</span>
+      <div class="logo-text">
+        <span class="brand">I.H</span>
+        <span class="sub">DIGITAL</span>
+      </div>
+    </div>
+
+    <div class="footer-email">
+      <span class="label">Email</span>
+      <a href="mailto:digital@appinventiv.com">
+        info@innovationshouse.in
+      </a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026–2027
+    </div>
+
+  </div>
+</footer>
+
+ 
+ 
+ 
+
+
+
+
+
+<script>
+const items = document.querySelectorAll(".service-item");
+
+items.forEach(item => {
+  item.querySelector(".service-header").addEventListener("click", () => {
+    items.forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
+  });
+});
+
+
+  const growthCards = document.querySelectorAll('.growth-card');
+
+  window.addEventListener('scroll', () => {
+    growthCards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < window.innerHeight - 100) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  growthCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(40px)';
+    card.style.transition = 'all 0.6s ease';
+  });
+
+
+
+
+
+
+
+const steps = document.querySelectorAll(".step");
+
+let current = 0;
+
+function activateStep(index) {
+  steps.forEach((step, i) => {
+    step.classList.toggle("active", i <= index);
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const triggerPoint = window.innerHeight / 1.3;
+
+  steps.forEach((step, index) => {
+    const top = step.getBoundingClientRect().top;
+    if (top < triggerPoint) {
+      activateStep(index);
+    }
+  });
+});
+
+
+
+</script>
+
+</body>
+</html>

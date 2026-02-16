@@ -1,0 +1,2871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Development Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-item span {
+  transition: 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu a {
+  display: block;
+  color: #aaa;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.submenu-item {
+  padding: 12px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.child-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.child-submenu a {
+  display: block;
+  padding: 8px 0;
+  color: #888;
+  text-decoration: none;
+}
+
+.child-submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.blog-card {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-content h3 {
+  font-size: 14px;
+  color: #111;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+
+.ai-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start;
+  padding:80px 15px;
+  text-align:center;
+
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs7VJA_x_n2y1XZ3aTDLXLNiPgEJ0Wp-S3bxQ0IF1x1w&s=10");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* DARK OVERLAY */
+.ai-hero .overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  z-index:0;
+}
+
+/* CONTENT */
+.ai-hero .content{
+ margin-top: 60px;
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  padding:20px;
+  color:#fff;
+}
+
+.ai-hero h1{
+  font-size:2.6rem;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.ai-hero p{
+  font-size:15px;
+  line-height:1.7;
+  opacity:0.9;
+  margin-bottom:30px;
+}
+
+/* BUTTON */
+.hero-btn{
+  display:inline-block;
+  background:#fff;
+  color:#000;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+}
+
+/* TRUSTED LINE */
+.trusted{
+  margin-top:40px;
+  font-size:12px;
+  letter-spacing:1px;
+  opacity:0.8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.trusted span{
+  width:40px;
+  height:1px;
+  background:#fff;
+  opacity:0.6;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .ai-hero h1{
+    font-size:2rem;
+  }
+  .ai-hero p{
+    font-size:0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* Section wrapper */
+.capabilities-section {
+  padding: 70px 20px 90px;
+  background: #000;
+}
+
+/* Content container */
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Intro paragraph */
+.intro-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 45px;
+}
+
+/* Section heading */
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Capabilities list */
+.capabilities-list {
+  list-style: none;
+}
+
+.capabilities-list li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+/* Blue check icon */
+.capabilities-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.1rem;
+  color: #1e90ff;
+}
+
+/* IN THE NEWS divider */
+.news-divider {
+  margin: 70px 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.news-divider span {
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.news-divider p {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+/* News logos (text version) */
+.news-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.news-logos span {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .news-logos {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+
+
+
+/* Outer section */
+.stats-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main card */
+.stats-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 50px 35px 60px;
+  border-radius: 28px;
+
+  /* Same dark blue gradient feel */
+  background: radial-gradient(
+    circle at top right,
+    #0a3a6a 0%,
+    #020b18 45%,
+    #000 100%
+  );
+}
+
+/* Heading */
+.stats-heading {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 45px;
+}
+
+/* Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px 40px;
+}
+
+/* Each stat */
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+/* Divider line */
+.stat-item span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+  .stats-heading {
+    font-size: 2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2.7rem;
+  }
+}
+
+
+
+
+
+
+
+.main-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.count {
+  width: 60px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.title {
+  flex: 1;
+  font-size: 22px;
+}
+
+.icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active .icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+  padding: 10px 0 20px 60px;
+  opacity: 0.9;
+}
+
+.highlight-box {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.highlight-box ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.highlight-box li {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.ai-highlight-section {
+  background: #000;
+  padding: 40px 20px;
+}
+
+.ai-card {
+  max-width: 420px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0d4fd6, #1b3fa3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.ai-image img {
+  width: 100%;
+  display: block;
+}
+
+.ai-content {
+  padding: 30px 25px 35px;
+  color: #fff;
+}
+
+.ai-content h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ai-content h2 span {
+  font-weight: 700;
+}
+
+.ai-content p {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.ai-btn {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  text-decoration: none; /* important */
+  border: none;
+  padding: 16px 18px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.ai-btn:hover {
+  background: #f1f1f1;
+}
+
+
+
+
+
+
+body {
+  background: #0b0b0b;
+  font-family: Arial, sans-serif;
+}
+
+.case-section {
+  max-width: 420px;
+  margin: auto;
+  color: #fff;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+h2 {
+  margin: 16px 0;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #333;
+}
+
+.tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #888;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.nav {
+  position: absolute;
+  top: 45%;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+
+
+
+
+
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.ai-accordion {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.desc {
+  color: black;
+  margin-bottom: 30px;
+}
+
+.item {
+  margin-bottom: 22px;
+}
+
+.header {
+  font-size: 20px;
+  cursor: default;
+  color: blue;
+}
+
+.header span {
+  color:blue;
+  margin-right: 12px;
+}
+
+.progress {
+  height: 2px;
+  background: #333;
+  margin: 10px 0;
+  overflow: hidden;
+  
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: black;
+  
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.item.active .content {
+  max-height: 300px;
+}
+
+.content li {
+  list-style: none;
+  margin: 12px 0;
+  position: relative;
+  padding-left: 28px;
+  color: black;
+}
+
+.content li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2aff2a;
+}
+
+
+
+
+
+
+/* HERO SECTION */
+.ai-hero{
+  padding:40px 15px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-card{
+  max-width:420px;
+  width:100%;
+  background:linear-gradient(160deg,#0b4fd4,#062a7a);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+/* IMAGE */
+.hero-image img{
+  width:100%;
+  display:block;
+}
+
+/* CONTENT */
+.hero-content{
+  padding:25px;
+  color:#fff;
+}
+
+.hero-content h1{
+  font-size:26px;
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:0.95;
+  margin-bottom:25px;
+}
+
+/* BUTTON */
+.hero-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#fff;
+  color:#000;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+}
+
+
+
+
+
+
+
+.compliance-section {
+  background: #000;
+  padding: 80px 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* TEXT AREA */
+.text-area {
+  max-width: 750px;
+  margin-bottom: 60px;
+}
+
+.text-area h2 {
+  font-size: 42px;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.text-area p {
+  font-size: 18px;
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+
+/* SLIDER */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card {
+  min-width: 70%;
+  margin: 10px;
+  padding: 40px 25px;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+  flex: 0 0 25%;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ARROWS */
+.slider-controls {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.slider-controls button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #555;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-controls button:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+
+
+
+
+.ai-partner-safe {
+  background: #000;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ai-top h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.ai-top p {
+  color: #ccc;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.ai-divider {
+  height: 1px;
+  background: #333;
+  margin: 40px 0;
+}
+
+.ai-slider {
+  position: relative;
+}
+
+.ai-slide {
+  display: none;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.ai-slide.active {
+  display: flex;
+}
+
+.ai-number {
+  font-size: 26px;
+  height: 300px;
+  color: #aaa;
+  border-right: 1px solid #444;
+  padding-right: 25px;
+  min-width: 60px;
+}
+
+.ai-content h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.ai-content {
+  padding:0 0px;   /* left side gap */
+}
+
+
+.ai-content p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.ai-arrows {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.ai-arrows button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ai-arrows button:hover {
+  background: #111;
+}
+
+
+
+
+
+.ai-hero-section {
+  background: #000;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-hero-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #2e55ff, #5a7dff);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.ai-hero-image img {
+  width: 100%;
+  display: block;
+}
+
+/* CONTENT */
+.ai-hero-content {
+  padding: 35px 25px 45px;
+  color: #fff;
+}
+
+.ai-hero-content h2 {
+  color: white;
+  font-size: 26px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.ai-hero-content h2 strong {
+  font-weight: 700;
+}
+
+.ai-hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 35px;
+}
+
+/* BUTTON */
+.ai-hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  padding: 18px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.ai-hero-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
+
+
+.moving-cards-section{
+  background:#000;
+  padding:80px 0;
+  overflow:hidden;
+
+}
+.container{
+    color: white;
+}
+.top-text{
+  color:white;
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  margin-bottom:50px;
+  line-height:1.6;
+  
+
+}
+
+/* Rows */
+.scroll-row{
+  width:100%;
+  overflow:hidden;
+  margin:25px 0;
+}
+
+.scroll-track{
+  display:block;
+  width:max-content;
+  gap:10px;
+}
+
+/* Cards */
+.card{
+  flex:0 0 auto;
+  min-width:200;
+  background:#111;
+  border-radius:50px;
+  padding:15px;
+  color:#fff;
+  transition:.3s;
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.card h4{
+  margin-top:12px;
+  font-size:18px;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* Animations */
+.scroll-track{
+  display:flex;
+  width:max-content;
+  gap:20px;
+}
+
+/* RIGHT */
+.scroll-right .scroll-track{
+  animation:scrollRight 12s linear infinite;
+}
+
+/* LEFT */
+.scroll-left .scroll-track{
+  animation:scrollLeft 12s linear infinite;
+}
+
+@keyframes scrollRight{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(calc(-100% / 2)); }
+}
+
+@keyframes scrollLeft{
+  from{ transform:translateX(calc(-100% / 2)); }
+  to{ transform:translateX(0); }
+}
+
+
+
+
+
+
+
+
+/* SECTION BACKGROUND */
+.ai-capabilities{
+  background:black;
+  padding:80px 16px;
+  font-family:system-ui;
+}
+
+/* TOP HEADING */
+.ai-intro{
+  max-width:900px;
+  margin:0 auto 50px;
+}
+
+.ai-intro h1{
+  font-size:42px;
+  line-height:1.2;
+  font-weight:600;
+  color:#111;
+  margin-bottom:25px;
+  text-align: center;
+}
+
+/* PARAGRAPH */
+.ai-intro p{
+  font-size:21px;
+  line-height:1.9;
+  color:white;
+  text-align: center;
+ 
+}
+
+
+
+.ai-accordion{
+  background:#f3f4f6;
+  padding:60px 15px;
+  font-family:system-ui;
+}
+
+.ai-card{
+  max-width:850px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* Blue Heading */
+.ai-header{
+  background:#0b5cff;
+  color:#fff;
+  padding:40px;
+  font-size:28px;
+  font-weight:600;
+}
+
+/* Body */
+.ai-body{
+  background:#fff;
+  padding:20px 30px;
+}
+
+/* Step */
+.step{
+  border-bottom:1px solid #e5e7eb;
+  padding:18px 0;
+  position:relative;
+}
+
+.step-head{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  cursor:pointer;
+}
+
+.step-head span{
+  color:#999;
+  width:40px;
+}
+
+.step-head h4{
+  color: black;
+  flex:1;
+  font-size:20px;
+}
+
+/* Arrow */
+.arrow{
+  width:10px;
+  height:10px;
+  border-right:2px solid #111;
+  border-bottom:2px solid #111;
+  transform:rotate(-45deg);
+  transition:.4s;
+}
+
+.step.active .arrow{
+  transform:rotate(45deg);
+}
+
+/* Content */
+.content{
+  max-height:0;
+  overflow:hidden;
+  color:#444;
+  line-height:1.6;
+  transition:max-height .6s ease;
+  margin-left:55px;
+}
+
+.step.active .content{
+  max-height:200px;
+  margin-top:12px;
+}
+
+/* Progress Line */
+.progress{
+  height:2px;
+  background:#e5e7eb;
+  margin:12px 0 0 55px;
+  position:relative;
+  overflow:hidden;
+}
+
+.progress::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:0%;
+  background:#0b5cff;
+}
+
+.step.active .progress::after{
+  animation:fill 4s linear forwards;
+}
+
+@keyframes fill{
+  from{ width:0%;}
+  to{ width:100%;}
+}
+
+
+
+
+
+
+@media(max-width:768px){
+
+.ai-intro h1{
+  font-size:30px;
+}
+
+.ai-intro p{
+  font-size:16px;
+}
+
+.ai-header{
+  font-size:22px;
+  padding:30px;
+}
+
+}
+
+
+</style>
+<body>
+    
+    
+    <header class="header">
+  <h2 class="logo">I.H</h2>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Slide Menu -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    I.H<span>˅</span>
+  </div>
+  
+  <div class="submenu">
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    Explore AI Tech <span>˅</span>
+  </div>
+  <div class="child-submenu">
+    <a href="ai service solution.html">AI Services & Solutions</a>
+    <a href="">AI Development</a>
+      <a href="">AI Consulting</a>
+      <a href="">AI Chatbot Development</a>
+     <a href="">Generative AI Development </a>
+    <a href="">Generative AI Consulting</a>
+     <a href=""> AI Agent Development</a>
+      <a href="">AI Integration  </a>
+     <a href="">ML Development </a>
+     <a href="">computer Vision </a>
+     <a href="">AI Copilot Development  </a>
+  </div>
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    AI Knowledge Hub <span>˅</span>
+  </div>
+  <div class="child-submenu">
+      <div class="blog-card" onclick="openBlog('digital.html')">
+    <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Choose the Best AI Agent Development Company for Businesses</h3>
+      </a>
+     
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+      <h3>25+ Disruptive AI Agent Business Ideas in 2026 you should Launch in 2026</h3>
+            </a>
+    </div>
+  </div>
+
+  <div class="blog-card" onclick="openBlog('blog3.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1676299081847-824916de030a
+" alt="AI Blog">
+    <div class="blog-content">
+      <h3>How to Hire the Best AI Developer for Your Custom  Project? Key steps,Costs, and more</h3>
+          </a>
+    </div>
+  </div>
+      
+      
+       <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI Blog">
+    <div class="blog-content">
+    <h3>How to Build a <br>AI App?Steps,Features,Costs,Trends</h3>
+            </a>
+    </div>
+  </div> 
+      
+ <div class="blog-card" onclick="openBlog('blog2.html')">
+ <a href=".html" class="blog-card">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI Blog">
+    <div class="blog-content">
+      <h3>AI in Transpotation:<br>Benefits and use cases for modern enterprise </h3>
+            </a>
+    </div>
+  </div> 
+      
+      
+      
+    
+  </div>
+
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    About <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="home.html">About I.H</a>
+    <a href="#">Our Core Team </a>
+    <a href="who.html">How We Work and Function  </a>
+    <a href="#"> Client Portfolio</a>
+    <a href="#"> Client Testimonials</a>
+     <a href="#"> Corporate social responsibility</a>
+    <a href="career.html">Start your career with us </a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Services <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="#">AI Development </a>
+    <a href="#">Machine Learning</a>
+ <a href="#">Chatbot & NLP</a>
+  <a href="#">Deep Learning</a>
+   <a href="#">App & Web AI</a>
+      <a href="#">Data Science</a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Industries <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="healthcare .html">Healthcare</a>
+    <a href="fitness.html">Fitness</a>
+ <a href="logistics.html">Logistics</a>
+  <a href="realestate.html">Real Estate</a>
+    <a href="banking.html">Banking</a>
+     <a href="fintech.html">FinTech</a>
+  </div>
+
+</div>
+
+
+
+
+
+<section class="ai-hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>AI Development Services</h1>
+
+    <p>
+      We engineer resilient enterprise AI platforms – from PoC to production.
+      We don’t just train models, we build secure and compliant AI ecosystems
+      that automate complex workflows and support predictive intelligence.
+    </p>
+
+    <a href="#" class="hero-btn">Consult Our AI Experts</a>
+
+    <div class="trusted">
+      <span></span>
+      TRUSTED BY CONGLOMERATES, ENTERPRISES AND STARTUPS ALIKE
+      <span></span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="capabilities-section">
+
+  <div class="container">
+    <p class="intro-text">
+      Backed by deep expertise of certified AI engineers, data scientists, and MLOps
+      specialists, we help your business identify high-ROI use cases, build secure and
+      explainable AI systems, and operationalize them at enterprise scale.
+    </p>
+
+    <h2 class="section-title">Our Core Capabilities:</h2>
+
+    <ul class="capabilities-list">
+      <li>Building AI products that boost business intelligence and speed</li>
+      <li>Creating advanced ML, Gen AI, agentic AI, and NLP systems for smarter decision-making</li>
+      <li>Building context-aware RAG systems and fine-tuning LLMs for industry specific accuracy</li>
+      <li>Facilitating seamless AI integrations, enabling organization-wide efficiency and performance gains</li>
+      <li>Implementing secure, governed AI architectures with compliance-ready frameworks</li>
+      <li>Scaling AI with robust cloud infrastructure and MLOps pipelines</li>
+    </ul>
+
+    <div class="news-divider">
+      <span></span>
+      <p>IN THE NEWS</p>
+      <span></span>
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+<section class="stats-section">
+
+  <div class="stats-card">
+
+    <h2 class="stats-heading">
+      Our decade long AI engineering experience, validated in numbers
+    </h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <h3>300+</h3>
+        <p>AI-Powered Solutions<br>Delivered</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Data Scientists & AI<br>Engineers Onboard</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>150+</h3>
+        <p>Custom AI Models Trained<br>And Deployed</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>75+</h3>
+        <p>Enterprise AI Integrations<br>Completed</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Bespoke LLMs Fine-Tuned</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>95%</h3>
+        <p>Client Satisfaction Rate</p>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="accordion-section">
+
+  <h1 class="main-title">
+    Our End-to-End AI Development Services Tailored to Your Business
+  </h1>
+
+  <div class="accordion">
+
+    <!-- 01 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">01</span>
+        <span class="title">AI Consulting</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          We help businesses adopt AI with a clear roadmap, reduced risk,
+          and strong technical foundations.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI Strategy & Roadmapping</li>
+            <li>AI Readiness & Gap Assessment</li>
+            <li>Use-case Identification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">02</span>
+        <span class="title">AI Product Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          From concept to production, we build scalable AI-powered products.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI MVP Development</li>
+            <li>Custom Model Training</li>
+            <li>Enterprise AI Solutions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">03</span>
+        <span class="title">Generative AI Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Build generative AI systems using LLMs for text, images, and automation.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>LLM-based Applications</li>
+            <li>Prompt Engineering</li>
+            <li>Fine-tuned GenAI Models</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">04</span>
+        <span class="title">AI Agent Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Intelligent AI agents that automate workflows and decision-making.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Autonomous AI Agents</li>
+            <li>Multi-agent Systems</li>
+            <li>Task Automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">05</span>
+        <span class="title">Smart AI Assistants & Chatbot Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Conversational AI chatbots that enhance user engagement and support.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Customer Support Bots</li>
+            <li>Voice & Text Assistants</li>
+            <li>Multi-language Chatbots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">06</span>
+        <span class="title">AI Integration</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Seamlessly integrate AI into your existing business systems.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>API-based AI Integration</li>
+            <li>Legacy System Integration</li>
+            <li>Cloud AI Deployment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">07</span>
+        <span class="title">AI Security</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Protect AI systems with advanced security and compliance frameworks.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Data Privacy Protection</li>
+            <li>AI Risk Mitigation</li>
+            <li>Model Security Audits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">08</span>
+        <span class="title">AI Design</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Human-centric AI design for better usability and adoption.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI UX/UI Design</li>
+            <li>Human-in-the-loop Systems</li>
+            <li>Explainable AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">09</span>
+        <span class="title">AIOps</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          AI-powered IT operations for smarter monitoring and automation.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Predictive Monitoring</li>
+            <li>Anomaly Detection</li>
+            <li>Automated Incident Response</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">10</span>
+        <span class="title">AI-as-a-Service (AIaaS)</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Ready-to-use AI solutions delivered through scalable cloud platforms.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Cloud-based AI Models</li>
+            <li>Subscription AI Services</li>
+            <li>Pay-as-you-go AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">11</span>
+        <span class="title">Automation Solutions</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Intelligent automation to optimize business processes and efficiency.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Workflow Automation</li>
+            <li>RPA + AI</li>
+            <li>Business Process Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">12</span>
+        <span class="title">Predictive Modeling</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Data-driven predictive models to forecast trends and outcomes.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Forecasting Models</li>
+            <li>Risk Prediction</li>
+            <li>Demand & Trend Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="ai-highlight-section">
+
+  <div class="ai-card">
+
+    <div class="ai-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwjR8YcFrREibjrYzC-Go4FdL5ASy8qzCcTC3-bPvtlg&s=10" alt="AI API Security">
+    </div>
+
+    <div class="ai-content">
+      <h2>
+        Don't Just Adopt AI. <br>
+        <span>Architect a Competitive Moat.</span>
+      </h2>
+
+      <p>
+        Generic APIs level the playing field. Custom AI tips it in your favor.
+        We build proprietary, domain-specific models that your competitors
+        can't copy.
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" target="_blank" class="ai-btn">
+   📞 Schedule an AI Architecture Review</a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="case-section">
+  <div class="slider-wrapper">
+    <button class="nav prev">‹</button>
+
+    <div class="slider">
+      <!-- SLIDE 1 -->
+      <div class="slide active">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRif2knubHR85UQZyhT628mQb0a-I0D3WP8Q9EUvjcK0g&s=10" alt="Americana ALMP" width="100" height="200">
+
+        <h2>Americana ALMP</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Americana Group’s last-mile delivery was slow and uncoordinated across brands.
+        </div>
+        <div class="tab-content" data-content="solution">
+          A unified delivery platform was built to streamline operations.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Faster delivery, higher customer satisfaction, and scalable growth.
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWNQzouztu6hO3tSDRX1Ur42nqkFLKTCPMh2plkOnS8Q&s=10" alt="MUDRA" width="100" height="200">
+
+        <h2>MUDRA</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Users struggled with inconsistent expense tracking and budgeting.
+        </div>
+        <div class="tab-content" data-content="solution">
+          An engaging AI-powered finance app was developed.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Improved savings habits and better financial decisions.
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTklNMDirWiipXIpehL8zBi5a-WBvN_e72YmtrqFJKZ2Q&s=10" alt="MyExec" width="100" height="200">
+
+        <h2>MyExec</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Small businesses lacked access to data-driven decision tools.
+        </div>
+        <div class="tab-content" data-content="solution">
+          A simple AI business assistant platform was created.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Better insights without expensive consultants.
+        </div>
+      </div>
+    </div>
+
+    <button class="nav next">›</button>
+  </div>
+</section>
+
+
+
+
+<section class="ai-accordion" id="aiAccordion">
+  <h2>Tailored AI Capabilities to Fit Your Industry and Vision</h2>
+  <p class="desc">
+    Our custom advanced AI solutions align with industry needs and business goals.
+  </p>
+
+  <div class="item active">
+    <div class="header"><span>[1]</span> AI for Healthcare</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Predictive diagnostics</li>
+      <li>Medical imaging AI</li>
+      <li>Remote patient monitoring</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[2]</span> AI for FinTech</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Fraud detection</li>
+      <li>Risk scoring</li>
+      <li>Smart financial insights</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[3]</span> AI for Banking</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Virtual banking assistants</li>
+      <li>Credit analysis</li>
+      <li>Workflow automation</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[4]</span> AI for Insurance</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Claims automation</li>
+      <li>Risk assessment</li>
+      <li>Customer analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[5]</span> AI for Lending</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Loan eligibility scoring</li>
+      <li>Default prediction</li>
+      <li>Automated approvals</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[6]</span> AI for Payments</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Transaction monitoring</li>
+      <li>Fraud prevention</li>
+      <li>Real-time analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[7]</span> AI for Retail</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Personalized shopping</li>
+      <li>Demand forecasting</li>
+      <li>Customer behavior analysis</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[8]</span> AI for eCommerce</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Product recommendations</li>
+      <li>Dynamic pricing</li>
+      <li>Cart abandonment insights</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[9]</span> AI for Manufacturing</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Predictive maintenance</li>
+      <li>Quality inspection AI</li>
+      <li>Supply optimization</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[10]</span> AI for Automotive</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Driver behavior analytics</li>
+      <li>ADAS intelligence</li>
+      <li>Predictive servicing</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[11]</span> AI for Energy</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Energy demand forecasting</li>
+      <li>Grid optimization</li>
+      <li>Predictive analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[12]</span> AI for Logistics</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Route optimization</li>
+      <li>Fleet analytics</li>
+      <li>Delivery forecasting</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[13]</span> AI for Transportation</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Traffic prediction</li>
+      <li>Smart mobility systems</li>
+      <li>Operational analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[14]</span> AI for Restaurant</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Demand forecasting</li>
+      <li>Order intelligence</li>
+      <li>Customer preference AI</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[15]</span> AI for OTT</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Content recommendations</li>
+      <li>User engagement analysis</li>
+      <li>Churn prediction</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[16]</span> AI for Real Estate</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Price prediction</li>
+      <li>Smart property insights</li>
+      <li>Customer intent analysis</li>
+    </ul>
+  </div>
+
+</section>
+
+
+
+
+<section class="ai-hero">
+  <div class="hero-card">
+
+    <div class="hero-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIWa18VnCcRcXmu2gFLwKz3JuDiTbCIPMhmzxB1JpPcg&s=10"
+           alt="AI Image">
+    </div>
+
+    <div class="hero-content">
+      <h1>The Future of Your Industry is Intelligent.</h1>
+
+      <p>
+        Don’t operate in the past. Let our industry experts design a
+        bespoke AI strategy that addresses your specific operational
+        bottlenecks and goals.
+      </p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1"
+         target="_blank"
+         class="hero-btn">
+        📞 Get AI Readiness Assessment Done
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="compliance-section">
+
+  <div class="container">
+
+    <!-- TEXT AREA -->
+    <div class="text-area">
+      <h2>The Compliance Framework Behind Every AI Product We Build</h2>
+      <p>
+        At Appinventiv, we build AI applications and software that pass all the 
+        compliance-based parameters and industry standards. Our ISO 9001 and 
+        27001 certifications, along with partnerships with AWS, Azure, and GCP, 
+        validate that we create AI products that meet global standards.
+      </p>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider-wrapper">
+
+      <div class="card-slider" id="cardSlider">
+
+        <!-- 20 CARDS -->
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8gc0XxUfG0iVk4d490ZQgud6Jy74FYbIN4fisY-vvOQ&s=10"><h3>AI Model Transparency and Interpretability Standards</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz4cuNy-D-br0RAPfZ95yawc7Ry-Ivihrew-zxUR_r7w&s=10"><h3>AI Algorithm Testing</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBJD9VDvWQcvyC5WkSI_98xJF-Fvv1YDnirxTraLA4wA&s=10"><h3>Model Training Framework</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_TXgUqq_NkAGJSe1whi8Uj8pjqoNoK7bh9zNJjJyAg&s=10"><h3>Edge AI Guidelines</h3></div>
+
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vC1wvqKDW92jHQFLu6EV8U50OIZCcNePRak0gaxlUA&s=10"><h3>GDPR</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJnRbP9AA7xTfJac64QAuH0dSbHyN33KQ9t4uwdc_RQ&s=10"><h3>ISO / IEC 27001</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSScDpi9rwkkNTr4d7-iYt1quI2oVvrEY9DzFwD0YKVjg&s=10"><h3>PCI-DSS</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJnRbP9AA7xTfJac64QAuH0dSbHyN33KQ9t4uwdc_RQ&s=10"><h3>SOC 2</h3></div>
+
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9d_OVlKxZ0OsntX-Quov9MJTmox_vzxBitnlkxj3ZQw&s=10"><h3>CCPA</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GOhD7WRdPS1vsa_WdpCp0d6qKqMD2u7br8gOjGr8bA&s=10"><h3>HIPAA</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsDj8rkAoTrBWJ6mqwJzmaHi7kPAOSfZnzVUNU9sIElw&s=10"><h3>FISMA</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tMRlL7k7tffeID1j4Hsf7Ao_Lsrlr1T0U2m_qRfX-A&s"><h3>Data Protection Act</h3></div>
+
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnt8KB5yMLwhcRMA_9uQR3PjG9vgOHOMyDMp-gOlW8IA&s=10"><h3>AI Ethics Guidelines</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOrPgSK9fZRQX-iE0k5GUuogjp-1YjF-DjlSs-bCIXrw&s=10"><h3>NIST AI RMF</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv_gf_yAGyqAAU_uwZHxdhwCkFK8q3qXlchZr-xXvPVA&s=10"><h3>IEEE</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO4xmcHWB5UptJpxoOedi4ao9xHl_7Zz1ty73zDtVjAg&s=10"><h3>EU AI Act</h3></div>
+
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBVNBPQOgIok900zMiZd6pKYHIvab_DfogdF24iA0FkA&s=10"><h3>Explainable AI</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPHN-wn-3BHQuV1EmU9ijeW3o7MhSU3AgsXwJ8KmO_Q&s=10"><h3>FCRA / EEOC</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3T4QIZBQaarmEbU_-wHnHQhJKZOnTaIjrggu40U6jJA&s=10"><h3>ISO / IEC 9001</h3></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqVKmxhluhvi1yFZFVCBoy4Ay7plOr0L4Ijv7KuW5Xg&s=10"><h3>ISO / IEC 42001</h3></div>
+
+      </div>
+
+      <!-- ARROWS -->
+      <div class="slider-controls">
+        <button id="prevBtn">&#8592;</button>
+        <button id="nextBtn">&#8594;</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="ai-partner-safe">
+
+  <div class="ai-top">
+    <h2>
+      Why Appinventiv is the Right AI Development Partner for Your Business Needs
+    </h2>
+    <p>
+      Appinventiv transforms your vision into practical, working applications.
+      We build custom AI strategies that align with your specific business needs.
+      Our team helps you navigate complex challenges and achieve sustainable
+      growth through proven technology solutions.
+    </p>
+  </div>
+
+  <div class="ai-divider"></div>
+
+  <div class="ai-slider">
+
+    <div class="ai-slide active">
+      <div class="ai-number">01</div>
+      <div class="ai-content">
+        <h3>Expert Team of AI Engineers</h3>
+        <p>
+          As an Economic Times-recognized Leader in AI Product Engineering,
+          we bring together certified AI-ML engineers and data scientists.
+"As an Economic Times-recognized Leader in AI Product Engineering, we bring together a team of certified and experienced AI-ML engineers, data scientists, and MLOps architects
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">02</div>
+      <div class="ai-content">
+        <h3>Smart Scalability</h3>
+        <p>
+          We design AI systems that scale smoothly and handle enterprise-level
+          performance without breaking.
+With 95% on-time delivery and the ability to scale enterprise systems, we design AI platforms that grow with your business.
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">03</div>
+      <div class="ai-content">
+        <h3>Data Quality & Integrity</h3>
+        <p>
+          Our experts ensure datasets are clean and optimized so AI models
+          deliver accurate and consistent results.
+ AI is only as strong as the data behind it. We analyze and clean datasets to ensure your AI models train correctly.
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">04</div>
+      <div class="ai-content">
+        <h3>AI Security & Compliance</h3>
+        <p>
+          We integrate enterprise-grade security aligned with GDPR, HIPAA,
+     ISO 27001, and SOC 2 standards.
+ We integrate enterprise-grade security protocols and align with global standards like GDPR, HIPAA, ISO 27001, and SOC 2.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ai-arrows">
+    <button class="ai-prev">&#8592;</button>
+    <button class="ai-next">&#8594;</button>
+  </div>
+
+</section>
+
+
+<section class="ai-hero-section">
+
+  <div class="ai-hero-card">
+
+    <!-- Top Image -->
+    <div class="ai-hero-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4yfZjcGI4runcCNWCWrwbBrZmNHGVFzbYSkf33pq8A&s=10"
+           alt="AI Team">
+    </div>
+
+    <!-- Content -->
+    <div class="ai-hero-content">
+
+      <h2>
+        <strong>Global Leaders Trust Us with</strong><br>
+        Their Most Critical AI Systems — You Can Too
+      </h2>
+
+      <p>
+        From KFC and the Americana Group to Flynas, enterprises rely
+        on our AI engineering depth, compliance readiness, and
+        large-scale execution capability.
+      </p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="ai-hero-btn">
+        Start Your Enterprise AI Development Journey
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<section class="moving-cards-section">
+
+  <div class="container">
+ <h2>Our Strategic partners</h2>
+    <p class="top-text">
+
+      We build powerful AI solutions for modern businesses. Our technology helps automate, analyze and grow faster.
+    </p>
+  </div>
+
+  <!-- Row 1 -->
+  <div class="scroll-row scroll-right">
+    <div class="scroll-track">
+      <!-- Cards Repeat Twice (Important for infinite loop) -->
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgW8xZFtVWGBg38C0nfb4OwMJF0Y4Lfi9wizEom0BUw&s=10">
+        <h4>Magento</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL9TejQKvshcq85WSCCSVeJ26aTOlQloNK_T-MbhuxVg&s=10">
+        <h4>Databricks</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgiQ2mt-Kq1Cr_0teriwCOP3bHC6vzxq36FJ2Vze8Y-Q&s=10">
+        <h4>Adobe</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVilgDcOpYQZb62DsLfydUlcS0L3std_fqp8lezpaQw&s=10">
+        <h4>ServiceNow</h4>
+      </div>
+
+      <!-- duplicate -->
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgW8xZFtVWGBg38C0nfb4OwMJF0Y4Lfi9wizEom0BUw&s=10https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgW8xZFtVWGBg38C0nfb4OwMJF0Y4Lfi9wizEom0BUw&s=10">
+        <h4>Magento</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL9TejQKvshcq85WSCCSVeJ26aTOlQloNK_T-MbhuxVg&s=10">
+        <h4>Databricks</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgiQ2mt-Kq1Cr_0teriwCOP3bHC6vzxq36FJ2Vze8Y-Q&s=10">
+        <h4>Adobe</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVilgDcOpYQZb62DsLfydUlcS0L3std_fqp8lezpaQw&s=10">
+        <h4>ServiceNow</h4>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="scroll-row scroll-left">
+    <div class="scroll-track">
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HCJ32fLfg7piWPuh3wd1Cjsd32dHoyX5VD4dttM7JQ&s=10">
+        <h4>OneStream</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvokdHyh3-AewNf-JBKOZsg2LGc4I17_ICArlahvc3KQ&s=10">
+        <h4>Oracel</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw6K7grABrpFISfWkj5Q8tfgeSPTJtUjh5_VatKguL5g&s=10">
+        <h4>RedHat</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifz0kyiXrJzfmrEo6-LpTxP7OphETA3Lfu_MLyHoHaA&s=10">
+        <h4>Sabre</h4>
+      </div>
+
+      <!-- duplicate -->
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HCJ32fLfg7piWPuh3wd1Cjsd32dHoyX5VD4dttM7JQ&s=10">
+        <h4>OneStream</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvokdHyh3-AewNf-JBKOZsg2LGc4I17_ICArlahvc3KQ&s=10">
+        <h4>Oracel</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw6K7grABrpFISfWkj5Q8tfgeSPTJtUjh5_VatKguL5g&s=10">
+        <h4>RedHat</h4>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifz0kyiXrJzfmrEo6-LpTxP7OphETA3Lfu_MLyHoHaA&s=10">
+        <h4>Sabre</h4>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+<section class="ai-capabilities">
+
+
+
+  <!-- ACCORDION CARD -->
+  <div class="ai-card">
+
+  <!-- TOP INTRO -->
+  <div class="ai-intro">
+
+     <h1>Drive Digital Transformation with Precision-Led AI Technologies</h1>
+         <p>
+      Our AI developers combine deep technical expertise with smart strategic thinking.
+      When you face complex business challenges, we turn them into intelligent solutions.
+      We integrate powerful AI capabilities directly into your existing business operations,
+      sparking innovation, streamlining processes, and positioning your company for whatever
+      comes next in the digital world.
+    </p>
+    </div>
+
+    <div class="ai-body">
+       <div class="step active">
+  <div class="step-head"><span>[1]</span><h4>Machine Learning (ML)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Your data tells a story. We build ML systems that learn patterns and improve decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[2]</span><h4>Generative AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Generate text, images and automate workflows using advanced AI models.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[3]</span><h4>Agentic AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Autonomous AI agents capable of performing real-world tasks and decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[4]</span><h4>Retrieval Augmented Generation (RAG)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Combine knowledge bases with LLMs to produce accurate business answers.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[5]</span><h4>Robotic Process Automation (RPA)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Automate repetitive tasks and operations to improve efficiency.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[6]</span><h4>Computer Vision</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">AI that understands images, videos and real-world visual data.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[7]</span><h4>Natural Language Processing (NLP)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Understand, analyze and generate human language intelligently.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[8]</span><h4>Data Science & Analytics</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Turn raw business data into meaningful insights and predictions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[9]</span><h4>Edge AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Run AI models directly on devices for faster real-time decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[10]</span><h4>Sentiment Analysis (Emotional AI)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Understand customer emotions and feedback automatically.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[11]</span><h4>Explainable AI (XAI)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Transparent AI decisions that humans can understand and trust.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[12]</span><h4>Green AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Energy-efficient AI systems designed for sustainability.</p>
+</div>
+
+
+
+    </div>
+  </div>
+
+</section>
+
+
+<script>
+    alert("JS working");
+    
+    function openMenu() {
+  document.getElementById("sideMenu").classList.add("active");
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("active");
+  document.getElementById("overlay").style.display = "none";
+}
+
+function toggleMenu(element) {
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  allSubmenus.forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+    function openBlog(page) {
+  window.location.href = page;
+}
+
+  }
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+function toggleMenu(element) {
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggleSubMenu(element) {
+  let childMenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".child-submenu").forEach(menu => {
+    if (menu !== childMenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (childMenu.style.display === "block") {
+    childMenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    childMenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+
+
+
+
+
+
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const content = header.nextElementSibling;
+
+    header.classList.toggle("active");
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+
+  
+           /*case-section*/
+  
+let index = 0;
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+
+document.querySelector('.next').onclick = () => {
+  index = (index + 1) % slides.length;
+  updateSlider();
+};
+
+document.querySelector('.prev').onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlider();
+};
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Tabs logic (per slide)
+document.querySelectorAll('.slide').forEach(slide => {
+  const tabs = slide.querySelectorAll('.tab');
+  const contents = slide.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      slide.querySelector(`[data-content="${tab.dataset.tab}"]`)
+        .classList.add('active');
+    });
+  });
+});
+
+
+
+
+    /*ai-accordion*/
+
+
+const items = document.querySelectorAll(".item");
+let current = 0;
+let duration = 4000; // time per item
+
+function activateItem(index) {
+  items.forEach((item, i) => {
+    item.classList.remove("active");
+    item.querySelector(".progress span").style.width = "0%";
+  });
+
+  const activeItem = items[index];
+  activeItem.classList.add("active");
+
+  const bar = activeItem.querySelector(".progress span");
+  let start = null;
+
+  function animate(time) {
+    if (!start) start = time;
+    let progress = time - start;
+    let percent = Math.min((progress / duration) * 100, 100);
+    bar.style.width = percent + "%";
+
+    if (percent < 100) {
+      requestAnimationFrame(animate);
+    } else {
+      current = (current + 1) % items.length;
+      activateItem(current);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+/* Start animation when section enters viewport */
+const observer = new IntersectionObserver(
+  entries => {
+    if (entries[0].isIntersecting) {
+      activateItem(0);
+      observer.disconnect();
+    }
+  },
+  { threshold: 0.4 }
+);
+
+observer.observe(document.getElementById("aiAccordion"));
+
+
+
+
+
+    /*compliance-section */
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slider = document.getElementById("cardSlider");
+  const cards = document.querySelectorAll(".card");
+
+  const totalCards = cards.length;
+  const visibleCards = 4;
+  let index = 0;
+
+  function slideCards() {
+    const cardWidth = cards[0].offsetWidth;
+    slider.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    index++;
+
+    // Infinite loop
+    if (index > totalCards - visibleCards) {
+      index = 0;
+    }
+
+    slideCards();
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    index--;
+
+    if (index < 0) {
+      index = totalCards - visibleCards;
+    }
+
+    slideCards();
+  });
+
+  window.addEventListener("resize", slideCards);
+
+});
+
+     /*ai-partner-section*/
+     
+(function () {
+
+  const section = document.querySelector(".ai-partner-safe");
+  if (!section) return;
+
+  const slides = section.querySelectorAll(".ai-slide");
+  const nextBtn = section.querySelector(".ai-next");
+  const prevBtn = section.querySelector(".ai-prev");
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", function () {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener("click", function () {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+})();
+
+
+     
+     
+     
+         /*ai-capabilities*/
+    document.addEventListener("DOMContentLoaded", function () {
+     
+         
+const steps = document.querySelectorAll(".step");
+let current = 0;
+
+function activateStep(index){
+  steps.forEach(step=>{
+    step.classList.remove("active");
+    step.querySelector(".progress").style.animation="none";
+  });
+
+  let step = steps[index];
+  step.classList.add("active");
+
+  let progress = step.querySelector(".progress::after");
+}
+
+function nextStep(){
+  activateStep(current);
+
+  setTimeout(()=>{
+    current++;
+    if(current >= steps.length) current = 0;
+    nextStep();
+  },4000);
+}
+
+nextStep();
+
+ });      
+</script>
+
+</body>
+</html>

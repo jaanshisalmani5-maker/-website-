@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Testimonials</title>
+  <link rel="stylesheet" href="client-testimonials.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #000, #111);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background: #1e66ff;
+  color: #fff;
+  padding: 14px 15px;
+  border-radius: 8px;
+  text-decoration: rtl;
+  position: relative;   /* ❗ absolute / fixed NA ho */
+}
+
+.cta-btn {
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+/* Rating */
+.rating {
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.testimonial-card {
+  background: #f1f5ff;
+  color: #000;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.tags span {
+  background: #e6ebff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.text {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background: #bbb;
+  border-radius: 50%;
+}
+
+.btn-secondary {
+  margin-top: 15px;
+  background: #1e66ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Clients */
+.clients {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.client-box {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Awards */
+.awards {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.award-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* Platforms */
+.platforms {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.platform-card {
+  background: #111;
+  padding: 18px;
+  margin: 12px auto;
+  max-width: 500px;
+  border-radius: 10px;
+}
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+ </style>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">I.H</div>
+ 
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>PROVEN RESULTS</h1>
+  <p>Through Our Clients' Words</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="btn-primary">Let's Explore Partnership Opportunities</a>
+</section>
+
+<!-- Rating -->
+<section class="rating">
+  <h2>⭐ 4.7 / 5</h2>
+  <p>Clutch Rating</p>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+
+  <div class="testimonial-card">
+    <div class="tags">
+      <span>U.S</span>
+      <span>Politics</span>
+    </div>
+    <p class="text">
+      It has been a pleasure working with Appinventiv. The team is extremely
+      versatile, professional, courteous, and responsive.
+    </p>
+    <div class="user">
+      <div class="avatar"></div>
+      <div>
+        <h4>César M Melgoza</h4>
+        <small>Founder & CEO – MOXY</small>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="testimonial-card">
+    <div class="tags">
+      <span>U.S</span>
+      <span>Education</span>
+    </div>
+    <p class="text">
+      I just want to take a moment to thank the entire Appinventiv team for your
+      incredible support.
+    </p>
+    <div class="user">
+      <div class="avatar"></div>
+      <div>
+        <h4>Rohit Jesudian</h4>
+        <small>CEO & Founder, KODA</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-card">
+    <div class="tags">
+      <span>U.S</span>
+      <span>Automobile</span>
+    </div>
+    <p class="text">
+      After researching numerous companies, we finally found Appinventiv.
+      It was the best decision we could have made.
+    </p>
+    <div class="user">
+      <div class="avatar"></div>
+      <div>
+        <h4>Steve Gertsch</h4>
+        <small>Project Manager, Auto Auction</small>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Client Logos -->
+<section class="clients">
+  <h2>Our Clients</h2>
+  <div class="client-grid">
+    <div class="client-box">KFC</div>
+    <div class="client-box">Pizza Hut</div>
+    <div class="client-box">Adidas</div>
+    <div class="client-box">IKEA</div>
+    <div class="client-box">Jobget</div>
+    <div class="client-box">Iliyo</div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section class="awards">
+  <h2>Benchmarking Success</h2>
+  <div class="award-grid">
+    <div class="award-card">2025<br>Leadership Excellence</div>
+    <div class="award-card">2024<br>Fastest Growing AI Company</div>
+    <div class="award-card">2023<br>Tech Company of the Year</div>
+    <div class="award-card">2022<br>Best Place to Work</div>
+  </div>
+</section>
+
+<!-- Platform Ratings -->
+<section class="platforms">
+  <h2>Recognized Across Leading Platforms</h2>
+
+  <div class="platform-card">⭐ 4.7 / 5 – Clutch</div>
+  <div class="platform-card">⭐ 4.7 / 5 – GoodFirms</div>
+  <div class="platform-card">⭐ 4.8 / 5 – TechReviewer</div>
+  <div class="platform-card">⭐ 4.7 / 5 – Mobile App Daily</div>
+</section>
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+  <div class="footer-top">
+    <p>3000+ digital deliveries for 35+ industries.</p>
+    <a href="#" class="explore-btn">EXPLORE NOW</a>
+  </div>
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>InventivAI</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>

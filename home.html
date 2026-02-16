@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise AI Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-dark:#050505;
+      --bg-blue:#0b2e6f;
+      --bg-blue-2:#0f4bd8;
+      --card:#0c0c0c;
+      --border:rgba(255,255,255,0.08);
+      --text:#ffffff;
+      --muted:#b9c3ff;
+      --accent:#5cff7a;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+    body{background:var(--bg-dark);color:var(--text);line-height:1.6}
+    section{padding:80px 6%}
+    h1{font-size:48px;font-weight:600;margin-bottom:24px}
+    h2{font-size:40px;font-weight:600;margin-bottom:20px}
+    p{font-size:18px;color:#e6e6e6}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+    .hero-img{
+      height:360px;border-radius:24px;
+      background:linear-gradient(135deg,#0f4bd8,#0b2e6f);
+      position:relative;overflow:hidden
+    }
+    .hero-img::after{
+      content:"";position:absolute;inset:0;
+      background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 18px);
+      opacity:.25
+    }
+    .chip{
+      position:absolute;inset:20%;border-radius:18px;
+      background:linear-gradient(135deg,#1fd1ff,#ffffff);
+      box-shadow:0 0 40px rgba(0,255,255,.6);
+    }
+
+    /* INFO CARDS */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:22px;padding:28px;min-height:280px;
+      display:flex;flex-direction:column;gap:14px
+    }
+    .card-img{
+      height:140px;border-radius:16px;
+      background-size:cover;background-position:center;
+      box-shadow:0 0 30px rgba(0,140,255,.35)
+    }
+    .card-img.cost{background-image:linear-gradient(135deg,#ffd86f,#ff9f1c)}
+    .card-img.speed{background-image:linear-gradient(135deg,#1fd1ff,#0f4bd8)}
+    .card-img.expert{background-image:linear-gradient(135deg,#5cff7a,#0b6f3a)}
+    .card h3{font-size:22px;margin-bottom:12px}
+
+    /* SERVICES */
+    .services{background:linear-gradient(180deg,#0b2e6f,#0f4bd8)}
+    .accordion{margin-top:40px}
+    .item{border-bottom:1px solid rgba(255,255,255,.2);padding:26px 0}
+    .title{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .title h3{font-size:28px;font-weight:600}
+    .icon{font-size:28px;transition:.3s}
+    .content{max-height:0;overflow:hidden;transition:.4s ease}
+    .content p{margin-top:16px;color:#eef1ff}
+    .item.active .content{max-height:400px}
+    .item.active .icon{transform:rotate(180deg)}
+
+    /* STATS */
+    .stat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .stat-box{
+      background:#0f4bd8;border-radius:32px;padding:60px;
+      min-height:520px;position:relative;overflow:hidden
+    }
+    .stat-box.single{display:flex;flex-direction:column;justify-content:flex-end}
+    .stat-visual{position:absolute;top:30px;left:30px;right:30px;height:260px}
+    .robot{
+      position:absolute;left:0;bottom:0;width:180px;height:240px;
+      background:linear-gradient(145deg,#ffffff,#cfe8ff);
+      border-radius:24px 24px 40px 40px;
+      box-shadow:0 0 40px rgba(0,0,0,.35)
+    }
+    .graph{position:absolute;right:0;bottom:0;width:60%;height:100%;display:flex;align-items:flex-end;gap:14px}
+    .graph span{flex:1;background:linear-gradient(#ff4d4d,#8b0000);border-radius:10px}
+    .graph span:nth-child(1){height:80%}
+    .graph span:nth-child(2){height:65%}
+    .graph span:nth-child(3){height:45%}
+    .graph span:nth-child(4){height:25%}
+    .stat-box h2{font-size:64px;margin-bottom:10px}
+       .partnerships {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.partnerships h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #111;
+  font-weight: 700;
+}
+
+.partner-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.partner {
+  background: #000;
+  color: #fff;
+  padding: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.partner:hover {
+  transform: translateY(-6px);
+  background: #1a1a1a;
+}
+
+
+    .logo{
+      background:#fff;border-radius:18px;height:110px;
+      display:flex;align-items:center;justify-content:center;
+      color:#000;font-weight:600;font-size:22px
+    }
+
+    .processor{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:220px;height:220px;border-radius:20px;
+      background:linear-gradient(145deg,#0d5bff,#0b2e6f);
+      box-shadow:0 0 60px rgba(0,140,255,.6);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .processor .core{
+      width:90px;height:90px;border-radius:12px;
+      background:linear-gradient(145deg,#e9f6ff,#7fd4ff);
+      box-shadow:inset 0 0 25px rgba(0,0,0,.35);
+    }
+    .pin{
+      position:absolute;width:14px;height:40px;
+      background:linear-gradient(#7fd4ff,#ffffff);
+    }
+    .p1{top:-40px;left:50%;transform:translateX(-50%)}
+    .p2{bottom:-40px;left:50%;transform:translateX(-50%)}
+    .p3{left:-40px;top:50%;transform:translateY(-50%) rotate(90deg)}
+    .p4{right:-40px;top:50%;transform:translateY(-50%) rotate(90deg)}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.philosophy-section {
+  padding: 60px 8%;
+  color: #fff;
+}
+
+.philosophy-section h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* GRAPH BOX */
+.graph-box {
+  position: relative;
+  height: 420px;
+  max-width: 520px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #6a00ff, #b980ff);
+  overflow: hidden;
+}
+
+/* GRID */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* BARS */
+.bars {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 22%;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(to top, #baff5a, #ffffff);
+}
+
+.b1 { height: 80px; }
+.b2 { height: 150px; }
+.b3 { height: 220px; }
+.b4 { height: 300px; }
+
+/* ARROW */
+.arrow {
+  position: absolute;
+  width: 260px;
+  height: 4px;
+  background: #fff;
+  top: 150px;
+  left: 10px;
+  transform: rotate(-45deg);
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -6px;
+  border-left: 14px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* SECTION */
+.pillar-section {
+  padding: 60px 8%;
+  max-width: 900px;
+}
+
+/* PILLAR LABEL */
+.pillar-label {
+  display: block;
+  color: #3b82f6;        /* same blue */
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* TITLE */
+.pillar-title {
+  color: #ffffff;
+  font-size: 30px;       /* same size as screenshot */
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+/* PARAGRAPH */
+.pillar-text {
+  color: #d1d5db;        /* light grey text */
+  font-size: 18px;
+  line-height: 1.75;
+  max-width: 820px;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* SECTION */
+.ai-partner-section {
+    margin-bottom: 80px;  
+  background: #7cf4f2; /* same cyan */
+  padding: 70px 8%;
+  color: #000;
+}
+
+/* IMAGE BOX */
+.ai-image {
+  height: 280px;
+  border-radius: 22px;
+  margin-bottom: 40px;
+
+  background-image: url("https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1400&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+/* SUBTITLE */
+.ai-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* TITLE */
+.ai-title {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.25;
+  max-width: 800px;
+}
+
+.ai-title span {
+  font-weight: 800;
+}
+
+/* FOURTH SECTION */
+.industry-ai-section {
+    margin-bottom: 80px;  
+  background: #e9ff4f;           /* same yellow */
+  padding: 70px 8%;
+  color: #000;
+}
+
+/* IMAGE */
+.industry-image {
+  height: 300px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+
+  background-image: url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1400&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+/* TITLE */
+.industry-title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.25;
+  max-width: 900px;
+  margin-bottom: 18px;
+}
+
+.industry-title span {
+  font-weight: 800;
+}
+
+/* SUB TEXT */
+.industry-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .industry-title {
+    font-size: 32px;
+  }
+
+  .industry-image {
+    height: 240px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+
+    @media(max-width:900px){
+      .hero,.stat{grid-template-columns:1fr}
+      .cards,.partners{grid-template-columns:1fr}
+      h1{font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <h1>How We Solve Your Enterprise AI Dilemma</h1>
+    <p>Taking an industry‑first approach, we combine tailored services with specialized AI products to improve your top and bottom line, enhance organizational agility, and advance digital maturity.</p>
+    <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/ai-boucing-anim.webp" width="300" height="250">
+  </div>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <div class="card-img">
+  <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/ai-in-house-solutions.webp" width="250" height="250">
+    
+     
+    </div>
+    <h3>Reduce AI Costs</h3>
+    <p>We reduce your costs and complexity of developing in-house AI solutions.</p>
+  </div>
+  <div class="card">
+    <div class="card-img">
+    <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/ai-adoption.webp" width="250" height="250">
+
+    </div>
+    <h3>Faster Adoption</h3>
+    <p>We remove barriers to slow AI adoption caused by scalability and customization issues.</p>
+  </div>
+  <div class="card">
+    <div class="card-img">
+    <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/expertise-integration-ai.webp" width="250" height="250">
+    </div>
+    <h3>Certified Expertise</h3>
+    <p>Advanced, certified experts integrate AI seamlessly into existing workflows.</p>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Custom AI Digital Engineering Solutions</h2>
+  <p>Our comprehensive service portfolio addresses critical aspects of enterprise AI implementation.</p>
+
+  <div class="accordion">
+    <div class="item active">
+      <div class="title"><h3>AI Strategy & Advisory</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>AI readiness & maturity assessment, responsible AI frameworks, operating model setup, cost‑benefit modelling, and compliance consulting.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title"><h3>AIaaS</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>Native LLM integrations, vision‑as‑a‑service, voice AI, custom AI APIs, and predictive analytics.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title"><h3>AI Platform Engineering</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>Secure, scalable AI platforms with MLOps, monitoring, governance, and enterprise integrations.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title"><h3>Generative AI & LLM Engineering</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>Custom LLMs, RAG pipelines, fine‑tuning, and enterprise‑grade GenAI solutions.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title"><h3>AI for UI/UX & Product Intelligence</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>AI‑driven personalization, behavior analytics, recommendation engines, and smart UX.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title"><h3>Machine Learning</h3><span class="icon">⌄</span></div>
+      <div class="content">
+        <p>Advanced ML models for forecasting, fraud detection, churn prediction, and automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stat">
+  <div class="stat-box single" style="min-height:420px;display:flex;flex-direction:column;justify-content:center">
+    <!-- FAILED PROJECT GRAPH ONLY -->
+    <div style="height:50%;display:flex;align-items:center">
+    <svg viewBox="0 0 600 200" width="100%" height="100%">
+      <defs>
+        <linearGradient id="fail" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ff4d4d"/>
+          <stop offset="100%" stop-color="#8b0000"/>
+        </linearGradient>
+      </defs>
+      <rect x="120" y="40" width="60" height="120" rx="10" fill="url(#fail)"/>
+      <rect x="220" y="70" width="60" height="90" rx="10" fill="url(#fail)"/>
+      <rect x="320" y="100" width="60" height="60" rx="10" fill="url(#fail)"/>
+      <rect x="420" y="130" width="60" height="30" rx="10" fill="url(#fail)"/>
+    </svg>
+  </div>
+
+    <h2 style="font-size:72px">85%</h2>
+    <p style="max-width:800px">of enterprise AI projects fail due to poor data readiness and lack of strategic alignment.</p>
+  </div>
+</section>
+
+
+<section class="partnerships">
+  <h2>Strategic Technology Partnerships</h2>
+
+  <div class="partner-list">
+    <div class="partner">Google Cloud</div>
+    <div class="partner">Microsoft Azure</div>
+    <div class="partner">Amazon Web Services (AWS)</div>
+    <div class="partner">IBM Technologies</div>
+    <div class="partner">Oracle Solutions</div>
+    <div class="partner">Salesforce</div>
+  </div>
+</section>
+<section class="philosophy-section">
+  <h1>The InventivAI Philosophy<br><span>(Why I.H?)</span></h1>
+
+  <div class="graph-box">
+    <div class="grid"></div>
+
+    <div class="bars">
+      <div class="bar b1"></div>
+      <div class="bar b2"></div>
+      <div class="bar b3"></div>
+      <div class="bar b4"></div>
+    </div>
+
+    <div class="arrow"></div>
+  </div>
+</section>
+
+
+<section class="pillar-section">
+  <span class="pillar-label">PILLAR 01</span>
+
+  <h2 class="pillar-title">Business-First Strategy</h2>
+
+  <p class="pillar-text">
+    We don't start with technology; we start with your business objectives.
+    The InventivAI consulting-led approach makes sure every AI initiative
+    is tied to a clear ROI, whether it's about enhancing customer experience,
+    optimizing operations, or creating new revenue streams.
+  </p>
+</section>
+
+<section class="ai-partner-section">
+  <div class="ai-image"></div>
+
+  <p class="ai-subtitle">
+    Your AI Advantage Starts with the Right Technology Partner
+  </p>
+
+  <h1 class="ai-title">
+    Let <span>I.H</span> be your strategic competitive edge
+  </h1>
+</section>
+
+<section class="industry-ai-section">
+
+  <div class="industry-image"></div>
+
+  <h1 class="industry-title">
+    Solve Real-World Challenges with <span>Industry-Specific AI</span>
+  </h1>
+
+  <p class="industry-text">
+    Move beyond generic solutions – get AI built for your business!
+  </p>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+  <div class="footer-top">
+    <p>3000+ digital deliveries for 35+ industries.</p>
+    <a href="#" class="explore-btn">EXPLORE NOW</a>
+  </div>
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="home.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+      <a href="#">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Sitemap</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Statutory Legal Information</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+<script>
+  document.querySelectorAll('.title').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const item=t.parentElement
+      item.classList.toggle('active')
+    })
+  })
+</script>
+
+</body>
+</html>
