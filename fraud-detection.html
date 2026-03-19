@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fraud Detection Engine Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0f14;
+      color: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1f3c, #0b5c7a);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #0bc5ea;
+      color: #000;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      flex: 1;
+      min-width: 200px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #0bc5ea;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      color: #0bc5ea;
+      font-size: 28px;
+    }
+
+    /* IMAGE */
+    .image {
+      margin-top: 30px;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #0bc5ea;
+      box-shadow: 0 0 20px rgba(11,197,234,0.3);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #0a2a43;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #0bc5ea;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #09a8c9;
+    }
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="tag">Finance</div>
+      <h1>Fraud Detection Engine</h1>
+      <p>Reducing fraud cases by 78% using AI-powered predictive analytics</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section container">
+    <h2>Project Overview</h2>
+    <p>
+      We developed an advanced fraud detection engine for financial institutions that monitors transactions in real-time.
+      The system uses machine learning algorithms to detect suspicious behavior and prevent fraud before it occurs.
+    </p>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section class="section container">
+    <h2>Challenges</h2>
+    <p>
+      Financial organizations were struggling with increasing fraud attempts, delayed detection, and false positives.
+      Traditional rule-based systems were not efficient in identifying complex fraud patterns.
+    </p>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section container">
+    <h2>Our Solution</h2>
+    <p>
+      We built a real-time fraud detection platform using AI models trained on transaction data. 
+      The system analyzes patterns, user behavior, and anomalies to instantly flag suspicious activities.
+    </p>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h3>78%</h3>
+        <p>Fraud Reduction</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>65%</h3>
+        <p>Faster Detection</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>50%</h3>
+        <p>False Alerts Reduced</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM PREVIEW -->
+  <section class="section container">
+    <h2>Platform Preview</h2>
+    <div class="image">
+      <img src="https://www.scalefocus.com/wp-content/uploads/2024/08/SF_AI_fraud_banking_graph1n.png" alt="Fraud Detection Dashboard">
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Want to secure your financial system?</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" target="_blank" class="cta-btn">
+      Contact Us
+    </a>
+  </section>
+
+
+  <!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+ 
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="home.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="digital.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>About Us </h3>
+        <span>Who we are & Our vision</span>
+      </div>
+      <a href="about.html">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="home.html">Home</a>
+    <a href="Policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact US</a>
+  
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+</body>
+</html>
