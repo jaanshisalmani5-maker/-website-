@@ -54,14 +54,16 @@ body {
   color: #ccc;
   margin-bottom: 25px;
 }
-
 .btn-primary {
+  display: inline-block;     /* IMPORTANT */
   background: #1e66ff;
   color: #fff;
-  padding: 14px 15px;
+  padding: 14px 24px;
   border-radius: 8px;
-  text-decoration: rtl;
-  position: relative;   /* ❗ absolute / fixed NA ho */
+  text-decoration: none;     /* FIX */
+  white-space: nowrap;       /* TEXT ek line me rahega */
+  text-align: center;
+  font-size: 14px;
 }
 
 .cta-btn {
@@ -425,10 +427,7 @@ body {
 <footer class="main-footer">
 
   <!-- Top Info -->
-  <div class="footer-top">
-    <p>3000+ digital deliveries for 35+ industries.</p>
-    <a href="#" class="explore-btn">EXPLORE NOW</a>
-  </div>
+ 
 
   <!-- Business Units -->
   <div class="footer-units">
@@ -436,10 +435,10 @@ body {
 
     <div class="unit-card">
       <div>
-        <h3>InventivAI</h3>
+        <h3>I.H</h3>
         <span>AI & Intelligent Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="home.html">Know more →</a>
     </div>
 
     <div class="unit-card">
@@ -447,23 +446,24 @@ body {
         <h3>Digital</h3>
         <span>Enterprise Digital Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="digital.html">Know more →</a>
     </div>
 
     <div class="unit-card">
       <div>
-        <h3>Foundation</h3>
-        <span>Social & Community Initiatives</span>
+        <h3>Solutions </h3>
+        <span>AI Solutions for Industries</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="solution.html">Know more →</a>
     </div>
   </div>
 
   <!-- Footer Links -->
   <div class="footer-links">
-    <a href="#">Sitemap</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Statutory Legal Information</a>
+    <a href="home.html">Home</a>
+    <a href="Policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact US</a>
+  
   </div>
 
   <!-- Footer Bottom -->
@@ -478,9 +478,6 @@ body {
   </div>
 
 </footer>
-
-
-
 
 
 
