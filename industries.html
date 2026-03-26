@@ -6,6 +6,216 @@
     <title>Industries We Serve</title>
     <link rel="stylesheet" href="industries.css">
 </head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: white;
+    color: #e4e8ec;
+}
+
+/* HEADER */
+.header{
+    padding: 40px 20px;
+}
+
+.header h1{
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.header p{
+    font-size: 18px;
+    opacity: 0.8;
+    color: skyblue;
+}
+
+/* GRID */
+.industry-grid{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 80px;
+}
+
+/* CARD */
+.industry-card{
+    background: black;
+    border-radius: 50px;
+    padding: 25px;
+    border: 1px solid #1f1f1f;
+    transition: 0.3s;
+    margin: 0 15px;
+    margin-bottom: 20px;
+}
+
+.industry-card:hover{
+    border-color: #0056ff;
+    transform: translateY(-5px);
+}
+
+/* NUMBER */
+.card-number{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* ICON */
+.icon{
+    width: 45px;
+    margin: 15px 0;
+
+    filter: invert(34%) sepia(80%) saturate(3200%)
+            hue-rotate(205deg) brightness(95%) contrast(110%);
+}
+
+/* TITLE */
+.industry-name{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.industry-text{
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn{
+    display: inline-block;
+    background: #0056ff;
+    padding: 10px 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #003ecb;
+}
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+</style>
 
 <body>
 
@@ -77,112 +287,6 @@
             <a href="fintech.html" class="btn">Explore More →</a>
         </div>
 
-        <!-- 07 Travel -->
-        <div class="industry-card">
-            <div class="card-number">07</div>
-        
-            <h2 class="industry-name">Travel</h2>
-            <p class="industry-text">Booking engines & trip automation systems.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 08 Hospitality -->
-        <div class="industry-card">
-            <div class="card-number">08</div>
-    
-            <h2 class="industry-name">Hospitality</h2>
-            <p class="industry-text">Hotel management & customer experience apps.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 09 Retail -->
-        <div class="industry-card">
-            <div class="card-number">09</div>
-            
-            <h2 class="industry-name">Retail</h2>
-            <p class="industry-text">POS, inventory & retail automation.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 10 E-commerce -->
-        <div class="industry-card">
-            <div class="card-number">10</div>
-            
-            <h2 class="industry-name">E-commerce</h2>
-            <p class="industry-text">Commerce platforms, cart & order systems.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 11 Education -->
-        <div class="industry-card">
-            <div class="card-number">11</div>
-        
-            <h2 class="industry-name">Education</h2>
-            <p class="industry-text">LMS, virtual learning & exam portals.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 12 OTT -->
-        <div class="industry-card">
-            <div class="card-number">12</div>
-
-            <h2 class="industry-name">OTT</h2>
-            <p class="industry-text">Streaming, media libraries & content delivery.</p>
-            <a href="ott.html" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 13 Food Delivery -->
-        <div class="industry-card">
-            <div class="card-number">13</div>
-            <h2 class="industry-name">Food Delivery</h2>
-            <p class="industry-text">Restaurant ordering and delivery apps.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 14 Social Media -->
-        <div class="industry-card">
-            <div class="card-number">14</div>
-            
-            <h2 class="industry-name">Social Media</h2>
-            <p class="industry-text">Community, chat & creator platforms.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 15 Automation -->
-        <div class="industry-card">
-            <div class="card-number">15</div>
-        
-            <h2 class="industry-name">Automation</h2>
-            <p class="industry-text">Process automation & AI workflow tools.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 16 Agriculture -->
-        <div class="industry-card">
-            <div class="card-number">16</div>
-        
-            <h2 class="industry-name">Agriculture</h2>
-            <p class="industry-text">Smart farming & crop analytics.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 17 Gaming -->
-        <div class="industry-card">
-            <div class="card-number">17</div>
-        
-            <h2 class="industry-name">Gaming</h2>
-            <p class="industry-text">Mobile, console & cloud gaming solutions.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
-
-        <!-- 18 Telecom -->
-        <div class="industry-card">
-            <div class="card-number">18</div>
-        
-            <h2 class="industry-name">Telecom</h2>
-            <p class="industry-text">Network, VoIP & digital connectivity apps.</p>
-            <a href="#" class="btn">Explore More →</a>
-        </div>
 
         <!-- Remaining 17 industries -->
         <!-- I will add the final 17 after your confirmation (total 35) -->
@@ -191,10 +295,7 @@
     <footer class="main-footer">
 
   <!-- Top Info -->
-  <div class="footer-top">
-    <p>3000+ digital deliveries for 35+ industries.</p>
-    <a href="#" class="explore-btn">EXPLORE NOW</a>
-  </div>
+
 
   <!-- Business Units -->
   <div class="footer-units">
@@ -202,10 +303,10 @@
 
     <div class="unit-card">
       <div>
-        <h3>InventivAI</h3>
+        <h3>I.H</h3>
         <span>AI & Intelligent Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="home.html">Know more →</a>
     </div>
 
     <div class="unit-card">
@@ -213,23 +314,23 @@
         <h3>Digital</h3>
         <span>Enterprise Digital Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="digital.html">Know more →</a>
     </div>
 
     <div class="unit-card">
       <div>
-        <h3>Foundation</h3>
-        <span>Social & Community Initiatives</span>
+        <h3>About Us </h3>
+        <span>Our vision & Our mission</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="about.html">Know more →</a>
     </div>
   </div>
 
   <!-- Footer Links -->
   <div class="footer-links">
-    <a href="#">Sitemap</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Statutory Legal Information</a>
+    <a href="home.html">Home</a>
+    <a href="policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact US</a>
   </div>
 
   <!-- Footer Bottom -->
