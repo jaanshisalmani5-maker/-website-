@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Start Your Career With Us</title>
   <link rel="stylesheet" href="career.css">
 </head>
@@ -83,30 +84,24 @@ body {
   flex-direction: row-reverse;
 }
 
+
 /* IMAGES */
 .career-img {
   flex: 1;
-  height: 340px;
-  border-radius: 18px;
-  background-size: cover;
-  background-position: center;
+  
+}
+.career-img img{
+  width:100%;
+  max-width:340px;
+  height:340px;
+  object-fit:cover;
+  border-radius:18px;
 }
 
-.why-us {
-  background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c");
-}
 
-.life {
-  background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70");
-}
 
-.learning {
-  background-image: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
-}
 
-.hiring {
-  background-image: url("https://images.unsplash.com/photo-1552664730-d307ca884978");
-}
+
 
 /* TEXT */
 .career-text {
@@ -117,7 +112,7 @@ body {
 .career-text h2 {
   font-size: 34px;
   margin-bottom: 15px;
-  color: #111;
+  color: black;
 }
 
 .career-text span {
@@ -160,22 +155,45 @@ body {
   background: #2f7cff;
 }
 
+
 /* CTA */
-.career-cta {
-  padding: 90px 20px;
+.career-cta h2{
+  color:#fff;
+  font-size:32px;
   text-align: center;
-  background: radial-gradient(circle, #111, #000);
+  margin-top: 20px;
 }
 
-.career-cta button {
-  margin-top: 25px;
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
-  background: #2f7cff;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+.career-cta p{
+  color:#d0d0d0;
+  margin-top:10px;
+  font-size:18px;
+  text-align: center;
+}
+
+.career-cta span{
+  color:#2f7cff;
+}
+.cta-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 36px;
+  border-radius:30px;
+  background:#2f7cff;
+  color:#fff;
+  font-size:16px;
+  text-decoration:none;
+  transition:0.3s;
+
+}
+.career-cta{
+  background:#0b1f4b;   /* yaha color change hota hai */
+  padding:90px 20px;
+  text-align:center;    /* ye button aur text center karega */
+}
+
+.cta-btn:hover{
+  background:black;
 }
 .main-footer{
   background:linear-gradient(180deg,#0b3aa8,#0a2f86);
@@ -286,20 +304,43 @@ body {
   text-align:center;
   min-width:120px;
 }
+@media (max-width:768px){
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .career-section {
-    flex-direction: column;
-    padding: 60px 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 36px;
-  }
+/* section ko vertical bana do */
+.career-section{
+  flex-direction: column;
+  text-align: center;
+  padding:40px 20px;
 }
 
-        
+/* reverse section bhi same ho jaye */
+.career-section.reverse{
+  flex-direction: column;
+}
+
+
+
+
+/* heading size mobile me chhota */
+.hero-content h1{
+  font-size:34px;
+}
+
+}
+
+@media (max-width:768px){
+
+.career-section{
+  flex-direction:column;
+}
+
+.career-img img{
+  max-width:100%;
+  height:auto;
+}
+
+}
+
     </style>
 
 <!-- HERO -->
@@ -322,11 +363,14 @@ body {
     to experienced professionals, we empower individuals to unlock
     their full potential in a collaborative and growth-driven culture.
   </p>
+
 </section>
 
 <!-- WHY JOIN US -->
 <section class="career-section">
-  <div class="career-img why-us"></div>
+  <div class="career-img">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+  </div>
   <div class="career-text">
     <h2>Why Join <span>Our Team</span></h2>
     <p>
@@ -345,7 +389,9 @@ body {
 
 <!-- LIFE AT COMPANY -->
 <section class="career-section reverse">
-  <div class="career-img life"></div>
+  <div class="career-img ">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70">
+  </div>
   <div class="career-text">
     <h2>Life At <span>Our Company</span></h2>
     <p>
@@ -358,7 +404,9 @@ body {
 
 <!-- LEARNING & GROWTH -->
 <section class="career-section">
-  <div class="career-img learning"></div>
+  <div class="career-img ">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+  </div>
   <div class="career-text">
     <h2>Learning & <span>Growth</span></h2>
     <p>
@@ -384,7 +432,9 @@ body {
 
 <!-- HIRING PROCESS -->
 <section class="career-section reverse">
-  <div class="career-img hiring"></div>
+  <div class="career-img ">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978">
+  </div>
   <div class="career-text">
     <h2>Our <span>Hiring Process</span></h2>
     <p>
@@ -404,18 +454,13 @@ body {
 <section class="career-cta">
   <h2>Ready To <span>Grow With Us?</span></h2>
   <p>Explore opportunities and become part of our journey.</p>
-  <button>View Open Positions</button>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor"class="cta-btn" target="_blank">View Open Positions</a>
 </section>
 
 <!-- Footer -->
 
 <footer class="main-footer">
 
-  <!-- Top Info -->
-  <div class="footer-top">
-    <p>3000+ digital deliveries for 35+ industries.</p>
-    <a href="#" class="explore-btn">EXPLORE NOW</a>
-  </div>
 
   <!-- Business Units -->
   <div class="footer-units">
@@ -423,10 +468,10 @@ body {
 
     <div class="unit-card">
       <div>
-        <h3>InventivAI</h3>
+        <h3>I.H</h3>
         <span>AI & Intelligent Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="home.html">Know more →</a>
     </div>
 
     <div class="unit-card">
@@ -434,23 +479,23 @@ body {
         <h3>Digital</h3>
         <span>Enterprise Digital Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="digital.html">Know more →</a>
     </div>
 
     <div class="unit-card">
       <div>
-        <h3>Foundation</h3>
+        <h3>Services</h3>
         <span>Social & Community Initiatives</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="services.html">Know more →</a>
     </div>
   </div>
 
   <!-- Footer Links -->
   <div class="footer-links">
-    <a href="#">Sitemap</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Statutory Legal Information</a>
+    <a href="home.html">Home</a>
+    <a href="policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact Us</a>
   </div>
 
   <!-- Footer Bottom -->
