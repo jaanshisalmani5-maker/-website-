@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — Innovations House Technologies</title>
+<link rel="stylesheet" href="about.css">
+<script src="https://kit.fontawesome.com/9d6b9f3d5a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* styles.css - shared stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{
+  --sky: #36a9ff;
+  --accent1: #7c5cff;
+  --accent2: #ff7ab6;
+  --bg: #f6fbff;
+  --card: #ffffff;
+  --muted: #657786;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0f172a;
+    padding: 15px 25px;
+    color: #fff;
+    position: relative;
+}
+
+.logo {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: 65px;
+    right: 25px;
+    background: #ffffff;
+    width: 260px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.menu a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #0f172a;
+    color: #fff;
+}
+
+/* Toggle Menu */
+#menu-toggle:checked ~ .menu {
+    display: flex;
+}
+
+/* About Content */
+.about-content {
+    padding: 60px 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+  color:#0f1724;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{
+  max-width:1100px;
+  margin:32px auto;
+  padding:24px;
+}
+
+
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+.logo{
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(135deg,var(--accent1), var(--accent2));
+  color:white;
+  font-weight:800;
+  box-shadow: 0 6px 18px rgba(124,92,255,0.18);
+}
+.nav-links{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:10px;
+  transition:all .18s ease;
+  font-weight:600;
+}
+.nav-links a:hover{ color:var(--sky); background:rgba(54,169,255,0.06) }
+
+/* hero */
+.hero{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:28px;
+  align-items:center;
+  margin-bottom:28px;
+}
+.hero-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+  padding:22px;
+  border-radius:16px;
+  box-shadow: 0 8px 30px rgba(15,23,36,0.06);
+  border: 1px solid rgba(10,20,40,0.03);
+}
+.h1{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin:0 0 10px 0;
+}
+.h1 .title{
+  font-size:28px;
+  color:var(--sky); /* sky blue heading */
+  font-weight:800;
+}
+.h1 .sub{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* image card */
+.image-card img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+  box-shadow: 0 12px 30px rgba(22, 35, 75, 0.08);
+}
+
+/* section grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+  margin-top:18px;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 8px 22px rgba(15,23,36,0.05);
+  border: 1px solid rgba(15,23,36,0.03);
+}
+.card h2{
+  margin:0 0 10px 0;
+  color:var(--sky);
+  font-size:18px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.card p{ margin:0; color:#243142; font-size:14px }
+
+/* full-width section */
+.full{
+  display:block;
+  margin-top:22px;
+  padding:20px;
+  border-radius:12px;
+  background: linear-gradient(90deg, rgba(124,92,255,0.06), rgba(54,169,255,0.04));
+  box-shadow: 0 8px 24px rgba(124,92,255,0.04);
+  border:1px solid rgba(124,92,255,0.06);
+}
+
+/* lists */
+.feature-list{ display:flex; flex-direction:column; gap:12px; margin-top:10px }
+.feature{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.feature .icon{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg, rgba(54,169,255,0.12), rgba(124,92,255,0.08));
+  font-weight:700;
+  color:var(--sky);
+  box-shadow: 0 6px 16px rgba(54,169,255,0.06);
+}
+.feature .text h3{ margin:0; font-size:15px; color:#122433}
+.feature .text p{ margin:6px 0 0 0; font-size:13px; color:var(--muted) }
+.accordion-menu {
+  width: 100%;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #444;
+}
+
+.accordion-header {
+  width: 100%;
+  background: black;
+  border: none;
+  color: blue;
+  font-size: 22px;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-header .icon {
+  font-size: 26px;
+}
+
+.accordion-content {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content li {
+background-color: black;
+color: white;
+  padding: 10px 0;
+}
+
+.accordion-content a {
+  color: #cfd8ff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* footer */
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+
+
+
+
+
+
+/* responsive */
+@media (max-width:980px){
+  .hero{ grid-template-columns:1fr; }
+  .grid{ grid-template-columns:1fr; }
+  .nav-links{ display:none }
+}
+
+</style>
+<body>
+
+<header class="about-header">
+    <div class="logo">I.H</div>
+
+    <!-- Hamburger -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Dropdown Menu -->
+    <nav class="menu">
+        <a href="client.html">Client Testimonials</a>
+        <a href="crs.html">Corporate Social Responsibility</a>
+        <a href="career.html">Start Your Career With Us</a>
+    </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+<a href="who.html"><i class="fa-solid fa-user"></i> Who</a>
+<a href="vision.html"><i class="fa-solid fa-eye"></i> Vision</a>
+<a href="mission.html"><i class="fa-solid fa-bullseye"></i> Mission</a>
+<a href="collaboration.html"><i class="fa-solid fa-handshake"></i> Collaboration</a>
+<a href="services.html"><i class="fa-solid fa-gears"></i> Services</a>
+<a href="values.html"><i class="fa-solid fa-heart"></i> Values</a>
+<a href="commitment.html"><i class="fa-solid fa-seedling"></i> Future</a>
+</div>
+</nav>
+
+<div class="hero">
+<div class="hero-card">
+<div class="h1">
+<div style="font-size:36px; font-weight:800; color:var(--sky)">
+About Us
+</div>
+</div>
+<p style="color:var(--muted); font-size:15px">
+Innovations House Technologies Private Limited is a forward-looking technology consulting and product innovation company focused on delivering intelligent, scalable, and impactful digital solutions. We work across AI, Cloud, IoT, Cybersecurity and more — partnering with governments, businesses, and institutions to accelerate innovation.
+</p>
+
+<div class="grid">
+<div class="card">
+<h2><i class="fa-solid fa-users" style="color:var(--sky)"></i> Who We Are</h2>
+<p>
+Experienced engineers, researchers and domain specialists collaborating to solve high-impact challenges across industries.
+</p>
+<a href="who.html" style="display:inline-block;margin-top:12px;color:var(--sky);font-weight:700;text-decoration:none">Read more →</a>
+</div>
+
+<div class="card">
+<h2><i class="fa-solid fa-eye" style="color:var(--sky)"></i> Our Vision</h2>
+<p>
+To be India’s most trusted innovation-driven technology powerhouse—where research meets real-world engineering.
+</p>
+<a href="vision.html" style="display:inline-block;margin-top:12px;color:var(--sky);font-weight:700;text-decoration:none">Read more →</a>
+</div>
+
+<div class="card">
+    <h2><i class="fa-solid fa-handshake"style="color:var(--sky)"></i>Our Mission</h2>
+    <p>to develop world-technology solutions backed by deep research and modern engineering practices</p>
+    <a href="mission.html" style="display:inline-block;margin-top:12px;color:var(--sky);font-weight:700;text-decoration:none">Read more</a>
+    
+</div>
+
+<div class="card">
+<h2><i class="fa-solid fa-handshake" style="color:var(--sky)"></i> Collaboration Ecosystem</h2>
+<p>
+MoU with DTU and partnerships across leading R&D institutes to translate research into commercial solutions.
+</p>
+<a href="collaboration.html" style="display:inline-block;margin-top:12px;color:var(--sky);font-weight:700;text-decoration:none">Read more →</a>
+</div>
+
+<div class="card">
+<h2><i class="fa-solid fa-gear" style="color:var(--sky)"></i> What We Do</h2>
+<p>
+Digital transformation, AI, Cloud, IoT, Robotics, Cybersecurity, and custom enterprise applications.
+</p>
+<a href="services.html" style="display:inline-block;margin-top:12px;color:var(--sky);font-weight:700;text-decoration:none">Read more →</a>
+</div>
+</div>
+
+<div class="full">
+<h2 style="margin-top:0;color:var(--sky)"><i class="fa-solid fa-award"></i> Why Choose Innovations House?</h2>
+<p style="color:#233044">
+Academic & research-backed innovation ecosystem, MoUs with top universities, agile delivery models and a strong commitment to ethical, sustainable technology practices.
+</p>
+<div style="margin-top:12px;display:flex;gap:10px">
+<a href="values.html" style="text-decoration:none;padding:10px 14px;border-radius:10px;background:var(--accent1);color:white;font-weight:700">Our Values</a>
+<a href="commitment.html" style="text-decoration:none;padding:10px 14px;border-radius:10px;background:var(--accent2);color:white;font-weight:700">Our Commitment</a>
+</div>
+</div>
+</div>
+
+<div class="image-card">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Innovation Lab">
+<div style="margin-top:12px;font-size:13px;color:var(--muted)">
+<strong>Innovations House</strong> — Research & engineering for real-world impact.
+</div>
+</div>
+</div>
+
+
+
+<div class="accordion-menu">
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Our Company
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="digital.html">Digital</a></li>
+    <li><a href="policy.html">Privacy policy</a></li>
+
+
+
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Services
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+      <li><a href="ai-devlopment.html">AI Development</a></li>
+      <li><a href="machine.html">Machine Learning</a></li>
+      <li><a href="ai app-web.html">App & web AI </a></li>
+    <li> <a href="nlp-chatbot.html">Chatbot & NLP</a></li> 
+   <li> <a href="deep Learning.html">Deep Learning</a></li> 
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Industries
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare .html">Healthcare</a></li>
+     <li><a href="logistics.html">Logistics </a></li>
+     <li><a href="banking.html">Banking</a></li>
+     <li><a href="fintech.html">FinTech</a></li>
+     
+     <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Solutions
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare.html">Healthcare AI</a></li>
+     <li><a href="enterprise.html"> Enterprise Automation</a></li>
+     <li><a href="e-commerce.html">E-Commerce AI</a></li>
+     <li><a href="finance.html">Finance & Banking</a></li>
+     <li><a href="automotive.html">Automotive & IoT</a></li>
+     <li><a href="Ed-Tech.html">EdTech AI</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+ 
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="home.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="digital.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Solutions </h3>
+        <span>AI Solutions for Industries</span>
+      </div>
+      <a href="solution.html">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="home.html">Home</a>
+    <a href="Policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact US</a>
+  
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+    
+    
+    const headers = document.querySelectorAll(".accordion-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector(".icon");
+
+      header.classList.toggle("active");
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.textContent = "+";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
+
+    function setActive(el){
+    let links = document.querySelectorAll(".toc-box a");
+    links.forEach(link => link.classList.remove("active"));
+    el.classList.add("active");
+}
+
+
+</script>
+</body>
+</html>
