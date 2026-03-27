@@ -2,12 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How to Build a Product Scanner App Like Yuka</title>
 
 <link rel="stylesheet" href="blog.css">
 <link rel="stylesheet" href="scanner -app.css"> <!-- footer same as logistics -->
 
 </head>
+<style>
+    body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#e4e8ec;
+  color:#333;
+  line-height:1.7;
+}
+
+/* Header */
+.blog-header{
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:#fff;
+  padding:80px 15%;
+}
+
+.blog-header h1{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.blog-header p{
+  font-size:18px;
+  max-width:800px;
+}
+
+/* Content */
+.blog-content{
+  padding:60px 15%;
+  background:#fff;
+}
+
+.blog-content h2{
+  font-size:30px;
+  color:#1e3c72;
+  margin-top:40px;
+}
+
+.blog-content h3{
+  font-size:22px;
+  margin-top:25px;
+  color:#2a5298;
+}
+
+.blog-content p{
+  margin-top:10px;
+  font-size:16px;
+}
+
+.blog-content ul{
+  margin:15px 0 0 20px;
+}
+
+.blog-content ul li{
+  margin-bottom:8px;
+}
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+</style>
 <body>
 
 <!-- BLOG HEADER -->
@@ -166,10 +334,7 @@
 <footer class="main-footer">
 
   <!-- Top Info -->
-  <div class="footer-top">
-    <p>3000+ digital deliveries for 35+ industries.</p>
-    <a href="#" class="explore-btn">EXPLORE NOW</a>
-  </div>
+
 
   <!-- Business Units -->
   <div class="footer-units">
@@ -177,10 +342,10 @@
 
     <div class="unit-card">
       <div>
-        <h3>InventivAI</h3>
+        <h3>I.H</h3>
         <span>AI & Intelligent Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="home.html">Know more →</a>
     </div>
 
     <div class="unit-card">
@@ -188,23 +353,23 @@
         <h3>Digital</h3>
         <span>Enterprise Digital Solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="digital.html">Know more →</a>
     </div>
 
     <div class="unit-card">
       <div>
-        <h3>Foundation</h3>
-        <span>Social & Community Initiatives</span>
+        <h3>Services</h3>
+        <span>Intelligent digital solutions</span>
       </div>
-      <a href="#">Know more →</a>
+      <a href="service.html">Know more →</a>
     </div>
   </div>
 
   <!-- Footer Links -->
   <div class="footer-links">
-    <a href="#">Sitemap</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Statutory Legal Information</a>
+    <a href="home.html">Home</a>
+    <a href="policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact Us</a>
   </div>
 
   <!-- Footer Bottom -->

@@ -6,6 +6,322 @@
   <title>Resources Menu</title>
   <link rel="stylesheet" href="resources.css" />
 </head>
+<style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{ background:#f4f6fb; }
+
+.header{
+  background:#000;
+  color:#fff;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.menu-btn{
+  font-size:22px;
+  background:#1b66ff;
+  border:none;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  display:none;
+}
+.overlay.show{ display:block; }
+
+.drawer{
+  position:fixed;
+  top:0; right:-100%;
+  width:100%;
+  height:100vh;
+  background:#fff;
+  transition:.4s ease;
+  overflow-y:auto;
+}
+.drawer.open{ right:0; }
+
+.drawer-header{
+  background:#000;
+  color:#fff;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.main-menu{
+  list-style:none;
+  padding:15px;
+}
+
+.main-menu li{
+  background:#f1f4ff;
+  margin-bottom:10px;
+  padding:14px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.main-menu li.active{
+  color:#1b66ff;
+  font-weight:600;
+}
+
+.submenu{
+  display:none;
+  padding:15px;
+}
+.submenu.show{ display:block; }
+
+.submenu h4{
+  margin-bottom:10px;
+  color:#555;
+}
+
+
+.item{
+  display:block;
+  padding:12px 15px;
+  margin:8px 0;
+  background:#1f1f1f;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.item:hover{
+  background:#00c2ff;
+  color:#000;
+}
+
+
+
+
+
+
+}
+
+.cta{
+  background:#111;
+  color:#fff;
+  padding:20px;
+  margin:15px;
+  border-radius:16px;
+}
+
+.cta button{
+  margin-top:12px;
+  background:#1b66ff;
+  border:none;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:10px;
+}
+
+.resources{
+padding:20px;
+}
+
+
+.resource-card{
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+margin-bottom:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:transform .3s ease;
+}
+
+
+.resource-card:hover{
+transform:translateY(-6px);
+}
+
+
+.card-image{
+height:200px;
+}
+
+
+.card-image.red{ background:#ef5b5b; }
+.card-image.blue{ background:#4f6cf5; }
+.card-image.yellow{ background:#f4b400; }
+
+
+.card-content{
+padding:20px;
+}
+
+
+.tag{
+display:inline-block;
+font-size:13px;
+color:#777;
+margin-bottom:10px;
+}
+
+
+.card-content h2{
+font-size:22px;
+margin-bottom:10px;
+line-height:1.3;
+}
+
+
+.card-content p{
+font-size:15px;
+color:#555;
+margin-bottom:12px;
+}
+
+
+.author{
+font-size:14px;
+color:#999;
+}
+
+
+@media(min-width:768px){
+.resources{
+max-width:900px;
+margin:auto;
+}
+
+
+.card-image{
+height:260px;
+}
+}
+
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+</style>
 <body>
 
 <!-- HEADER -->
@@ -27,8 +343,7 @@
   <!-- MAIN OPTIONS -->
   <ul class="main-menu">
     <li onclick="openSub('blogs')" id="blogs-tab" class="active">Blogs <span>→</span></li>
-    <li onclick="openSub('guides')" id="guides-tab">Guides <span>→</span></li>
-    <li onclick="openSub('press')" id="press-tab">Press Releases <span>→</span></li>
+
   </ul>
 
   <!-- SUB SECTIONS -->
@@ -44,8 +359,7 @@
     How to Build a Custom Multilingual Chatbot
   </a>
 
-  <a href="delivery.html" class="item">
-    The Real Cost of Delivery Management Software
+
   </a>
 </div>
 
@@ -53,17 +367,7 @@
   
   
 
-  <div class="submenu show" id="guides">
-    <h4>RECOMMENDED GUIDES</h4>
-    <a href=" #"class="item">How to Develop an LLM Model</a>
-    <a href="#"class="item">AI Strategy Guide for Enterprises</a>
-  </div>
 
-  <div class="submenu show" id="press">
-    <h4>PRESS RELEASES</h4>
-    <a href="#" class="item">Appinventiv Wins Global AI Award</a>
-    <a href="#"class="item">Company Expansion Announcement</a>
-  </div>
 
   <!-- CTA -->
   <div class="cta">
@@ -141,6 +445,65 @@
 </div>
 </article>
 
+
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+  <div class="footer-top">
+    <p>3000+ digital deliveries for 35+ industries.</p>
+    <a href="#" class="explore-btn">EXPLORE NOW</a>
+  </div>
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="home.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="digital.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Services</h3>
+        <span>Intelligent digital solutions</span>
+      </div>
+           <a href="service.html">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="home.html">Home</a>
+    <a href="policy.html">Privacy Policy</a>
+    <a href="about.html">About Us</a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+</footer>
+
+
 <script>
 function openMenu(){
   document.getElementById('drawer').classList.add('open');
@@ -159,64 +522,6 @@ function openSub(id){
 }
 
 </script>
-
-
-
-<footer class="main-footer">
-
-  <!-- Top Info -->
-  <div class="footer-top">
-    <p>3000+ digital deliveries for 35+ industries.</p>
-    <a href="#" class="explore-btn">EXPLORE NOW</a>
-  </div>
-
-  <!-- Business Units -->
-  <div class="footer-units">
-    <h2>Business Units Under Our Group</h2>
-
-    <div class="unit-card">
-      <div>
-        <h3>InventivAI</h3>
-        <span>AI & Intelligent Solutions</span>
-      </div>
-      <a href="#">Know more →</a>
-    </div>
-
-    <div class="unit-card">
-      <div>
-        <h3>Digital</h3>
-        <span>Enterprise Digital Solutions</span>
-      </div>
-      <a href="#">Know more →</a>
-    </div>
-
-    <div class="unit-card">
-      <div>
-        <h3>Foundation</h3>
-        <span>Social & Community Initiatives</span>
-      </div>
-      <a href="#">Know more →</a>
-    </div>
-  </div>
-
-  <!-- Footer Links -->
-  <div class="footer-links">
-    <a href="#">Sitemap</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Statutory Legal Information</a>
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
-
-    <div class="badges">
-      <div class="badge">DMCA<br>Protected</div>
-      <div class="badge">Tech Fast 50</div>
-      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
-    </div>
-  </div>
-</footer>
 
 
 
