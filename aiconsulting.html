@@ -1,0 +1,4065 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Consulting</title>
+<link rel="stylesheet" href="aiconsulting.css">
+</head>
+<style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f4f8ff,#ffffff);
+}
+
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-item span {
+  transition: 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu a {
+  display: block;
+  color: #aaa;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.submenu-item {
+  padding: 12px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.child-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.child-submenu a {
+  display: block;
+  padding: 8px 0;
+  color: #888;
+  text-decoration: none;
+}
+
+.child-submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.blog-card {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-content h3 {
+  font-size: 14px;
+  color: #111;
+  line-height: 1.4;
+}
+
+
+
+
+
+/* AI CONSULTING HERO SECTION */
+.ai-consulting-hero {
+  position: relative;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKLaeXgLCDXZ9TLx1cYWOYG0XqKpU9sSkA4ZO1I3HkKQ&s=10") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.ai-consulting-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 20, 50, 0.80);
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  color: #000;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #dcdcdc;
+  margin-bottom: 40px;
+  color: white;
+}
+
+/* TRUSTED TEXT */
+.trusted-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.trusted-text span {
+  flex: 1;
+  height: 1px;
+  background: #ffffff;
+  max-width: 100px;
+  opacity: 0.5;
+  
+}
+
+/* BUTTON */
+.consult-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.consult-btn:hover {
+  background: #e6e6e6;
+}
+
+
+
+
+
+
+/* SECTION BACKGROUND */
+.ai-core-section {
+  background: #000000;
+  padding: 80px 20px;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* INTRO TEXT */
+.intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #dcdcdc;
+  margin-bottom: 40px;
+}
+
+/* HEADING */
+.core-heading {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* LIST */
+.core-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.core-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  color: #ffffff;
+}
+
+/* BLUE DOUBLE CHECK ICON */
+.check-icon {
+  color: #1e63ff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+
+
+
+.ai-stats-section {
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+  padding: 60px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.stats-card {
+  background: #f1f1f1;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Center Vertical Line */
+.stats-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #d6d6d6;
+}
+
+/* Center Horizontal Line */
+.stats-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #d6d6d6;
+}
+
+.stat-box {
+  padding: 40px 30px;
+}
+
+.stat-box h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.stat-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+
+
+
+.ai-services {
+  background: linear-gradient(180deg,#1e4db7,#001a3a);
+  padding: 70px 20px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ai-services .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.ai-services .main-heading {
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.ai-services .main-heading span {
+  color: #f3d76b;
+  font-weight: 700;
+}
+
+.ai-services .main-para {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  color: #e2e8f0;
+}
+
+/* Accordion */
+
+.ai-services .accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 20px 0;
+}
+
+.ai-services .accordion-header {
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background: transparent !important;
+}
+
+.ai-services .arrow {
+  transition: 0.3s;
+  background: transparent !important;
+}
+
+.ai-services .accordion-item.active .arrow {
+  transform: rotate(180deg);
+  
+}
+
+.ai-services .accordion-content {
+  max-height: 0;
+  overflow: visible;
+  transition: 0.4s ease;
+  display: none;
+  
+}
+
+.ai-services .accordion-item.active .accordion-content {
+  max-height: none;
+  margin-top: 20px;
+  display: block;
+  margin-top: 20px;
+}
+
+.ai-services .accordion-para {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: #dbeafe;
+}
+
+/* Cards */
+
+.ai-services .card {
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.08) !important;
+}
+
+.ai-services .card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.ai-services .card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+
+
+
+
+
+.ai-report-section{
+  background:#000;
+  padding:60px 15px;
+  display:flex;
+  justify-content:center;
+}
+
+.ai-report-card{
+  width:100%;
+  max-width:380px;
+  border-radius:30px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#2d6cdf,#1e56c9);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* IMAGE HALF */
+.card-image img{
+  width:100%;
+  display:block;
+}
+
+/* CONTENT HALF */
+.card-content{
+  padding:30px 25px 35px;
+  color:#fff;
+}
+
+/* 85% row */
+.stat-row{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.big-number{
+  font-size:64px;
+  font-weight:700;
+  line-height:1;
+  margin:0;
+}
+
+.stat-heading{
+  font-size:20px;
+  font-weight:500;
+  margin:0;
+  line-height:1.4;
+}
+
+/* Paragraph */
+.stat-para{
+  font-size:17px;
+  line-height:1.7;
+  margin:25px 0 30px;
+  color:#e4ecff;
+}
+
+/* Button */
+.consult-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.consult-btn:hover {
+  background: #e6e6e6;
+}
+
+
+
+
+
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+.case-study-section{
+  padding:80px 20px;
+}
+
+.case-study-section.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.case-study-section.section-header h2{
+  font-size:42px;
+  line-height:1.3;
+  word-spacing: 10px;
+  text-align: center;
+}
+
+.section-header span{
+  color:#f5d76e;
+}
+
+.section-header p{
+  margin-top:20px;
+  max-width:700px;
+  color:#aaa;
+  word-spacing: 5px;
+}
+
+.case-wrapper{
+  margin-top:60px;
+}
+
+.case-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+.case-content{
+  background:#111;
+  padding:40px;
+  border-radius:20px;
+  margin-top:30px;
+}
+
+.case-content h3{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.tabs{
+  display:flex;
+  gap:30px;
+  border-bottom:1px solid #333;
+  margin-bottom:20px;
+}
+
+.tab{
+  background:none;
+  border:none;
+  color:#777;
+  font-size:16px;
+  padding-bottom:10px;
+  cursor:pointer;
+}
+
+.tab.active{
+  color:#fff;
+  border-bottom:2px solid #fff;
+}
+
+.tab-content p{
+  color:#ccc;
+  line-height:1.6;
+}
+
+.read-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 30px;
+  background:linear-gradient(90deg,#2d6cff,#3f8cff);
+  border-radius:40px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.arrows{
+  text-align:center;
+  margin-top:40px;
+}
+
+.arrows button{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:1px solid #333;
+  background:none;
+  color:#fff;
+  font-size:20px;
+  margin:0 10px;
+  cursor:pointer;
+}
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.ai-industries {
+  background: linear-gradient(180deg, #2563eb, #0f172a);
+  color: white;
+  padding: 60px 20px;
+}
+
+.ai-industries .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.ai-industries h2 {
+  font-size: 32px;
+  font-weight: 400;
+  word-spacing: 8px;
+  text-align: center;
+}
+
+.ai-industries h2 span {
+  display: block;
+  color: #ffe066;
+  font-weight: 700;
+}
+
+.ai-industries .section-para {
+  margin-top: 20px;
+  line-height: 1.7;
+  word-spacing: 5px;
+  text-align: center;
+}
+
+.ai-industries .accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.ai-industries .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.ai-industries .accordion-header h3 {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.ai-industries .icon {
+  font-size: 28px;
+  transition: 0.3s;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+.accordion-item.active .icon {
+  transform: rotate(45deg);
+}
+
+ .option {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+ .option.active-option {
+  background: white;
+  color: #0f172a;
+}
+
+
+
+
+
+
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+}
+
+.compliance-section{
+  background: linear-gradient(180deg,#07142c,#1c4ed8);
+  padding:80px 20px;
+  color:#fff;
+}
+
+.compliance-section.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.compliance-section h2{
+  font-size:42px;
+  font-weight:600;
+  line-height:1.3;
+  text-align: center;
+}
+
+.compliance-section h2 span{
+  color:#f4e04d;
+  font-weight:700;
+  text-align: center;
+}
+
+.compliance-section.subtext{
+  margin-top:20px;
+  font-size:18px;
+  line-height:1.7;
+  max-width:900px;
+  text-align: center;
+}
+
+.compliance-section.cards-grid{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:8px;
+}
+
+.compliance-section.card{
+  background:#f3f3f3;
+  border-radius:25px;
+  padding:10px 10px;
+  text-align:center;
+  color:#000;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  position: center;
+}
+
+.compliance-section.card img{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+  margin-bottom:20px;
+  position: center;
+}
+
+.compliance-section.card h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.compliance-section.card p{
+  font-size:16px;
+  line-height:1.5;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+.ai-why{
+  width:90%;
+  max-width:900px;
+  margin:auto;
+  padding:60px 0;
+}
+
+.ai-heading{
+  font-size:42px;
+  line-height:1.25;
+  font-weight:600;
+}
+
+.ai-heading span{
+  color:#f4e36b;
+}
+
+.ai-intro{
+  margin-top:25px;
+  font-size:18px;
+  line-height:1.8;
+  color:#d6d6d6;
+}
+
+.divider{
+  width:100%;
+  height:1px;
+  background:#333;
+  margin:50px 0;
+}
+
+/* slider layout */
+
+.slider-box{
+  display:flex;
+  gap:25px;
+}
+
+.slider-number{
+  font-size:22px;
+  color:#d6d6d6;
+  width:40px;
+}
+
+.slider-line{
+  width:1px;
+  background:#333;
+}
+
+.slider-content{
+  flex:1;
+}
+
+.slider-title{
+  font-size:32px;
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:20px;
+}
+
+.slider-text{
+  font-size:18px;
+  color:#d6d6d6;
+  line-height:1.8;
+}
+
+/* arrows */
+
+.slider-arrows{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
+}
+
+.arrow{
+  width:60px;
+  height:60px;
+  border:1px solid #444;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.arrow:hover{
+  background:#111;
+}
+
+
+
+
+
+
+/* SECTION BACKGROUND */
+
+.decision-section{
+padding:70px 20px;
+background: radial-gradient(circle at top left,#b23cff,#0b1c73 40%,#02103f 80%);
+color:#fff;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTAINER */
+
+.decision-container{
+max-width:900px;
+margin:auto;
+}
+
+/* HEADING */
+
+.decision-title{
+font-size:42px;
+line-height:1.3;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.decision-title span{
+color:#f4d94f;
+font-weight:700;
+}
+
+/* PARAGRAPH */
+
+.decision-text{
+font-size:20px;
+line-height:1.7;
+color:#d9d9d9;
+margin-bottom:40px;
+max-width:700px;
+}
+
+/* CARDS */
+
+.decision-cards{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* SINGLE CARD */
+
+.decision-card{
+background:rgba(0,0,0,0.45);
+padding:40px;
+border-radius:20px;
+backdrop-filter: blur(4px);
+}
+
+/* PERCENT */
+
+.decision-card h3{
+font-size:60px;
+font-weight:500;
+margin-bottom:15px;
+}
+
+/* TEXT */
+
+.decision-card p{
+font-size:22px;
+color:#e6e6e6;
+line-height:1.5;
+}
+.decision-btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:white;
+color:#000;
+font-size:18px;
+font-weight:600;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.decision-btn:hover{
+background:#fff;
+transform:translateY(-2px);
+}
+
+
+
+
+
+.engagement-section{
+  padding:80px 20px;
+  background:linear-gradient(180deg,#1e5bd7,#02152e);
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+engagement-section.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.engagement-section.section-title{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.engagement-section.section-title span{
+  color:#ffd84a;
+}
+
+.engagement-section.section-desc{
+  font-size:18px;
+  color:#d7e3ff;
+  margin-bottom:50px;
+  max-width:750px;
+}
+
+/* GRID FOR 4 CARDS */
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.card{
+   background: linear-gradient(180deg,#1e5bd7,#02152e);
+ 
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,0.15);
+ color: blue;
+}
+
+.icon{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:18px;
+}
+.card h3{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#d0dbf7;
+  line-height:1.6;
+}
+
+
+
+
+
+
+.ai-partner-section{
+background:#000;
+padding:80px 20px;
+color:#fff;
+overflow:hidden;
+}
+
+.ai-partner-container{
+max-width:1200px;
+margin:auto;
+}
+
+.ai-partner-heading{
+font-size:42px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.ai-partner-heading span{
+color:#f3e46c;
+}
+
+.ai-partner-text{
+color:#bbb;
+margin-bottom:50px;
+}
+
+
+/* SLIDER */
+
+.ai-partner-slider{
+overflow:hidden;
+}
+
+.ai-partner-track{
+display:grid;
+grid-template-columns:repeat(8,1fr);
+gap:50px;
+animation:aiPartnerMove 20s linear infinite;
+}
+
+
+/* CARD */
+
+.ai-partner-card{
+background:#111;
+border:1px solid #333;
+border-radius:15px;
+padding:40px 20px;
+text-align:center;
+}
+
+.ai-partner-card img{
+width:70px;
+margin-bottom:15px;
+}
+
+.ai-partner-card p{
+font-size:18px;
+}
+
+
+
+
+
+
+
+
+
+.ai-coe-section{
+padding:80px 20px;
+background:linear-gradient(180deg,#07142c,#1c5bd8);
+color:white;
+font-family:sans-serif;
+}
+
+.ai-coe-container{
+max-width:900px;
+margin:auto;
+}
+
+.ai-coe-heading{
+font-size:40px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.ai-coe-heading span{
+color:#f2e96b;
+}
+
+.ai-coe-text{
+color:#d9e3ff;
+margin-bottom:40px;
+line-height:1.6;
+}
+
+/* ACCORDION */
+
+.ai-coe-item{
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.ai-coe-btn{
+width:100%;
+background:none;
+border:none;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+font-size:18px;
+cursor:pointer;
+}
+
+.ai-coe-arrow{
+transition:0.4s;
+font-size:20px;
+}
+
+.ai-coe-content{
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+color:#e5ecff;
+line-height:1.7;
+}
+
+.ai-coe-item.active .ai-coe-content{
+max-height:300px;
+padding-bottom:20px;
+}
+
+.ai-coe-item.active .ai-coe-arrow{
+transform:rotate(180deg);
+}
+/* ANIMATION */
+
+@keyframes aiPartnerMove{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+
+
+
+
+
+.ai-stack-section{
+padding:80px 20px;
+background:linear-gradient(180deg,#0b1c3c,#2563eb);
+color:white;
+font-family:sans-serif;
+}
+
+.ai-stack-container{
+max-width:900px;
+margin:auto;
+}
+
+.ai-stack-heading{
+font-size:40px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.ai-stack-heading span{
+color:#f3e46c;
+}
+
+.ai-stack-text{
+color:#dbe6ff;
+line-height:1.6;
+margin-bottom:40px;
+}
+
+/* accordion */
+
+.ai-stack-item{
+border-bottom:1px solid rgba(255,255,255,0.25);
+}
+
+.ai-stack-btn{
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:none;
+border:none;
+color:white;
+font-size:20px;
+padding:18px 0;
+cursor:pointer;
+}
+
+.ai-stack-arrow{
+transition:0.4s;
+font-size:22px;
+}
+
+.ai-stack-content{
+max-height:0;
+overflow:hidden;
+transition:0.4s;
+}
+
+.ai-stack-item.active .ai-stack-content{
+max-height:800px;
+padding:20px 0;
+}
+
+.ai-stack-item.active .ai-stack-arrow{
+transform:rotate(180deg);
+}
+
+/* cards */
+
+.ai-stack-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.ai-stack-card{
+background:#e5e5e5;
+border-radius:20px;
+padding:30px 20px;
+text-align:center;
+}
+
+.ai-stack-card img{
+width:60px;
+margin-bottom:15px;
+}
+
+.ai-stack-card p{
+color:#000;
+font-weight:500;
+}
+
+
+
+
+
+
+.ai-models{
+background: linear-gradient(180deg,#020c1f,#0a2b6b);
+padding:80px 20px;
+color:#fff;
+font-family:Arial;
+}
+
+.ai-models.container{
+max-width:800px;
+margin:auto;
+}
+
+.ai-models h2{
+font-size:42px;
+line-height:1.3;
+margin-bottom:20px;
+word-spacing: 5px;
+}
+
+.ai-models h2 span{
+color:#f6d64a;
+}
+
+.ai-models.desc{
+max-width:750px;
+color:#cbd5e1;
+margin-bottom:50px;
+line-height:1.7;
+word-spacing: 7px;
+}
+
+.models-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+justify-content: center;
+gap:20px;
+margin-top: 50px;
+}
+
+.model-card{
+display:flex;
+align-items:center;
+gap:15px;
+padding:12px 14px;
+border-radius:14px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.18);
+font-size:18px;
+transition:.3s;
+}
+
+.model-card img{
+width:36px;
+height:36px;
+object-fit:contain;
+}
+
+.model-card:hover{
+background:rgba(255,255,255,0.12);
+transform:translateY(-3px);
+}
+
+
+
+
+.ai-approach{
+background:#f5f5f5;
+padding:80px 20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.section-title{
+font-size:44px;
+font-weight:600;
+line-height:1.2;
+margin-bottom:20px;
+color: black;
+word-spacing: 5px;
+}
+
+.section-title span{
+color:#2f6fed;
+}
+
+.section-desc{
+color:black;
+font-size:16px;
+margin-bottom:50px;
+word-spacing: 5px;
+}
+
+/* timeline */
+
+.timeline{
+position:relative;
+padding-left:40px;
+color: black;
+}
+
+.timeline::before{
+content:"";
+position:absolute;
+left:8px;
+top:0;
+width:4px;
+height:100%;
+background:#ddd;
+}
+
+.progress-line{
+position:absolute;
+left:8px;
+top:0;
+width:4px;
+height:0;
+background:#2f6fed;
+transition:height .4s ease;
+}
+
+/* dots */
+
+.timeline-item{
+position:relative;
+margin-bottom:60px;
+color: black;
+word-spacing: 5px;
+margin-top: 10px;
+}
+
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-36px;
+top:5px;
+width:14px;
+height:14px;
+background:#dcdcdc;
+border-radius:50%;
+transition:.3s;
+}
+
+/* active dot */
+
+.timeline-item.active::before{
+background:#2f6fed;
+}
+
+
+
+
+
+body{
+margin:0;
+background:black;
+font-family:Arial;
+color:white;
+}
+
+.accordion-menu {
+  width: 100%;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #444;
+}
+
+.accordion-header {
+  width: 100%;
+  background: black;
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-header .icon {
+  font-size: 26px;
+}
+
+.accordion-content {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content li {
+background-color: black;
+color: white;
+  padding: 10px 0;
+}
+
+.accordion-content a {
+  color: #cfd8ff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+    text-align: center;
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+    text-align: center;
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span{
+    text-align: center;
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  text-align: center;
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+.cards-grid{
+  grid-template-columns:1fr;
+}
+
+.section-title{
+  font-size:32px;
+}
+
+}
+
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:600px){
+
+.decision-title{
+font-size:34px;
+}
+
+.decision-card h3{
+font-size:48px;
+}
+
+.decision-card p{
+font-size:18px;
+}
+
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .core-heading {
+    font-size: 22px;
+  }
+
+  .core-list li {
+    font-size: 16px;
+  }
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .trusted-text {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .trusted-text span {
+    max-width: 60px;
+  }
+}
+
+</style>
+<body>
+    <header class="header">
+  <h2 class="logo">I.H</h2>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Slide Menu -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    I.H<span>˅</span>
+  </div>
+  
+  <div class="submenu">
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    Explore AI Tech <span>˅</span>
+  </div>
+  <div class="child-submenu">
+    <a href="ai service solution.html">AI Services & Solutions</a>
+    <a href="AI development.html">AI Development</a>
+      <a href="aiconsulting.html">AI Consulting</a>
+      <a href="delivered.html">Delivered projects & Clients  </a>
+ </div>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    About <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="home.html">About I.H</a>
+    
+    <a href="who.html">How We Work and Function  </a>
+    
+    <a href="client.html"> Client Testimonials</a>
+    
+    <a href="career.html">Start your career with us </a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Services <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="ai-devlopment.html">AI Development </a>
+    <a href="machine.html">Machine Learning</a>
+ <a href="nlp-chatbot.html">Chatbot & NLP</a>
+  <a href="deep learning.html">Deep Learning</a>
+   <a href="ai app-web.html">App & Web AI</a>
+      <a href="data-science.html">Data Science</a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Industries <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="healthcare .html">Healthcare</a>
+    <a href="fitness.html">Fitness</a>
+ <a href="logistics.html">Logistics</a>
+  <a href="realestate.html">Real Estate</a>
+    <a href="banking.html">Banking</a>
+     <a href="fintech.html">FinTech</a>
+  </div>
+
+</div>
+
+ 
+<!-- AI CONSULTING HERO SECTION START -->
+<section class="ai-consulting-hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>AI Consulting Services</h1>
+
+    <p>
+      Our AI consulting services are led by domain experts who have delivered AI
+      solutions for Fortune 500 enterprises and regulated industries worldwide.
+      From boardroom strategy to technical roadmaps, we help organizations adopt
+      AI responsibly, ensuring compliance, security, and measurable business
+      outcomes at scale.
+    </p>
+
+    <div class="trusted-text">
+      <span></span>
+      TRUSTED BY CONGLOMERATES, ENTERPRISES AND STARTUPS ALIKE
+      <span></span>
+    </div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="consult-btn">Consult Our AI Experts</a>
+  </div>
+</section>
+<!-- AI CONSULTING HERO SECTION END --> 
+ 
+ 
+ 
+ <!-- AI CONSULTING CONTENT SECTION START -->
+<section class="ai-core-section">
+  <div class="container">
+
+    <p class="intro-text">
+      Backed by the expertise of 200+ AI engineers and data scientists and having received multiple recognitions, including the Leader in AI Product Engineering & Digital Transformation 2025 award by The Economic Times, we enable enterprises to unlock true value with AI while ensuring governance and trust.
+    </p>
+
+    <h2 class="core-heading">Our Core Capabilities</h2>
+
+    <ul class="core-list">
+      <li>
+        <span class="check-icon">✓✓</span>
+        Defining enterprise-wide AI strategies and transformation roadmaps
+      </li>
+
+      <li>
+        <span class="check-icon">✓✓</span>
+        Assessing data maturity and AI readiness across business functions
+      </li>
+
+      <li>
+        <span class="check-icon">✓✓</span>
+        Establishing AI governance, compliance, and ethical frameworks
+      </li>
+
+      <li>
+        <span class="check-icon">✓✓</span>
+        Guiding change management and organizational adoption of AI
+      </li>
+
+      <li>
+        <span class="check-icon">✓✓</span>
+        Advising on AI vendor selection and ecosystem partnerships
+      </li>
+    </ul>
+
+  </div>
+</section>
+<!-- AI CONSULTING CONTENT SECTION END -->
+ 
+ <!-- STATS SECTION START -->
+<section class="ai-stats-section">
+
+  <div class="stats-card">
+
+    <div class="stat-box border-right border-bottom">
+      <h2>300+</h2>
+      <p>AI-Powered<br>Solutions<br>Delivered</p>
+    </div>
+
+    <div class="stat-box border-bottom">
+      <h2>200+</h2>
+      <p>Data Scientists &<br>AI Engineers<br>Onboard</p>
+    </div>
+
+    <div class="stat-box border-right">
+      <h2>150+</h2>
+      <p>Custom AI Models<br>Trained And<br>Deployed</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>75+</h2>
+      <p>Enterprise AI<br>Integrations<br>Completed</p>
+    </div>
+
+  </div>
+
+</section>
+ 
+ 
+ 
+ <section class="ai-services">
+
+  <div class="container">
+
+    <h1 class="main-heading">
+      Comprehensive <span>Range of Services</span><br>
+      Our AI Consulting Company Offers
+    </h1>
+
+    <p class="main-para">
+      We are an enterprise AI consulting company, trusted by global businesses to design strategies, build intelligent systems, and deploy AI at scale. Our consultants work closely with leadership and IT teams, turning complex challenges into scalable solutions that deliver measurable outcomes and long-term advantage.
+    </p>
+    <!-- AI Strategy Development -->
+<div class="accordion-item active">
+  <div class="accordion-header">
+    AI Strategy Development
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We create AI strategies that align with enterprise infrastructures, compliance needs, and business goals. Our cloud-native frameworks are modular, secure and designed for governance and continuous learning.
+    </p>
+
+    <div class="card">
+      <h3>1. Strategic AI Alignment</h3>
+      <p>
+        We define AI goals that map directly to enterprise platforms, hybrid cloud setups, and KPIs, so the strategy isn’t just theoretical but execution-ready.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Opportunity Mapping</h3>
+      <p>
+        Using telemetry and readiness scoring, we identify where AI brings the highest value, avoiding wasted investment and ensuring a focused roadmap.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Generative AI Consulting -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    Generative AI Consulting
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We design and deploy generative AI solutions powered by LLMs, multimodal models, and enterprise-grade architectures to automate workflows and enhance user experiences.
+    </p>
+
+    <div class="card">
+      <h3>1. Custom LLM Development</h3>
+      <p>
+        We build and fine-tune large language models tailored to enterprise datasets, ensuring accuracy, security, and contextual intelligence.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. AI Content Automation</h3>
+      <p>
+        From automated content generation to intelligent assistants, we implement scalable generative AI systems that improve productivity.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Assessment -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Assessment
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      Our AI readiness assessment evaluates infrastructure, data maturity, and governance frameworks to identify gaps and define a clear AI adoption path.
+    </p>
+
+    <div class="card">
+      <h3>1. Infrastructure Evaluation</h3>
+      <p>
+        We audit your technical ecosystem to ensure scalability, security, and compatibility with modern AI technologies.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Data Readiness Analysis</h3>
+      <p>
+        We assess data quality, structure, and accessibility to ensure your AI initiatives are built on reliable foundations.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Integration -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Integration
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We seamlessly integrate AI models into existing enterprise systems, ensuring secure deployment and optimized performance.
+    </p>
+
+    <div class="card">
+      <h3>1. API & System Integration</h3>
+      <p>
+        We connect AI engines with enterprise platforms, CRMs, ERPs, and cloud ecosystems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Workflow Automation</h3>
+      <p>
+        AI-powered automation improves operational efficiency and reduces manual workload across departments.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Solution Development -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Solution Development
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We build scalable, production-ready AI systems tailored to complex enterprise use cases.
+    </p>
+
+    <div class="card">
+      <h3>1. Custom Model Engineering</h3>
+      <p>
+        We develop AI models optimized for performance, scalability, and domain-specific intelligence.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. End-to-End Deployment</h3>
+      <p>
+        From architecture design to deployment, we deliver secure and enterprise-grade AI solutions.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Solution Optimization -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Solution Optimization
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We continuously monitor and optimize AI models to improve performance, reduce latency, and ensure reliability.
+    </p>
+
+    <div class="card">
+      <h3>1. Performance Tuning</h3>
+      <p>
+        We refine model accuracy and response times using advanced optimization techniques.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Cost Optimization</h3>
+      <p>
+        Efficient infrastructure planning ensures lower operational costs without compromising results.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Project Planning -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Project Planning
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We define clear roadmaps, milestones, and governance structures to ensure successful AI implementation.
+    </p>
+
+    <div class="card">
+      <h3>1. Roadmap Creation</h3>
+      <p>
+        We outline phased AI adoption strategies aligned with enterprise goals.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Risk Management</h3>
+      <p>
+        We identify potential risks and create mitigation plans for smooth execution.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Validation -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Validation
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We rigorously test AI models for reliability, bias mitigation, and compliance adherence.
+    </p>
+
+    <div class="card">
+      <h3>1. Model Testing</h3>
+      <p>
+        Performance validation ensures consistent and accurate AI outcomes.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Bias & Compliance Review</h3>
+      <p>
+        We evaluate ethical standards and regulatory compliance requirements.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Data Engineering & Management -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    Data Engineering & Management
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We design scalable data pipelines and governance systems to power AI ecosystems.
+    </p>
+
+    <div class="card">
+      <h3>1. Data Pipeline Architecture</h3>
+      <p>
+        We build robust pipelines for real-time and batch data processing.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Data Governance</h3>
+      <p>
+        Secure data management ensures integrity, compliance, and long-term usability.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Ethics and Governance -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Ethics and Governance
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We implement ethical AI frameworks that ensure transparency, fairness, and accountability.
+    </p>
+
+    <div class="card">
+      <h3>1. Responsible AI Frameworks</h3>
+      <p>
+        We define policies that govern AI usage across the enterprise.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Compliance Monitoring</h3>
+      <p>
+        Continuous governance ensures alignment with global regulations.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- AI Performance Monitoring -->
+<div class="accordion-item">
+  <div class="accordion-header">
+    AI Performance Monitoring
+    <span class="arrow">&#9662;</span>
+  </div>
+  <div class="accordion-content">
+
+    <p class="accordion-para">
+      We track AI systems in real time to maintain peak efficiency and business impact.
+    </p>
+
+    <div class="card">
+      <h3>1. Real-Time Monitoring</h3>
+      <p>
+        Continuous tracking ensures optimal model behavior.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Predictive Maintenance</h3>
+      <p>
+        Early detection mechanisms prevent performance degradation.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+ </section>
+ 
+ 
+ 
+ 
+ <section class="ai-report-section">
+
+  <div class="ai-report-card">
+
+    <!-- TOP IMAGE -->
+    <div class="card-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQp_omd_QkjrcCTK_fHivDsUHNyEyGrcvwy8eprYTKjA&s=10" alt="AI Robot">
+    </div>
+
+    <!-- BOTTOM CONTENT -->
+    <div class="card-content">
+
+      <div class="stat-row">
+        <h2 class="big-number">85%</h2>
+        <h3 class="stat-heading">
+          of Enterprise AI Projects Fail<br>
+          Due to Poor Data Readiness.
+        </h3>
+      </div>
+
+      <p class="stat-para">
+        Stop guessing if your infrastructure can handle AI. 
+        Get an audit of your data maturity, governance, 
+        and architecture before you invest a single dollar 
+        in development.
+      </p>
+
+   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="consult-btn"> Get Your AI Readiness Report</a>
+</section>
+ 
+ <section class="case-study-section">
+
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="section-header">
+      <h2>
+        Transforming Businesses with Custom AI Consulting Services and Innovative Solutions:
+        <span>Real Success Stories</span>
+      </h2>
+      <p>
+        We are your strategic enterprise partners who de-risk AI adoption,
+        accelerate time-to-value, and deliver measurable ROI.
+      </p>
+    </div>
+
+    <!-- Case Study Wrapper -->
+    <div class="case-wrapper">
+
+      <!-- Image -->
+      <div class="case-image">
+        <img id="caseImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tY_hvfIsgJceUrHEembD8rTBiGQHxhMRptmTOogeDQ&s=10" alt="">
+      </div>
+
+      <!-- Content Box -->
+      <div class="case-content">
+
+        <h3 id="caseTitle">Dr. Morepen AI Healthcare Chatbot</h3>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" onclick="changeTab(0)">The Challenge</button>
+          <button class="tab" onclick="changeTab(1)">How We Helped</button>
+          <button class="tab" onclick="changeTab(2)">The Impact</button>
+        </div>
+
+        <div class="tab-content">
+          <p id="caseText">
+            Dr. Morepen needed a chatbot that could manage real conversations,
+            not just answer isolated questions.
+          </p>
+        </div>
+
+      
+
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="arrows">
+      <button onclick="prevSlide()">&#8592;</button>
+      <button onclick="nextSlide()">&#8594;</button>
+    </div>
+
+  </div>
+
+</section>
+ 
+ 
+ 
+ 
+ 
+
+
+<section class="ai-industries">
+  <div class="container">
+
+    <h2>
+      Artificial Intelligence Consulting in Action:
+      <span>Industries We Serve</span>
+    </h2>
+
+    <p class="section-para">
+      Our AI strategy consulting services are strategically designed to drive transformation 
+      across a spectrum of 35+ industries, maximizing resource utilization and competitive 
+      advantages through targeted AI applications.
+    </p>
+
+    <div class="accordion">
+
+      <!-- 1 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Healthcare</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Electronic Health Records (EHR) Optimization with AI</div>
+          <div class="option">AI-Powered Hospital Management Systems (HMS)</div>
+          <div class="option">Laboratory Information Management Systems (LIMS)</div>
+          <div class="option">Clinical Decision Support Systems (CDSS)</div>
+          <div class="option">Medical Imaging Analysis</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Finance</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Fraud Detection</div>
+          <div class="option">AI Risk Assessment</div>
+          <div class="option">Algorithmic Trading</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Restaurant</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Smart Inventory</div>
+          <div class="option">Demand Forecasting</div>
+          <div class="option">Customer Insights</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>eCommerce</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Product Recommendation Engine</div>
+          <div class="option">Chatbots</div>
+          <div class="option">Personalized Shopping</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Logistics</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Route Optimization</div>
+          <div class="option">Fleet Management</div>
+          <div class="option">Warehouse Automation</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Social Networking</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Content Moderation AI</div>
+          <div class="option">User Engagement Analysis</div>
+          <div class="option">Recommendation Systems</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Construction</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Project Risk Prediction</div>
+          <div class="option">AI Safety Monitoring</div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Oil and Gas</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Predictive Maintenance</div>
+          <div class="option">Drilling Optimization</div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Travel</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Dynamic Pricing</div>
+          <div class="option">Travel Chatbots</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Aviation</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Flight Analytics</div>
+          <div class="option">Fuel Optimization</div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Real Estate</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Property Price Prediction</div>
+          <div class="option">Virtual Assistants</div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Education</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Adaptive Learning Systems</div>
+          <div class="option">AI Tutors</div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Insurance</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Claim Automation</div>
+          <div class="option">Risk Modeling</div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Retail</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Smart Checkout</div>
+          <div class="option">Customer Behavior Tracking</div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Manufacturing</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Predictive Maintenance</div>
+          <div class="option">Quality Inspection AI</div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Automotive</h3>
+          <span class="icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <div class="option">Autonomous Driving Systems</div>
+          <div class="option">Driver Behavior Analysis</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ 
+ 
+
+<section class="compliance-section">
+  <div class="container">
+
+    <h2>
+      We Deliver Enterprise-Grade, Regulation-Ready 
+      <span>AI Consulting Services</span>
+    </h2>
+
+    <p class="subtext">
+      Enterprises trust Appinventiv for AI consultancy & services that is built
+      to scale securely and meet regulatory standards. As an artificial intelligence
+      consulting company, we focus on long-term value, designing enterprise-grade
+      systems that balance innovation with compliance across AWS, Azure, and Google Cloud.
+    </p>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vC1wvqKDW92jHQFLu6EV8U50OIZCcNePRak0gaxlUA&s=10" alt="GDPR" width="220px" height="80px">
+        <h3>GDPR</h3>
+        <p>(General Data Protection Regulation)</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74Cj_NAJPH8HnfPbJhBJXyjmwrYdYIf_uJ1VsyisRQA&s=10" alt="ISO 27001"width="220px" height="80px">
+        <h3>ISO/IEC 27001</h3>
+        <p>(Information Security Management Systems)</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4tLgLth48pvSJ5ahBwX3ezrUD4rH0tXl5jRrDI0oiXQ&s=10" alt="ISO 27701"width="220px" height="80px">
+        <h3>ISO/IEC 27701</h3>
+        <p>(Privacy Information Management)</p>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvbi_P4U6Tvz6EgJqOS2p9B0AZVdDM2SGJXqjJ5Q0Ow&s=10" alt="SOC 2"width="220px" height="80px">
+        <h3>SOC 2</h3>
+        <p>(System and Organization Controls for Security & Availability)</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+ 
+ 
+ 
+ 
+ 
+ <section class="ai-why">
+
+<h2 class="ai-heading">
+Why Global Enterprises <span>Choose Appinventiv</span> for AI Consulting Services
+</h2>
+
+<p class="ai-intro">
+With a strong foundation in delivering enterprise-grade transformations, Appinventiv has established itself as a trusted artificial intelligence consulting company. Our approach to AI consulting for startups and enterprises combines deep domain expertise, compliance-first execution, and measurable ROI, making us a partner of choice for startups and Fortune 500 enterprises alike.
+</p>
+
+<div class="divider"></div>
+
+
+<div class="slider-box">
+
+<div class="slider-number" id="slideNumber">01</div>
+
+<div class="slider-line"></div>
+
+<div class="slider-content">
+
+<h3 class="slider-title" id="slideTitle">
+300+ Enterprise AI Journeys Accelerated
+</h3>
+
+<p class="slider-text" id="slideText">
+We’ve successfully led more than 300 projects in AI adoption consulting, helping organizations move beyond experimentation into production-ready impact. Our AI strategy consulting services align enterprise data, workflows, and KPIs with scalable outcomes.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="slider-arrows">
+
+<div class="arrow" id="prev">&#8592;</div>
+<div class="arrow" id="next">&#8594;</div>
+
+</div>
+
+</section>
+ 
+ 
+ <section class="decision-section">
+
+<div class="decision-container">
+
+<h2 class="decision-title">
+Drive <span>Smarter Decisions</span> with <br>
+Enterprise-Grade Intelligence
+</h2>
+
+<p class="decision-text">
+Transform operations with our innovation-led AI consulting frameworks and achieve measurable outcomes:
+</p>
+
+<div class="decision-cards">
+
+<div class="decision-card">
+<h3>65%</h3>
+<p>Faster Time-to-Market for New Products</p>
+</div>
+
+<div class="decision-card">
+<h3>50%</h3>
+<p>Lower Operational Costs Across Functions</p>
+</div>
+
+<div class="decision-card">
+<h3>90%</h3>
+<p>Accuracy in Forecasting and Strategic Planning</p>
+</div>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" target="_blank" class="decision-btn">
+Book Your AI Consultatuon
+</a>
+</div>
+
+</div>
+</section>
+ 
+<section class="engagement-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Our <span>Scalable Engagement</span> Options for AI Consultancy and Services Success
+    </h2>
+
+    <p class="section-desc">
+      Every enterprise AI journey is different. Which is why our AI consulting services are delivered through flexible models built for scale, agility, and measurable outcomes.
+    </p>
+
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="icon">⚙</div>
+        <h3>AI Maintenance & Optimization Retainer</h3>
+        <p>
+          Post-deployment, we keep your AI ecosystem future-ready. From retraining to compliance updates, drift detection to tech upgrades, our artificial intelligence consulting services ensure resilience and long-term performance.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👤</div>
+        <h3>End-to-End Project Ownership</h3>
+        <p>
+          We handle the entire lifecycle including discovery, model development, deployment, and optimization. This full-cycle AI consulting for businesses ensures accountability and speed without burdening your internal teams.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">↗</div>
+        <h3>AI Expertise on Demand</h3>
+        <p>
+          Access artificial intelligence consultants, ML engineers, and data scientists on tap. A flexible model, perfect for enterprises or startups that need custom AI strategy consulting services to accelerate timelines or scale quickly.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Milestone-Based Collaboration</h3>
+        <p>
+          Work with us on defined deliverables like audits, proof of concepts, or LLM integrations. This approach gives predictable outcomes, fixed timelines, and transparent results with minimal overhead.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+ 
+ 
+ <section class="ai-partner-section">
+
+<div class="ai-partner-container">
+
+<h2 class="ai-partner-heading">
+Our Strategic <span>Industry Partnerships</span>
+Empowering AI Software Consulting Services Worldwide
+</h2>
+
+<p class="ai-partner-text">
+Collaborating with global technology leaders to deliver scalable and secure AI-powered solutions.
+</p>
+
+
+<div class="ai-partner-slider">
+
+<div class="ai-partner-track">
+
+<!-- CARD -->
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgW8xZFtVWGBg38C0nfb4OwMJF0Y4Lfi9wizEom0BUw&s=10">
+<p>Magento</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdvCIBG3q0TJ4Zqoc9AitCpkPqWZM35f0vtOyECkGmQ&s=10">
+<p>Databricks</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4y1UaWiA5LcbhM-U9p7ve4Mecka9KyPK5detJ-tVfnQ&s=10">
+<p>Red Hat</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRifz0kyiXrJzfmrEo6-LpTxP7OphETA3Lfu_MLyHoHaA&s=10">
+<p>Sabre</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLxLkLNGd-ohqJ-uK09uAy-nzp-Loxtc50qZRBEn7vZQ&s=10">
+<p>AWS</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmsuRLD1iT_Z9UjV37LIA2kIeV8KHfNijenNPYKsBCPA&s=10">
+<p>Google Cloud</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR0EoIjmqbWLiALnVlofoFWuAzBT-fN47rtOLY4YMrhA&s=10">
+<p>Microsoft</p>
+</div>
+
+<div class="ai-partner-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjtT6BA0cyzB3d7Tdxl5mbo2rh3wbQXs03KSAUepLiw&s=10">
+<p>Shopify</p>
+</div>
+
+<!-- DUPLICATE CARDS (Infinite Effect) -->
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgiQ2mt-Kq1Cr_0teriwCOP3bHC6vzxq36FJ2Vze8Y-Q&s=10">
+   <p>Adobe </p>
+</div>
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnh-dEIYryz58o93ofhtxv6nG_uTz9em6NNmUA0M_VkQ&s=10">
+   <p>Strip </p>
+</div>
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQU2SsY8hgPRABz_v63H4aggUyoEk2TBnI3MJK-1GGuw&s=10">
+   <p>Azure </p>
+</div>
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyG6p259cl-1OZGulBCcEvO0XxklP6PR95ZeZX-wNbg&s=10">
+   <p>ServiceNow </p>
+</div>
+
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsghCVP8PRIdOXYQNbPZC26uPCmeSPAE0gplgSlQ6_dw&s=10">
+   <p>Cloudinary </p>
+</div>
+
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnf5afA5pTyx0MzUP9-fxH93vq77dw3fFL8MLZUpCdA&s=10">
+   <p>AWS Sagemaker </p>
+</div>
+
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmh5i5-QUgPX0CR1pwkswElPUE1DpNzhqaBEC2N-2JnA&s">
+   <p>AWS Bedrock </p>
+</div>
+
+
+
+<div class="ai-partner-card">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDZGVraG2hOkR_yNU5-IJKq4ZIeMJBlgaXOJtsS7iiDw&s=10">
+   <p>Docker </p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+ 
+ 
+ 
+ 
+ <section class="ai-coe-section">
+
+<div class="ai-coe-container">
+
+<h2 class="ai-coe-heading">
+Our <span>AI Center of Excellence</span>: Setting New Benchmarks with Expert Artificial Intelligence Consultants
+</h2>
+
+<p class="ai-coe-text">
+At Appinventiv, we don’t just deliver technology solutions but shape them into enterprise outcomes. We are an AI consulting company with direct focus on understanding the unique business problem first, then applying the right mix of tools and expertise.
+</p>
+
+
+<div class="ai-coe-accordion">
+
+<!-- 1 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>⚙️ Machine Learning</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>Our machine learning development services bring automation that learns on its own. Algorithms adapt over time, predicting failures, improving customer journeys, and removing manual guesswork. From predictive maintenance to hyper-personalized targeting, enterprises see measurable gains without increasing effort.
+
+</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>✨ Generative AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>
+Our generative AI services allow businesses to push boundaries. Text, design and images, all can be created faster and sharper, giving teams more time to focus on strategy. We help accelerate product innovation and engagement by building secure, scalable foundations around these creative outputs.
+
+
+
+</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>🤖 Agentic AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>
+    
+   
+With agentic AI, businesses move beyond automation into autonomy. These systems set goals, reason, and adapt, whether managing supply chains or acting as enterprise assistants. It’s a step toward strategy execution, not just task execution. 
+    
+</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>💬 Natural Language Processing</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>
+With natural language processing, we help enterprises transform unstructured text into insights. It could be automating customer conversations, extracting patterns from thousands of documents, or running sentiment analysis at scale. The result is more intelligent decision-making and stronger engagement.
+    
+    
+    
+</p>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>👁 Computer Vision</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>As a global provider of AI consultancy and services, we deploy computer vision to interpret and act on visual data. Factories use it for quality checks, retailers for product discovery, and enterprises for secure authentication, each case improving accuracy while reducing overhead.
+    
+    
+</p>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>🧠 Deep Learning</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>Our artificial intelligence consultants build deep learning systems that handle the toughest tasks like speech recognition, imaging, and predictive modeling. These custom solutions create a layer of intelligence inside enterprise workflows, raising efficiency while reducing error rates.</p>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>⚙️ Robotic Process Automation</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>
+Robotic process automation takes away the burden of repetitive tasks. Data entry, invoices, HR records, all can be automated. As an artificial intelligence consulting firm, we can help you integrate RPA with enterprise systems, allowing your teams to spend less time on routine work and more on strategy.</p>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>🛡 Ethical AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>Trust matters and so does compliance. Our artificial intelligence consulting services embed transparency, governance, and fairness into every project. From bias detection to explainability, our ethical AI frameworks keep enterprises aligned with regulations and stakeholder expectations.
+    
+    
+    
+</p>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>🏢 Enterprise AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>We deliver enterprise AI consulting services that fit complex organizations. Intelligent automation for supply chains, smarter CRM optimization, cross-department workflows, every model is built for resilience, scale, and long-term enterprise value.
+    
+</p>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>🔍 Explainable AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>Explainability is no longer optional. Through explainable AI, enterprises get models that are traceable and auditable. This means the decisions can be explained, justified, and aligned with compliance standards, leading to user trust and regulatory confidence in equal measure.
+    
+</p>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="ai-coe-item">
+<button class="ai-coe-btn">
+<span>😊 Sentimental AI</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>Digital systems need empathy. Our sentimental AI solutions detect tone, mood, and intent, helping businesses adapt responses in real time. From customer service to feedback loops, this brings a layer of emotional intelligence into enterprise products.
+    
+</p>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="ai-coe-item ">
+<button class="ai-coe-btn">
+<span>📊 AI Analytics</span>
+<span class="ai-coe-arrow">⌄</span>
+</button>
+<div class="ai-coe-content">
+<p>
+AI analytics turns raw enterprise data into strategic intelligence. From demand forecasting to risk assessment and performance tracking, insights are delivered in real time. As your artificial intelligence consulting partner, we ensure analytics pipelines are designed for accuracy, scale, and compliance, helping leadership make faster and more confident decisions.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+
+<section class="ai-stack-section">
+
+<div class="ai-stack-container">
+
+<h2 class="ai-stack-heading">
+Artificial Intelligence Consulting and Development 
+<span>Tech Stack</span> We Utilize
+</h2>
+
+<p class="ai-stack-text">
+Our AI consulting approach ensures the right mix of tools, frameworks, and cloud platforms is chosen for each enterprise. We align the tech stack with your strategy, governance requirements, and long-term scalability.
+</p>
+
+
+<div class="ai-stack-accordion">
+
+<!-- 1 -->
+<div class="ai-stack-item">
+
+<button class="ai-stack-btn">
+Frontend Technologies
+<span class="ai-stack-arrow">⌄</span>
+</button>
+
+<div class="ai-stack-content">
+
+<div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/react.svg">
+<p>React</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/angular.svg">
+<p>Angular</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/vuejs.svg">
+<p>Vue.JS</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/next.svg">
+<p>Next.js</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/typescript.svg">
+<p>TypeScript</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/materialui.svg">
+<p>Material-UI</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/bootstrap.svg">
+<p>Bootstrap</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/tailwindcss.svg">
+<p>Tailwind CSS</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+Backend Development
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+
+
+
+<div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/node-js.svg">
+<p>Node.js</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/python.svg">
+<p>Python</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/java.svg">
+<p>Java</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/springboot.svg">
+<p>Spring Boot</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 3 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+Database Management
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    <div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/mysql.svg">
+<p>MySQL</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/postgresql.svg">
+<p>PostgreSQL</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/mongodb.svg">
+<p>MongoDB</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/redis.svg">
+<p>Redis</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+Cloud Infrastructure
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    
+
+<div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/aws-ec2-rds-lambda.svg">
+<p>AWS (EC2, RDS,Lambda) </p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/microsoft-azure.svg">
+<p>Microsoft Azure</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/google-cloud-platform.svg">
+<p>Google Cloud</p>
+</div>
+
+<div class="ai-stack-card">
+    <img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/docker.svg">
+    <p>Docker</p>
+    </div>  
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+Security & Compliance
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    <div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/jwt.svg">
+<p>JWT</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/gdpr-tools.svg">
+<p>GDPR Tools</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/ssl-tls-tech.svg">
+<p>SSL/TSL</p>
+</div>
+
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/pci-dss.svg">
+<p>PIC DSS</p>
+</div>
+
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/oauth.svg">
+<p>OAuth 2.0</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+Payment Processing
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    <div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/stripe.svg">
+<p>Stripe</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/paypal.svg">
+<p>PayPal</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/plaid.svg">
+<p>Plaid</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/swift-apis.svg">
+<p>SWIFT APIs </p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/ach-processing.svg">
+<p>ACH Processing</p>
+</div>
+
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/digital-wallet-integration.svg">
+<p>Digital Wallet Integration </p>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+AI & Analytics
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    <div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/tensorflow.svg">
+<p>TensorFlow</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/pytorch.svg">
+<p>PyTorch</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/tableau.svg">
+<p>Tableau</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="ai-stack-item">
+<button class="ai-stack-btn">
+DevOps & Monitoring
+<span class="ai-stack-arrow">⌄</span>
+</button>
+<div class="ai-stack-content">
+    <div class="ai-stack-grid">
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/new-relic.svg">
+<p>New Relic</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/data-dog.svg">
+<p>Datadog</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/jenkins.svg">
+<p>Jenkins</p>
+</div>
+
+<div class="ai-stack-card">
+<img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/tech-stack-images/elk-stack.svg">
+<p>ELK Stack</p>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+ 
+ 
+ 
+ 
+ <section class="ai-models">
+  <div class="container">
+
+    <h2><span>AI Models</span> We Leverage to Deliver Robust AI Products</h2>
+
+    <p class="desc">
+      Our AI consulting and development services are powered by advanced AI models,
+      enabling us to create innovative and scalable solutions tailored to your needs.
+      These models form the foundation of the robust AI products we deliver:
+    </p>
+
+    <div class="models-grid">
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/gemini.svg">Gemini</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/gpt-4.svg">GPT-4</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/gemma.svg">Gemma</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/claude.svg">Claude</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/palm-2.svg">PaLM-2</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/llama-3.svg">LLaMA 3</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/gpt-4.svg">InstructGPT</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/turing-nlg.svg">Turing NLG</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/flan-t5.svg">Flan</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/vicuna.svg">Vicuna</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/alpaca.svg">Alpaca</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/mistral.svg">Mistral</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/orca.svg">Orca</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/sora.svg">SORA</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/dalle.svg">DALL-E 2</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/stable-diffusion-2.svg">Stable Diffusion</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/whisper.svg">Whisper</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/bloom-560m.svg">Bloom 560M</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/phi-2-1.svg">Phi-2</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/t5-1.svg">T5</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/bert-1.svg">BERT</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/roberta.svg">RoBERTa</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/roberta.svg">ALBERT</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/roberta.svg">ERNIE</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/megatron-lm.svg">Megatron-LM</div>
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/xlm-2.svg">XLM</div>
+
+      <div class="model-card"><img src="https://appinventiv.com/wp-content/themes/twentynineteen-child/new-images/xlnet-1.svg">XLNet</div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="ai-approach">
+
+<div class="container">
+
+<h2 class="section-title">
+Our Structured <span>Approach</span> to Artificial Intelligence Consulting
+</h2>
+
+<p class="section-desc">
+As an artificial intelligence consulting firm, we follow an agile and compliance-first approach to deliver custom AI consulting services for enterprises. Every step is designed to align AI adoption with business goals, ensuring transparency, scalability, and measurable outcomes.
+</p>
+
+<div class="timeline">
+
+<div class="progress-line"></div>
+
+<div class="timeline-item">
+<h3>Understanding Business Objectives</h3>
+<p>
+We start with in-depth workshops where our artificial intelligence consultants work closely with stakeholders to capture goals, challenges, and expectations.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>AI Readiness Assessment</h3>
+<p>
+Our AI strategy consulting services include a thorough assessment of your existing systems, data maturity, and team capabilities.
+We evaluate infrastructure, governance processes, and workforce readiness to ensure the foundation is strong enough for enterprise-scale AI adoption.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Identifying the Right AI Technologies</h3>
+<p>
+Once the current state is clear, we advise on the most suitable technologies, whether machine learning, NLP, RPA, or computer vision.We focus on recommending solutions that directly address business needs while ensuring compliance, scalability, and long-term value.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>AI Roadmap & Strategy Development</h3>
+<p>
+
+With our enterprise AI consulting services, we build a roadmap that connects immediate priorities with long-term transformation. This includes timelines, risk mitigation strategies, integration pathways, and KPIs, ensuring leadership has a measurable plan for AI adoption.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Governance & Compliance Frameworks</h3>
+<p>
+
+
+As an artificial intelligence consulting company, we integrate governance into every step. From bias detection and explainability audits to access control and encryption, we design frameworks that keep AI implementations aligned with regulations like GDPR, HIPAA, and SOC 2.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>System Integration & Execution Support</h3>
+<p>
+
+
+Through our AI implementation services, we ensure smooth integration of AI solutions into ERP, CRM, and legacy workflows. We oversee data migration, establish secure pipelines, and make sure adoption causes minimal disruption to enterprise operations.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Validation & Testing</h3>
+<p>
+Our AI consultancy services emphasize rigorous testing including performance validation and stress checks,and compliance audits. We ensure every model meets functional and ethical benchmarks so enterprises can trust outcomes and achieve regulatory alignment.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Deployment & Change Management</h3>
+<p>
+When solutions are production-ready, we handle deployment with enterprise stability in mind.We provide training, documentation, and change management support so internal teams can adopt AI seamlessly and generate business impact from day one.
+</p>
+</div>
+
+
+
+<div class="timeline-item">
+    <h3>Ongoing Optimization &
+Monitoring</h3>
+<p>Our artificial intelligence consulting services continue beyond deployment. We monitor live systems, retrain models to counter drift, and deliver upgrades that keep AI accurate, ethical, and future-ready, ensuring enterprises maximize long-term value.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="mobile-menu">
+
+<div class="accordion-menu">
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Our Company
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="digital.html">Digital</a></li>
+    <li><a href="policy.html">Privacy policy</a></li>
+
+
+
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Services
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+      <li><a href="ai-devlopment.html">AI Development</a></li>
+      <li><a href="machine.html">Machine Learning</a></li>
+      <li><a href="ai app-web.html">App & web AI </a></li>
+    <li> <a href="nlp-chatbot.html">Chatbot & NLP</a></li> 
+   <li> <a href="deep Learning.html">Deep Learning</a></li> 
+    </ul>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Industries
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare .html">Healthcare</a></li>
+     <li><a href="logistics.html">Logistics </a></li>
+     <li><a href="banking.html">Banking</a></li>
+     <li><a href="fintech.html">FinTech</a></li>
+     
+     <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Solutions
+      <span class="icon">+</span>
+    </button>
+    <ul class="accordion-content">
+     <li><a href="healthcare.html">Healthcare AI</a></li>
+     <li><a href="enterprise.html"> Enterprise Automation</a></li>
+     <li><a href="e-commerce.html">E-Commerce AI</a></li>
+     <li><a href="finance.html">Finance & Banking</a></li>
+     <li><a href="automotive.html">Automotive & IoT</a></li>
+     <li><a href="Ed-Tech.html">EdTech AI</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+</section>
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+ 
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Foundation</h3>
+        <span>Social & Community Initiatives</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+
+    <a href="Policy.html">Privacy Policy</a>
+ 
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+<script>
+            
+    
+    function openMenu() {
+  document.getElementById("sideMenu").classList.add("active");
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("active");
+  document.getElementById("overlay").style.display = "none";
+}
+
+function toggleMenu(element) {
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  allSubmenus.forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+    function openBlog(page) {
+  window.location.href = page;
+}
+
+  }
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+function toggleMenu(element) {
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggleSubMenu(element) {
+  let childMenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".child-submenu").forEach(menu => {
+    if (menu !== childMenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (childMenu.style.display === "block") {
+    childMenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    childMenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+    /*case-study-section*/
+        
+
+const caseStudies = [
+  {
+    title: "Dr. Morepen AI Healthcare Chatbot",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tY_hvfIsgJceUrHEembD8rTBiGQHxhMRptmTOogeDQ&s=10",
+    content: [
+      "Dr. Morepen needed a chatbot that could manage real conversations.",
+      "We built an AI conversational engine with contextual understanding.",
+      "Reduced support load by 40% and improved engagement."
+    ]
+  },
+  {
+    title: "Tootle AI-Powered Travel Assistant",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqssVw97EgwJ0ayxwx6bpd4U2XdxCOh6IWdGYBGNB2Xg&s=10",
+    content: [
+      "Tootle wanted an AI assistant for real travel scenarios.",
+      "We developed voice + text contextual assistant.",
+      "Improved user retention by 35%."
+    ]
+  },
+  {
+    title: "Americana ALMP",
+    image: "https://appinventiv.com/wp-content/uploads/2025/07/americana-banner-img.webp",
+    content: [
+      "Americana needed delivery automation across 12 countries.",
+      "We built AI-powered logistics optimization.",
+      "Operational efficiency increased by 50%."
+    ]
+  }
+];
+
+let currentSlide = 0;
+let currentTab = 0;
+
+function loadSlide(){
+  document.getElementById("caseTitle").innerText = caseStudies[currentSlide].title;
+  document.getElementById("caseImage").src = caseStudies[currentSlide].image;
+  changeTab(0);
+}
+
+function changeTab(index){
+  currentTab = index;
+  document.getElementById("caseText").innerText =
+    caseStudies[currentSlide].content[index];
+
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  document.querySelectorAll(".tab")[index].classList.add("active");
+}
+
+function nextSlide(){
+  currentSlide = (currentSlide + 1) % caseStudies.length;
+  loadSlide();
+}
+
+function prevSlide(){
+  currentSlide = (currentSlide - 1 + caseStudies.length) % caseStudies.length;
+  loadSlide();
+}
+
+loadSlide();
+
+
+      /* ai-services  */
+
+           /* ai-industries  */
+  
+document.addEventListener("DOMContentLoaded", function () {
+
+  const allHeaders = document.querySelectorAll(".accordion-header");
+
+  allHeaders.forEach(header => {
+    header.addEventListener("click", function () {
+
+      const currentItem = this.closest(".accordion-item");
+      const parentSection = this.closest("section");
+
+      // Sirf same section ke accordion close honge
+      parentSection.querySelectorAll(".accordion-item").forEach(item => {
+        if(item !== currentItem){
+          item.classList.remove("active");
+        }
+      });
+
+      currentItem.classList.toggle("active");
+    });
+  });
+
+  // Option white effect
+  const options = document.querySelectorAll(".option");
+
+  options.forEach(option => {
+    option.addEventListener("click", function (e) {
+      e.stopPropagation();
+      this.classList.toggle("active-option");
+    });
+  });
+
+});
+
+
+
+
+         /*  */
+const slides = [
+
+{
+num:"01",
+title:"300+ Enterprise AI Journeys Accelerated",
+text:"We’ve successfully led more than 300 projects in AI adoption consulting, helping organizations move beyond experimentation into production-ready impact. Our AI strategy consulting services align enterprise data, workflows, and KPIs with scalable outcomes."
+},
+
+{
+num:"02",
+title:"85% Faster AI Adoption Across Industries",
+text:"By leveraging pre-built accelerators, modular MLOps pipelines, and cloud-native frameworks, we cut time-to-deployment by 85%. Our custom AI strategy consulting services for enterprises ensure implementations are faster, cost-efficient and built to last."
+},
+
+{
+num:"03",
+title:"200+ Global Deployments with Zero Compliance Failures",
+text:"As one of the leading AI consulting firms, we’ve delivered AI solutions across finance, healthcare, logistics, and retail, maintaining a flawless compliance record. From GDPR to HIPAA to SOC 2, our enterprise services meet regional and industry-specific regulations from day one."
+}
+
+];
+
+let index = 0;
+
+const num = document.getElementById("slideNumber");
+const title = document.getElementById("slideTitle");
+const text = document.getElementById("slideText");
+
+function showSlide(i){
+
+num.textContent = slides[i].num;
+title.textContent = slides[i].title;
+text.textContent = slides[i].text;
+
+}
+
+document.getElementById("next").onclick = function(){
+
+index++;
+
+if(index >= slides.length){
+index = 0;
+}
+
+showSlide(index);
+
+};
+
+document.getElementById("prev").onclick = function(){
+
+index--;
+
+if(index < 0){
+index = slides.length - 1;
+}
+
+showSlide(index);
+
+};
+
+
+
+          /* ai-coe-section    */
+          document.querySelectorAll(".ai-coe-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+let item = button.parentElement;
+
+document.querySelectorAll(".ai-coe-item").forEach(el=>{
+if(el!==item){
+el.classList.remove("active");
+}
+});
+
+item.classList.toggle("active");
+
+});
+
+});
+
+       /* ai-stack-section"  */
+       document.querySelectorAll(".ai-stack-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+let item = btn.parentElement;
+
+document.querySelectorAll(".ai-stack-item").forEach(el=>{
+if(el!==item){
+el.classList.remove("active");
+}
+});
+
+item.classList.toggle("active");
+
+});
+
+});
+
+     /* ai-approach */
+   window.addEventListener("scroll", function(){
+
+const items = document.querySelectorAll(".timeline-item");
+const progress = document.querySelector(".progress-line");
+
+window.addEventListener("scroll", () => {
+
+let lastActive = null;
+
+items.forEach((item,i) => {
+
+const rect = item.getBoundingClientRect();
+
+if(rect.top < window.innerHeight*0.6){
+item.classList.add("active");
+lastActive = item;
+}else{
+item.classList.remove("active");
+}
+
+});
+
+if(lastActive){
+
+const timeline = document.querySelector(".timeline");
+const height = lastActive.offsetTop + 10;
+
+progress.style.height = height + "px";
+
+}
+
+});
+});
+
+
+
+      /*     */
+      const headers = document.querySelectorAll(".accordion-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector(".icon");
+
+      header.classList.toggle("active");
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.textContent = "+";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
+ 
+ </script>
+</body>
+</html>
