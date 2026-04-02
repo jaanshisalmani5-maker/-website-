@@ -1,0 +1,3857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Development Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
+}
+
+body {
+  background: #000;
+}
+
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  text-align: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-item span {
+  transition: 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.submenu a {
+  display: block;
+  color: #aaa;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.submenu-item {
+  padding: 12px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.child-submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.child-submenu a {
+  display: block;
+  padding: 8px 0;
+  color: #888;
+  text-decoration: none;
+}
+
+.child-submenu a:hover {
+  color: #1e90ff;
+}
+
+
+.blog-card {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.blog-content h3 {
+  font-size: 14px;
+  color: #111;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+.ai-hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+  text-align: center;
+
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG1RItT6FP9zIh2a-yRYYNM7yKA7FhLWa4wEpugDVYcg&s=10") center/cover no-repeat;
+  color: #fff;
+}
+
+/* OVERLAY */
+.ai-hero .overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content{
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+/* HEADING */
+.hero-content h1{
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  word-spacing: 10px;
+}
+
+/* PARAGRAPH */
+.hero-content p{
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  word-spacing: 5px;
+}
+
+/* BUTTON */
+.hero-btn{
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+/* TRUSTED LINE */
+.trusted{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.trusted span{
+  width: 40px;
+  height: 1px;
+  background: #fff;
+  opacity: 0.6;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size: 2rem;
+  }
+
+  .hero-content p{
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+/* Section wrapper */
+.capabilities-section {
+  padding: 70px 20px 90px;
+  background: #000;
+}
+
+/* Content container */
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Intro paragraph */
+.intro-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 45px;
+}
+
+/* Section heading */
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Capabilities list */
+.capabilities-list {
+  list-style: none;
+}
+
+.capabilities-list li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+/* Blue check icon */
+.capabilities-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.1rem;
+  color: #1e90ff;
+}
+
+/* IN THE NEWS divider */
+.news-divider {
+  margin: 70px 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.news-divider span {
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.news-divider p {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+/* News logos (text version) */
+.news-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.news-logos span {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .news-logos {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+
+
+
+/* Outer section */
+.stats-section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main card */
+.stats-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 50px 35px 60px;
+  border-radius: 28px;
+
+  /* Same dark blue gradient feel */
+  background: radial-gradient(
+    circle at top right,
+    #0a3a6a 0%,
+    #020b18 45%,
+    #000 100%
+  );
+}
+
+/* Heading */
+.stats-heading {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 45px;
+}
+
+/* Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px 40px;
+}
+
+/* Each stat */
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+/* Divider line */
+.stat-item span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+  .stats-heading {
+    font-size: 2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2.7rem;
+  }
+}
+
+
+
+
+
+
+
+.main-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.count {
+  width: 60px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.title {
+  flex: 1;
+  font-size: 22px;
+}
+
+.icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active .icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+  padding: 10px 0 20px 60px;
+  opacity: 0.9;
+}
+
+.highlight-box {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.highlight-box ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.highlight-box li {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.ai-highlight-section {
+  background: #000;
+  padding: 40px 20px;
+}
+
+.ai-card {
+  max-width: 420px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0d4fd6, #1b3fa3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.ai-image img {
+  width: 100%;
+  display: block;
+}
+
+.ai-content {
+  padding: 30px 25px 35px;
+  color: #fff;
+}
+
+.ai-content h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ai-content h2 span {
+  font-weight: 700;
+}
+
+.ai-content p {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.ai-btn {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  text-decoration: none; /* important */
+  border: none;
+  padding: 16px 18px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.ai-btn:hover {
+  background: #f1f1f1;
+}
+
+
+
+
+
+
+body {
+  background: #0b0b0b;
+  font-family: Arial, sans-serif;
+}
+
+.case-section {
+  max-width: 420px;
+  margin: auto;
+  color: #fff;
+}
+.case-heading {
+  max-width: 420px;
+  margin: 40px auto 20px;
+  color: #fff;
+  text-align: left;
+}
+
+.case-heading h1 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.case-heading p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  padding: 20px;
+  width: 100%;
+  
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+  height: auto;
+}
+
+h2 {
+  margin: 16px 0;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #333;
+}
+
+.tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #888;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.nav {
+  position: absolute;
+  top: 45%;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+
+
+
+
+
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.ai-accordion {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.ai-accordion h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.ai-accordion .desc {
+  color: black;
+  margin-bottom: 30px;
+}
+
+.item {
+  margin-bottom: 22px;
+}
+
+.header {
+  font-size: 20px;
+  cursor: default;
+  color: blue;
+}
+
+.ai-accordion .header span {
+  color:blue;
+  margin-right: 12px;
+}
+
+.ai-accordion .progress {
+  height: 2px;
+  background: #333;
+  margin: 10px 0;
+  overflow: hidden;
+  color: blue;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: black;
+  
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.item.active .content {
+  max-height: 300px;
+}
+
+.content li {
+  list-style: none;
+  margin: 12px 0;
+  position: relative;
+  padding-left: 28px;
+  color: black;
+}
+
+.ai-accordion  .content li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2aff2a;
+}
+
+
+
+
+
+
+/* HERO SECTION */
+.ai-hero{
+  padding:40px 15px;
+  display:flex;
+  justify-content:center;
+  background: #000 !important;
+}
+
+.hero-card{
+  max-width:420px;
+  width:100%;
+  background:linear-gradient(160deg,#0b4fd4,#062a7a);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+/* IMAGE */
+.hero-image img{
+  width:100%;
+  display:block;
+}
+
+/* CONTENT */
+.hero-content{
+  padding:25px;
+  color:#fff;
+}
+
+.hero-content h1{
+  font-size:26px;
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:0.95;
+  margin-bottom:25px;
+}
+
+/* BUTTON */
+.hero-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#fff;
+  color:#000;
+  padding:14px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+}
+
+
+
+
+
+
+
+.compliance-section {
+  background: #000;
+  padding: 80px 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* TEXT AREA */
+.text-area {
+  max-width: 750px;
+  margin-bottom: 60px;
+}
+
+.text-area h2 {
+  font-size: 42px;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.text-area p {
+  font-size: 18px;
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+
+/* SLIDER */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-slider {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card {
+  min-width: 70%;
+  margin: 10px;
+  padding: 40px 25px;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+  flex: 0 0 25%;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ARROWS */
+.slider-controls {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.slider-controls button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #555;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-controls button:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+
+
+
+
+.ai-partner-safe {
+  background: #000;
+  color: #fff;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ai-top h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.ai-top p {
+  color: #ccc;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.ai-divider {
+  height: 1px;
+  background: #333;
+  margin: 40px 0;
+}
+
+.ai-slider {
+  position: relative;
+}
+
+.ai-slide {
+  display: none;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.ai-slide.active {
+  display: flex;
+}
+
+.ai-number {
+  font-size: 26px;
+  height: 300px;
+  color: #aaa;
+  border-right: 1px solid #444;
+  padding-right: 25px;
+  min-width: 60px;
+}
+
+.ai-content h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.ai-content {
+  padding:0 0px;   /* left side gap */
+}
+
+
+.ai-content p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.ai-arrows {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.ai-arrows button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ai-arrows button:hover {
+  background: #111;
+}
+
+
+
+
+
+.ai-hero-section {
+  background: #000;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-hero-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #2e55ff, #5a7dff);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.ai-hero-image img {
+  width: 100%;
+  display: block;
+}
+
+/* CONTENT */
+.ai-hero-content {
+  padding: 35px 25px 45px;
+  color: #fff;
+}
+
+.ai-hero-content h2 {
+  color: white;
+  font-size: 26px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.ai-hero-content h2 strong {
+  font-weight: 700;
+}
+
+.ai-hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e5e5e5;
+  margin-bottom: 35px;
+}
+
+/* BUTTON */
+.ai-hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  padding: 18px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.ai-hero-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
+
+
+.moving-cards-section{
+  background:#000;
+  padding:80px 0;
+  overflow:hidden;
+
+}
+.container{
+    color: white;
+}
+.top-text{
+  color:white;
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  margin-bottom:50px;
+  line-height:1.6;
+  
+
+}
+
+/* Rows */
+.scroll-row{
+  width:100%;
+  overflow:hidden;
+  margin:25px 0;
+}
+
+.scroll-track{
+  display:block;
+  width:max-content;
+  gap:10px;
+}
+
+/* Cards */
+.card{
+  flex:0 0 auto;
+  min-width:200;
+  background:#111;
+  border-radius:50px;
+  padding:15px;
+  color:#fff;
+  transition:.3s;
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.card h4{
+  margin-top:12px;
+  font-size:18px;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* Animations */
+.scroll-track{
+  display:flex;
+  width:max-content;
+  gap:20px;
+}
+
+/* RIGHT */
+.scroll-right .scroll-track{
+  animation:scrollRight 12s linear infinite;
+}
+
+/* LEFT */
+.scroll-left .scroll-track{
+  animation:scrollLeft 12s linear infinite;
+}
+
+@keyframes scrollRight{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(calc(-100% / 2)); }
+}
+
+@keyframes scrollLeft{
+  from{ transform:translateX(calc(-100% / 2)); }
+  to{ transform:translateX(0); }
+}
+
+
+
+
+
+
+
+
+/* SECTION BACKGROUND */
+.ai-capabilities{
+  background:black;
+  padding:80px 16px;
+  font-family:system-ui;
+}
+
+/* TOP HEADING */
+.ai-intro{
+  max-width:900px;
+  margin:0 auto 50px;
+}
+
+.ai-intro h1{
+  font-size:42px;
+  line-height:1.2;
+  font-weight:600;
+  color:#111;
+  margin-bottom:25px;
+  text-align: center;
+}
+
+/* PARAGRAPH */
+.ai-intro p{
+  font-size:21px;
+  line-height:1.9;
+  color:white;
+  text-align: center;
+ 
+}
+
+
+
+.ai-accordion{
+  background:#f3f4f6;
+  padding:60px 15px;
+  font-family:system-ui;
+}
+
+.ai-card{
+  max-width:850px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* Blue Heading */
+.ai-header{
+  background:#0b5cff;
+  color:#fff;
+  padding:40px;
+  font-size:28px;
+  font-weight:600;
+}
+
+/* Body */
+.ai-body{
+  background:#fff;
+  padding:20px 30px;
+}
+
+/* Step */
+.step{
+  border-bottom:1px solid #e5e7eb;
+  padding:18px 0;
+  position:relative;
+}
+
+.step-head{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  cursor:pointer;
+}
+
+.step-head span{
+  color:#999;
+  width:40px;
+}
+
+.step-head h4{
+  color: black;
+  flex:1;
+  font-size:20px;
+}
+
+/* Arrow */
+.arrow{
+  width:10px;
+  height:10px;
+  border-right:2px solid #111;
+  border-bottom:2px solid #111;
+  transform:rotate(-45deg);
+  transition:.4s;
+}
+
+.step.active .arrow{
+  transform:rotate(45deg);
+}
+
+/* Content */
+.content{
+  max-height:0;
+  overflow:hidden;
+  color:#444;
+  line-height:1.6;
+  transition:max-height .6s ease;
+  margin-left:55px;
+}
+
+.step.active .content{
+  max-height:200px;
+  margin-top:12px;
+}
+
+/* Progress Line */
+.progress{
+  height:2px;
+  background:#e5e7eb;
+  margin:12px 0 0 55px;
+  position:relative;
+  overflow:hidden;
+}
+
+.progress::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:0%;
+  background:#0b5cff;
+}
+
+.step.active .progress::after{
+  animation:fill 4s linear forwards;
+}
+
+@keyframes fill{
+  from{ width:0%;}
+  to{ width:100%;}
+}
+
+
+
+
+
+
+@media(max-width:768px){
+
+.ai-intro h1{
+  font-size:30px;
+}
+
+.ai-intro p{
+  font-size:16px;
+}
+
+.ai-header{
+  font-size:22px;
+  padding:30px;
+}
+
+}
+
+
+
+
+.ai-models-section {
+  background: linear-gradient(to bottom, #050505, #0c0c0c);
+  padding: 80px 20px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  color: white;
+  text-align: center;
+}
+
+.section-desc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cfcfcf;
+  max-width: 900px;
+  margin-bottom: 50px;
+  text-align:center;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.model-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 25px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border: 1px solid #2a2a2a;
+  transition: 0.3s ease;
+}
+
+.model-card:hover {
+  border-color: #3a3a3a;
+  transform: translateY(-3px);
+}
+
+.model-card img {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.model-card span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 30px;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.tech-stack{
+  background:#050505;
+  color:#fff;
+  padding:80px 20px;
+  font-family:Poppins,sans-serif;
+}
+
+.container{max-width:1100px;margin:auto;}
+
+.title{
+  font-size:42px;
+  font-weight:600;
+  margin-bottom:20px;
+  color: white;
+  text-align: center;
+}
+
+.desc{
+  color:#cfcfcf;
+  line-height:1.8;
+  max-width:900px;
+  margin-bottom:40px;
+  text-align: center;
+}
+
+/* Accordion */
+.acc-item{
+  border-bottom:1px solid #2a2a2a;
+}
+
+.acc-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 0;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.arrow{
+  width:10px;
+  height:10px;
+  border-right:2px solid #fff;
+  border-bottom:2px solid #fff;
+  transform:rotate(45deg);
+  transition:.3s;
+}
+
+.acc-item.active .arrow{
+  transform:rotate(-135deg);
+}
+
+/* Content */
+.acc-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s ease;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  padding:20px 0 30px;
+}
+
+.tool-card{
+  background:#f1f1f1;
+  color:#000;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+
+.tool-card img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+
+.tool-card p{
+  font-weight:500;
+}
+
+
+
+
+
+
+
+/* Section */
+.ai-section{
+  width:100%;
+  max-width:380px;
+  padding:10px 10px;
+}
+
+/* Card */
+.ai-card{
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 10px 35px rgba(0,0,0,0.4);
+}
+
+/* Image */
+.card-image img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  display:block;
+}
+
+/* Gradient Content */
+.card-content{
+  padding:26px 22px 30px;
+  background:linear-gradient(180deg,#1d78b7,#0d4f86);
+  color:white;
+}
+
+/* Heading */
+.card-content h2{
+  font-size:26px;
+  line-height:1.3;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+/* Paragraph */
+.card-content p{
+  font-size:15px;
+  line-height:1.7;
+  color:#d7e9ff;
+  margin-bottom:26px;
+}
+
+/* Button */
+.ai-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-decoration:none;
+  background:#e5e5e5;
+  color:#111;
+  padding:16px;
+  border-radius:40px;
+  font-weight:600;
+  font-size:16px;
+  transition:0.25s;
+}
+
+.ai-btn i{
+  font-size:18px;
+}
+
+/* Hover */
+.ai-btn:hover{
+  background:white;
+  transform:scale(1.04);
+}
+
+
+
+
+
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.risk-section{
+  padding:60px 18px;
+}
+
+.container{
+  max-width:420px;
+  margin:auto;
+}
+
+h1{
+  font-size:38px;
+  font-weight:500;
+  line-height:1.2;
+}
+
+.intro{
+  margin-top:18px;
+  color:#cfcfcf;
+  line-height:1.6;
+}
+
+hr{
+  border:0;
+  height:1px;
+  background:#333;
+  margin:28px 0;
+}
+
+/* Badge */
+.badge{
+  display:inline-block;
+  background:#1c1c1c;
+  padding:14px 26px;
+  border-radius:40px;
+  margin-bottom:26px;
+  font-size:18px;
+}
+
+/* Title */
+h2{
+  font-size:26px;
+  margin-bottom:18px;
+  color: #cfcfcf;
+}
+
+/* Description */
+.desc{
+  color:#cfcfcf;
+  line-height:1.7;
+  font-size:17px;
+  margin-top: 0px;
+}
+
+/* Arrows */
+.arrows{
+  margin-top:30px;
+  display:flex;
+  gap:20px;
+}
+
+.arrows button{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid #555;
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.arrows button:hover{
+  border-color:white;
+}
+
+
+
+
+
+section{
+    max-width:900px;
+    margin:auto;
+    padding:80px 20px 120px;
+  }
+
+  .heading{
+    font-size:48px;
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:20px;
+  }
+
+  .subtext{
+    color:#a8b0b9;
+    font-size:18px;
+    line-height:1.7;
+    max-width:700px;
+    margin-bottom:80px;
+  }
+
+  /* Timeline */
+  .timeline{
+    position:relative;
+    padding-left:60px;
+  }
+
+  .line-bg{
+    position:absolute;
+    left:18px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#2a2f36;
+    border-radius:5px;
+  }
+
+  .line-progress{
+    position:absolute;
+    left:18px;
+    top:0;
+    width:4px;
+    height:0%;
+    background:#2f6bff;
+    border-radius:5px;
+    transition:height .25s linear;
+  }
+
+  .item{
+    position:relative;
+    margin-bottom:90px;
+    opacity:.35;
+    transform:translateY(40px);
+    transition:.5s ease;
+  }
+
+  .item.active{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .dot{
+    position:absolute;
+    left:-35px;
+    top:8px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#2a2f36;
+    border:3px solid #07090c;
+    transition:.3s;
+  }
+
+  .item.active .dot{
+    background:#2f6bff;
+  }
+
+  .title{
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  .desc{
+    color:#a8b0b9;
+    font-size:17px;
+    line-height:1.7;
+    max-width:640px;
+  }
+
+  @media(max-width:600px){
+    .heading{font-size:34px}
+    .title{font-size:22px}
+    .timeline{padding-left:50px}
+  }
+
+
+
+
+
+.main-footer{
+  background:linear-gradient(180deg,#0b3aa8,#0a2f86);
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Top strip */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:#1e63f0;
+  font-size:14px;
+}
+
+.explore-btn{
+  color:#fff;
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+/* Units Section */
+.footer-units{
+  padding:50px 8%;
+}
+
+.footer-units h2{
+    text-align: center;
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.unit-card{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.3s;
+}
+
+.unit-card:hover{
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-4px);
+}
+
+.unit-card h3{
+    
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.unit-card span
+  font-size:14px;
+  opacity:.9;
+}
+
+.unit-card a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  border-bottom:1px solid #fff;
+}
+
+/* Footer Links */
+.footer-links{
+  padding:20px 8%;
+  border-top:1px solid rgba(255,255,255,0.3);
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#fff;
+  text-decoration:underline;
+  font-size:14px;
+}
+
+/* Bottom Section */
+.footer-bottom{
+  padding:30px 8%;
+  text-align:center;
+}
+
+.footer-bottom p{
+  text-align: center;
+  margin-bottom:20px;
+  font-size:14px;
+  opacity:.9;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:#fff;
+  color:#0b3aa8;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  min-width:120px;
+}
+
+
+
+</style>
+<body>
+    
+    
+    <header class="header">
+  <h2 class="logo">I.H</h2>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Slide Menu -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    I.H<span>˅</span>
+  </div>
+  
+  <div class="submenu">
+
+  <div class="submenu-item" onclick="toggleSubMenu(this)">
+    Explore AI Tech <span>˅</span>
+  </div>
+  <div class="child-submenu">
+    <a href="ai service solution.html">AI Services & Solutions</a>
+    <a href="AI development.html">AI Development</a>
+      <a href="aiconsulting.html">AI Consulting</a>
+      <a href="delivered.html">Delivered projects & Clients  </a>
+ </div>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    About <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="home.html">About I.H</a>
+    
+    <a href="who.html">How We Work and Function  </a>
+    
+    <a href="client.html"> Client Testimonials</a>
+    
+    <a href="career.html">Start your career with us </a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Services <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="ai-devlopment.html">AI Development </a>
+    <a href="machine.html">Machine Learning</a>
+ <a href="nlp-chatbot.html">Chatbot & NLP</a>
+  <a href="deep learning.html">Deep Learning</a>
+   <a href="ai app-web.html">App & Web AI</a>
+      <a href="data-science.html">Data Science</a>
+  </div>
+
+  <div class="menu-item" onclick="toggleMenu(this)">
+    Industries <span>˅</span>
+  </div>
+  <div class="submenu">
+    <a href="healthcare .html">Healthcare</a>
+    <a href="fitness.html">Fitness</a>
+ <a href="logistics.html">Logistics</a>
+  <a href="realestate.html">Real Estate</a>
+    <a href="banking.html">Banking</a>
+     <a href="fintech.html">FinTech</a>
+  </div>
+
+</div>
+
+
+
+
+
+<section class="ai-hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>AI Development Services</h1>
+
+    <p>
+      Recognized as a Leader in AI-First Engineering by Economic Times and
+      backed by 5+ strategic partnerships, we deliver enterprise-ready,
+      resilient AI development services that scale seamlessly across
+      departments and production environments.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="hero-btn">Consult Our AI Experts</a>
+
+    <div class="trusted">
+      <span></span>
+      TRUSTED BY CONGLOMERATES, ENTERPRISES AND STARTUPS ALIKE
+      <span></span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="capabilities-section">
+
+  <div class="container">
+    <p class="intro-text">
+      Backed by deep expertise of certified AI engineers, data scientists, and MLOps
+      specialists, we help your business identify high-ROI use cases, build secure and
+      explainable AI systems, and operationalize them at enterprise scale.
+    </p>
+
+    <h2 class="section-title">Our Core Capabilities:</h2>
+
+    <ul class="capabilities-list">
+      <li>Building AI products that boost business intelligence and speed</li>
+      <li>Creating advanced ML, Gen AI, agentic AI, and NLP systems for smarter decision-making</li>
+      <li>Building context-aware RAG systems and fine-tuning LLMs for industry specific accuracy</li>
+      <li>Facilitating seamless AI integrations, enabling organization-wide efficiency and performance gains</li>
+      <li>Implementing secure, governed AI architectures with compliance-ready frameworks</li>
+      <li>Scaling AI with robust cloud infrastructure and MLOps pipelines</li>
+    </ul>
+
+    <div class="news-divider">
+      <span></span>
+      <p>IN THE NEWS</p>
+      <span></span>
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+<section class="stats-section">
+
+  <div class="stats-card">
+
+    <h2 class="stats-heading">
+      Our decade long AI engineering experience, validated in numbers
+    </h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-item">
+        <h3>300+</h3>
+        <p>AI-Powered Solutions<br>Delivered</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Data Scientists & AI<br>Engineers Onboard</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>150+</h3>
+        <p>Custom AI Models Trained<br>And Deployed</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>75+</h3>
+        <p>Enterprise AI Integrations<br>Completed</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Bespoke LLMs Fine-Tuned</p>
+        <span></span>
+      </div>
+
+      <div class="stat-item">
+        <h3>95%</h3>
+        <p>Client Satisfaction Rate</p>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="accordion-section">
+
+  <h1 class="main-title">
+    Our End-to-End AI Development Services Tailored to Your Business
+  </h1>
+
+  <div class="accordion">
+
+    <!-- 01 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">01</span>
+        <span class="title">AI Consulting</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          We help businesses adopt AI with a clear roadmap, reduced risk,
+          and strong technical foundations.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI Strategy & Roadmapping</li>
+            <li>AI Readiness & Gap Assessment</li>
+            <li>Use-case Identification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">02</span>
+        <span class="title">AI Product Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          From concept to production, we build scalable AI-powered products.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI MVP Development</li>
+            <li>Custom Model Training</li>
+            <li>Enterprise AI Solutions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">03</span>
+        <span class="title">Generative AI Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Build generative AI systems using LLMs for text, images, and automation.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>LLM-based Applications</li>
+            <li>Prompt Engineering</li>
+            <li>Fine-tuned GenAI Models</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">04</span>
+        <span class="title">AI Agent Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Intelligent AI agents that automate workflows and decision-making.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Autonomous AI Agents</li>
+            <li>Multi-agent Systems</li>
+            <li>Task Automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">05</span>
+        <span class="title">Smart AI Assistants & Chatbot Development</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Conversational AI chatbots that enhance user engagement and support.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Customer Support Bots</li>
+            <li>Voice & Text Assistants</li>
+            <li>Multi-language Chatbots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">06</span>
+        <span class="title">AI Integration</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Seamlessly integrate AI into your existing business systems.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>API-based AI Integration</li>
+            <li>Legacy System Integration</li>
+            <li>Cloud AI Deployment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">07</span>
+        <span class="title">AI Security</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Protect AI systems with advanced security and compliance frameworks.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Data Privacy Protection</li>
+            <li>AI Risk Mitigation</li>
+            <li>Model Security Audits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">08</span>
+        <span class="title">AI Design</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Human-centric AI design for better usability and adoption.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>AI UX/UI Design</li>
+            <li>Human-in-the-loop Systems</li>
+            <li>Explainable AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">09</span>
+        <span class="title">AIOps</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          AI-powered IT operations for smarter monitoring and automation.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Predictive Monitoring</li>
+            <li>Anomaly Detection</li>
+            <li>Automated Incident Response</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">10</span>
+        <span class="title">AI-as-a-Service (AIaaS)</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Ready-to-use AI solutions delivered through scalable cloud platforms.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Cloud-based AI Models</li>
+            <li>Subscription AI Services</li>
+            <li>Pay-as-you-go AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">11</span>
+        <span class="title">Automation Solutions</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Intelligent automation to optimize business processes and efficiency.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Workflow Automation</li>
+            <li>RPA + AI</li>
+            <li>Business Process Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="accordion-item">
+      <button class="accordion-header">
+        <span class="count">12</span>
+        <span class="title">Predictive Modeling</span>
+        <span class="icon">⌄</span>
+      </button>
+      <div class="accordion-content">
+        <p>
+          Data-driven predictive models to forecast trends and outcomes.
+        </p>
+        <div class="highlight-box">
+          <ul>
+            <li>Forecasting Models</li>
+            <li>Risk Prediction</li>
+            <li>Demand & Trend Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="ai-highlight-section">
+
+  <div class="ai-card">
+
+    <div class="ai-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwjR8YcFrREibjrYzC-Go4FdL5ASy8qzCcTC3-bPvtlg&s=10" alt="AI API Security">
+    </div>
+
+    <div class="ai-content">
+      <h2>
+        Don't Just Adopt AI. <br>
+        <span>Architect a Competitive Moat.</span>
+      </h2>
+
+      <p>
+        Generic APIs level the playing field. Custom AI tips it in your favor.
+        We build proprietary, domain-specific models that your competitors
+        can't copy.
+ <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" target="_blank" class="ai-btn">
+   📞 Schedule an AI Architecture Review</a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="case-section">
+    <div class="case-heading">
+  <h1>AI in Action: Success Stories from Global Enterprises</h1>
+  
+  <p>
+    Our every success story deeply demonstrates how our AI application 
+    development services have delivered tangible results, streamlining 
+    operations, boosting efficiency, and driving measurable growth for our clients.
+  </p>
+</div>
+  <div class="slider-wrapper">
+   
+
+    <div class="slider">
+      <!-- SLIDE 1 -->
+      <div class="slide active">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRif2knubHR85UQZyhT628mQb0a-I0D3WP8Q9EUvjcK0g&s=10" alt="Americana ALMP" >
+
+        <h2>Americana ALMP</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Americana Group’s last-mile delivery was slow and uncoordinated across brands.
+        </div>
+        <div class="tab-content" data-content="solution">
+          A unified delivery platform was built to streamline operations.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Faster delivery, higher customer satisfaction, and scalable growth.
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWNQzouztu6hO3tSDRX1Ur42nqkFLKTCPMh2plkOnS8Q&s=10" alt="MUDRA">
+
+        <h2>MUDRA</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Users struggled with inconsistent expense tracking and budgeting.
+        </div>
+        <div class="tab-content" data-content="solution">
+          An engaging AI-powered finance app was developed.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Improved savings habits and better financial decisions.
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTklNMDirWiipXIpehL8zBi5a-WBvN_e72YmtrqFJKZ2Q&s=10" alt="MyExec" >
+
+        <h2>MyExec</h2>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="challenge">The Challenge</button>
+          <button class="tab" data-tab="solution">The Solution</button>
+          <button class="tab" data-tab="impact">The Impact</button>
+        </div>
+
+        <div class="tab-content active" data-content="challenge">
+          Small businesses lacked access to data-driven decision tools.
+        </div>
+        <div class="tab-content" data-content="solution">
+          A simple AI business assistant platform was created.
+        </div>
+        <div class="tab-content" data-content="impact">
+          Better insights without expensive consultants.
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+<section class="ai-accordion" id="aiAccordion">
+  <h2>Tailored AI Capabilities to Fit Your Industry and Vision</h2>
+  <p class="desc">
+    Our custom advanced AI solutions align with industry needs and business goals.
+  </p>
+
+  <div class="item active">
+    <div class="header"><span>[1]</span> AI for Healthcare</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Predictive diagnostics</li>
+      <li>Medical imaging AI</li>
+      <li>Remote patient monitoring</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[2]</span> AI for FinTech</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Fraud detection</li>
+      <li>Risk scoring</li>
+      <li>Smart financial insights</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[3]</span> AI for Banking</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Virtual banking assistants</li>
+      <li>Credit analysis</li>
+      <li>Workflow automation</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[4]</span> AI for Insurance</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Claims automation</li>
+      <li>Risk assessment</li>
+      <li>Customer analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[5]</span> AI for Lending</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Loan eligibility scoring</li>
+      <li>Default prediction</li>
+      <li>Automated approvals</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[6]</span> AI for Payments</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Transaction monitoring</li>
+      <li>Fraud prevention</li>
+      <li>Real-time analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[7]</span> AI for Retail</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Personalized shopping</li>
+      <li>Demand forecasting</li>
+      <li>Customer behavior analysis</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[8]</span> AI for eCommerce</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Product recommendations</li>
+      <li>Dynamic pricing</li>
+      <li>Cart abandonment insights</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[9]</span> AI for Manufacturing</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Predictive maintenance</li>
+      <li>Quality inspection AI</li>
+      <li>Supply optimization</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[10]</span> AI for Automotive</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Driver behavior analytics</li>
+      <li>ADAS intelligence</li>
+      <li>Predictive servicing</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[11]</span> AI for Energy</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Energy demand forecasting</li>
+      <li>Grid optimization</li>
+      <li>Predictive analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[12]</span> AI for Logistics</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Route optimization</li>
+      <li>Fleet analytics</li>
+      <li>Delivery forecasting</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[13]</span> AI for Transportation</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Traffic prediction</li>
+      <li>Smart mobility systems</li>
+      <li>Operational analytics</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[14]</span> AI for Restaurant</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Demand forecasting</li>
+      <li>Order intelligence</li>
+      <li>Customer preference AI</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[15]</span> AI for OTT</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Content recommendations</li>
+      <li>User engagement analysis</li>
+      <li>Churn prediction</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="header"><span>[16]</span> AI for Real Estate</div>
+    <div class="progress"><span></span></div>
+    <ul class="content">
+      <li>Price prediction</li>
+      <li>Smart property insights</li>
+      <li>Customer intent analysis</li>
+    </ul>
+  </div>
+
+</section>
+
+
+
+
+<section class="ai-hero">
+  <div class="hero-card">
+
+    <div class="hero-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIWa18VnCcRcXmu2gFLwKz3JuDiTbCIPMhmzxB1JpPcg&s=10"
+           alt="AI Image">
+    </div>
+
+    <div class="hero-content">
+      <h1>The Future of Your Industry is Intelligent.</h1>
+
+      <p>
+        Don’t operate in the past. Let our industry experts design a
+        bespoke AI strategy that addresses your specific operational
+        bottlenecks and goals.
+      </p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor"
+         target="_blank"
+         class="hero-btn">
+        📞 Contact Us
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="ai-partner-safe">
+
+  <div class="ai-top">
+    <h2>
+      Why I.H is the Right AI Development Partner for Your Business Needs
+    </h2>
+    <p>
+      I.H transforms your vision into practical, working applications.
+      We build custom AI strategies that align with your specific business needs.
+      Our team helps you navigate complex challenges and achieve sustainable
+      growth through proven technology solutions.
+    </p>
+  </div>
+
+  <div class="ai-divider"></div>
+
+  <div class="ai-slider">
+
+    <div class="ai-slide active">
+      <div class="ai-number">01</div>
+      <div class="ai-content">
+        <h3>Expert Team of AI Engineers</h3>
+        <p>
+          As an Economic Times-recognized Leader in AI Product Engineering,
+          we bring together certified AI-ML engineers and data scientists.
+"As an Economic Times-recognized Leader in AI Product Engineering, we bring together a team of certified and experienced AI-ML engineers, data scientists, and MLOps architects
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">02</div>
+      <div class="ai-content">
+        <h3>Smart Scalability</h3>
+        <p>
+          We design AI systems that scale smoothly and handle enterprise-level
+          performance without breaking.
+With 95% on-time delivery and the ability to scale enterprise systems, we design AI platforms that grow with your business.
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">03</div>
+      <div class="ai-content">
+        <h3>Data Quality & Integrity</h3>
+        <p>
+          Our experts ensure datasets are clean and optimized so AI models
+          deliver accurate and consistent results.
+ AI is only as strong as the data behind it. We analyze and clean datasets to ensure your AI models train correctly.
+        </p>
+      </div>
+    </div>
+
+    <div class="ai-slide">
+      <div class="ai-number">04</div>
+      <div class="ai-content">
+        <h3>AI Security & Compliance</h3>
+        <p>
+          We integrate enterprise-grade security aligned with GDPR, HIPAA,
+     ISO 27001, and SOC 2 standards.
+ We integrate enterprise-grade security protocols and align with global standards like GDPR, HIPAA, ISO 27001, and SOC 2.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ai-arrows">
+    <button class="ai-prev">&#8592;</button>
+    <button class="ai-next">&#8594;</button>
+  </div>
+
+</section>
+
+
+<section class="ai-hero-section">
+
+  <div class="ai-hero-card">
+
+    <!-- Top Image -->
+    <div class="ai-hero-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4yfZjcGI4runcCNWCWrwbBrZmNHGVFzbYSkf33pq8A&s=10"
+           alt="AI Team">
+    </div>
+
+    <!-- Content -->
+    <div class="ai-hero-content">
+
+      <h2>
+        <strong>Global Leaders Trust Us with</strong><br>
+        Their Most Critical AI Systems — You Can Too
+      </h2>
+
+      <p>
+        From KFC and the Americana Group to Flynas, enterprises rely
+        on our AI engineering depth, compliance readiness, and
+        large-scale execution capability.
+      </p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor" class="ai-hero-btn">
+        Start Your Enterprise AI Development Journey
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="ai-capabilities">
+
+
+
+  <!-- ACCORDION CARD -->
+  <div class="ai-card">
+
+  <!-- TOP INTRO -->
+  <div class="ai-intro">
+
+     <h1>Drive Digital Transformation with Precision-Led AI Technologies</h1>
+         <p>
+      Our AI developers combine deep technical expertise with smart strategic thinking.
+      When you face complex business challenges, we turn them into intelligent solutions.
+      We integrate powerful AI capabilities directly into your existing business operations,
+      sparking innovation, streamlining processes, and positioning your company for whatever
+      comes next in the digital world.
+    </p>
+    </div>
+
+    <div class="ai-body">
+       <div class="step active">
+  <div class="step-head"><span>[1]</span><h4>Machine Learning (ML)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Your data tells a story. We build ML systems that learn patterns and improve decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[2]</span><h4>Generative AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Generate text, images and automate workflows using advanced AI models.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[3]</span><h4>Agentic AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Autonomous AI agents capable of performing real-world tasks and decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[4]</span><h4>Retrieval Augmented Generation (RAG)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Combine knowledge bases with LLMs to produce accurate business answers.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[5]</span><h4>Robotic Process Automation (RPA)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Automate repetitive tasks and operations to improve efficiency.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[6]</span><h4>Computer Vision</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">AI that understands images, videos and real-world visual data.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[7]</span><h4>Natural Language Processing (NLP)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Understand, analyze and generate human language intelligently.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[8]</span><h4>Data Science & Analytics</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Turn raw business data into meaningful insights and predictions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[9]</span><h4>Edge AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Run AI models directly on devices for faster real-time decisions.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[10]</span><h4>Sentiment Analysis (Emotional AI)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Understand customer emotions and feedback automatically.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[11]</span><h4>Explainable AI (XAI)</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Transparent AI decisions that humans can understand and trust.</p>
+</div>
+
+<div class="step">
+  <div class="step-head"><span>[12]</span><h4>Green AI</h4><div class="arrow"></div></div>
+  <div class="progress"></div>
+  <p class="content">Energy-efficient AI systems designed for sustainability.</p>
+</div>
+
+
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<section class="ai-models-section">
+  <div class="container">
+
+    <h2 class="section-title">
+      State-of-the-Art AI Models We Integrate,
+      Fine-Tune, and Deploy
+    </h2>
+
+    <p class="section-desc">
+      We engineer, customize, and deploy state-of-the-art AI models built for real business impact.
+      As an enterprise-focused artificial intelligence software development company,
+      we work across foundation models, domain-specific LLMs, vision models,
+      speech models, and multilingual transformers.
+    </p>
+
+    <div class="models-grid">
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOFTCLKZFdJpKwyUNbQWm8nvMnaB-_uaRZIQsAbfsHWw&s=10" alt="">
+        <span>GPT-4o</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUMV4Jh5NvaHffXqDX-oNBlwUyabCsc1bzryR4hAPqCg&s=10" alt="">
+        <span>Claude</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqBYmHRZ1HDWNhN0SRr747IWYryaTqU0AmkubPh8p27Q&s=10" alt="">
+        <span>Gemini</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKjAVCOhzbI2vCXaocxQDTkYtLG2pkkZx2BkpHEjerMg&s=10" alt="">
+        <span>Llama 3.1</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1MwjM_sgOSaJnLP1W3KC-hjSH5NN_Qr2W4wRTcgtXpg&s=10" alt="">
+        <span>Mistral</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1MwjM_sgOSaJnLP1W3KC-hjSH5NN_Qr2W4wRTcgtXpg&s=10" alt="">
+        <span>Mixtral</span>
+      </div>
+
+      <div class="model-card">
+        <img src="data:image/png;base64,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" alt="">
+        <span>PaLM-2</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPxXalbUWzKTjOr1MT5gyviW89k8qQ7qvz8YD9gBjz8A&s=10" alt="">
+        <span>Orca</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa_-cympe9Ho5Y29vCggEO6zDVznHSHp9lUXgzxdVmWA&s" alt="">
+        <span>Vicuna</span>
+      </div>
+
+      <div class="model-card">
+        <img src="data:image/jpeg;base64,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" alt="">
+        <span>Alpaca</span>
+      </div>
+
+      <div class="model-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVzMcPGsO2NjNKtduG2IfAw7JU4R2HQOzklhr_cbcEg&s=10" alt="">
+        <span>Gemma</span>
+      </div>
+
+      <div class="model-card">
+        <img src="data:image/png;base64,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" alt="">
+        <span>Phi-2</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="tech-stack">
+  <div class="container">
+
+    <h2 class="title">AI Tech Stack Engineered for Enterprise Scale</h2>
+
+    <p class="desc">
+      I.H stands out as an artificial intelligence software development company
+      with its utilization of a robust technology stack to build smart, future-ready platforms.
+      We work with advanced tools such as TensorFlow, PyTorch, OpenAI GPT models,
+      Apache Kafka, and AWS SageMaker to build AI platforms that are scalable,
+      efficient, and align with your long-term objectives.
+    </p>
+
+    <div class="accordion">
+
+      <!-- 1 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Programming Languages</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="data:image/jpeg;base64,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"><p>Python</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXTXDOg2T04NaUdgstM2rHJ-odIi2EDoQGmF7_Ttaag&s=10"><p>Java</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVcu7xBMGdyBsUF-WOEM3lEopUcQPZOOQgy6LSay_NSQ&s=10"><p>C++</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>ML & AI Frameworks</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIzKw4d0xapp6HM_T-fCZwL1Nzf7bulvDGIIcKlFMmVQ&s=10"><p>TensorFlow</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhV9f7PVCwxgp4Hig-jWeXypqEv01n4NDyNs1DYW7XQQ&s=10"><p>PyTorch</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6DTSsQ1Jg_6eFPwesi5Gq8Vcmfpwr3PW4knGVUlBLYQ&s=10"><p>Keras</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Deep Learning Libraries</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFs5lijjSEG4NSmsjWjR2OcXKdh3me8m0CfK4P1oJIHw&s=10"><p>OpenCV</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZV14ywJ5MUPUn7DB2LCqLmq4cFBAbjFMvnK1PIqGTyg&s=10"><p>Scikit-learn</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpFCJwpLX7LE2G7_DXQg0meyQcONQDFxCpczx6C4sFVA&s=10"><p>Theano</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Generative AI Technologies</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOpkEvxYIWQrWA401gVWouORPu-_H6nTnHuldqnkSUoA&s=10"><p>GPT Models</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUEmINNjfovoLs3obRDnZRIwNNbqMRQpGTfuDuTDTyOg&s=10"><p>DALL-E</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sjdsLtmiKd40I1fvC8vylcDD_66jsWOadLt-VVN1EQ&s=10"><p>Midjourney</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Natural Language Processing</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ65SbhmfXDnLcnLhotrFl2CV5cwN_uhlaxQSFvMz7cw&s=10"><p>Spacy</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5AqVc-2ycoGBQXEpANQztakERNO8N3aqiByVGIsnFRQ&s=10"><p>NLTK</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrX05uWjpj99OZDpsL7WZDDa1fdAdaY30PUrBqWqImQ&s=10"><p>HuggingFace</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Computer Vision</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9B-reepgFQzRJu23TB-xYPSCkXtpzUvKk5H3aJ_ysJg&s=10"><p>YOLO</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFs5lijjSEG4NSmsjWjR2OcXKdh3me8m0CfK4P1oJIHw&s=10"><p>OpenCV</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_8NDLpYqJsthhEfGvhBBEhkMzzl5D0458Vicjq7In0w&s=10"><p>Detectron</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Data Preprocessing & ETL</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQwB1kNEMfidw53EWjaFSWxhnifObM7XOwi83_6ogJug&s=10"><p>Pandas</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxmrnHEuTq8l5JAM5LKCv7ENczbCANmXkcYi-TeWWKOg&s=10"><p>Apache Airflow</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN7LjnGQz01rubKBeriFTmoza4Wedp-cTIgWa1yVZSyw&s=10"><p>Talend</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Data Analysis & Visualization</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp0NAx0MTM-fuz1mjMBMYMIHT7UfgSup8xKfFuAY9eQQ&s=10"><p>Tableau</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYht8IiRCzLhvpODnRaFeecQvEfmgsQEVTibnEIHYeGQ&s=10"><p>NumPy</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8u7tCU7o1TCDVDrZHCbaTiaQqIKhzzLlez859IQKwDg&s"><p>Matplotlib</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>MLOps Tools</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlyP0esZcWc2B_tk1aKRLjk8XcdPqaaK3GZgeji2wYhQ&s"><p>MLflow</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfq_YNtO9VaYKwOVYcoGfaMEtkjNoPfewrMfraZWa07w&s=10"><p>Kubeflow</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg0aBbHtI2yXJvG08BF9zQkq-9BChmiw9ff8Xl8D-A7Q&s=10"><p>DVC</p></div>
+             <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMHXbn59w8YSdtRN2tjamxePejpq4XFiaIbReu50Vwfw&s=10"><p>Vertex AI</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Hyperparameter Optimization Tools</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbS8lNMHQqVwpZmdRMZz7QFAUfEllYIXrrQnqJjxOFQ&s=10"><p>Optuna</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA2FMfPseSTIY76yP_IfBhQ6wF3jCDAbReEwVLY8j8NQ&s=10"><p>Ray </p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJBqN3lcmCbZmjTIhlk5uj7VMw7waYzsGiemlfc-IS3g&s=10"><p>Hyperopt</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Interpretability & Monitoring</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4L28AsqkXSWXLCEzV61iL15WssY7Lqt_AC0vRvb3QQ&s=10"><p>SHAP</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW8guZSvXyWtqTUaQ7-yOqebc6GQtxbeOlDJPYkY1xIA&s=10"><p>LIME</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3XHQ39WVhZBPaWZIouiL-Gq7l64P_2cFawXXrIlj_tw&s=10"><p>Evidently AI</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Cloud Platforms</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdI_K7JOtNbuDoIh7-orPTzqjKOqqTPeK5CC8u0mHYaw&s=10"><p>AWS</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1jprhCAyfKDGjdtAPZEKDjFaz8cWv7W_aoWz3w3fz2A&s=10"><p>Azure</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR314jnJGxb5feXfoJN99SOpnoF__vKcbCal_NWG5jOzw&s=10"><p>Google Cloud</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Big Data Technologies</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznRZEvnv5X83vYRwqq0Z3Q4Ey8KnCJNsPNerOgrFQ8Q&s=10"><p>Kafka</p></div>
+            <div class="tool-card"><img src="data:image/png;base64,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"><p>Hadoop</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdeVcXJ1cy1yzthbqrDIYxPUtzexSolpUcXbBqBDuxEQ&s=10"><p>Apache Spark</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>Vector Databases</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXrH_b50Qx1In5i8F7G9VXLaXIXNxeXDoNiEvxOKascA&s=10"><p>Pinecone</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgJYIPdkITgD3ohxcplP3b7ueJ6f-K-Xq4AmWihIAj5Q&s=10"><p>Weaviate</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5nw9KYMeny6GbQDZfCCBubgzFsyKVbar_6XxlGHTinw&s=10"><p>Milvus</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <span>3D Modeling</span>
+          <i class="arrow"></i>
+        </div>
+        <div class="acc-content">
+          <div class="cards">
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlIKaaVrwGt-PlVWchQ1DzizKkFdW0mx0vqes7FwnGw&s=10"><p>Blender</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRxUHuPoP9OxHeZ1SHdibjtkdUd3lKh2ROTR4GQLZyw&s=10"><p>Autodesk Maya</p></div>
+            <div class="tool-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR93TzXZ2MacSKFkU9Y_JoEL07McrC15W6XHjAkUA32_g&s=10"><p>Unity</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="ai-section">
+
+  <div class="ai-card">
+
+    <!-- Image -->
+    <div class="card-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDauozyORx97o0tuesSwk0mkIuzlkVKxu6s8oeJ-fbJg&s=10" alt="AI">
+    </div>
+
+    <!-- Content -->
+    <div class="card-content">
+      <h2>
+        Your AI System Deserves an <br>
+        Architecture Built to Perform
+      </h2>
+
+      <p>
+        From vector databases to cloud-native MLOps pipelines, we design AI
+        platforms that handle complex workflows, massive datasets, and
+        real-time intelligence.
+      </p>
+
+      <!-- Button -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQh8P2y4xrPE-sXVn2p5rtuTCOrbia8twC1ZpEC7WISxNrDw/viewform?usp=publish-editor"
+         target="_blank"
+         class="ai-btn">
+        <i class="fa-solid fa-phone"></i>
+        Develop a Future-Ready AI System
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="risk-section">
+
+  <div class="container">
+
+    <h1>Derisking Your AI Transformation</h1>
+
+    <p class="intro">
+      Enterprise AI adoption demands more than just innovation; it requires
+      AI-powered development services to offer
+    </p>
+
+    <hr>
+
+    <!-- Number Badge -->
+    <div class="badge" id="badge">[ 1 ]</div>
+
+    <!-- Changing Content -->
+    <h2 id="title">Hallucination Control</h2>
+
+    <p class="desc" id="desc">
+      We implement RAG architectures and factual consistency checks to prevent
+      misinformation, ensuring your model delivers only accurate, verifiable outputs.
+    </p>
+
+    <!-- Arrows -->
+    <div class="arrows">
+  <button id="prev">←</button>
+  <button id="next">→</button>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="heading">Our Agile Roadmap to Enterprise AI Development</div>
+  <div class="subtext">
+    We follow an iterative, agile AI engineering approach that minimizes delays, reduces risk, and delivers production‑ready systems faster, without compromising quality.
+  </div>
+
+  <div class="timeline" id="timeline">
+    <div class="line-bg"></div>
+    <div class="line-progress" id="progress"></div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Discovery & Insight Gathering</div>
+      <div class="desc">We understand your business, analyze existing systems and identify real AI opportunities aligned with your goals.</div>
+    </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Data Acquisition & Preparation</div>
+      <div class="desc">We collect, clean and structure data from APIs, databases and external sources to prepare it for machine learning.</div>
+    </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Model Development & Experimentation</div>
+      <div class="desc">We design ML models, test algorithms and select the best performing architecture for your problem.</div>
+    </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Training & Model Optimization</div>
+      <div class="desc">We train models using real data and optimize performance using validation and fine‑tuning.</div>
+    </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Deployment & Integration</div>
+      <div class="desc">We deploy the AI into real products and integrate it with APIs and applications.</div>
+    </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="title">Monitoring, Support & Continuous Improvement</div>
+      <div class="desc">We monitor performance, retrain models and continuously improve the AI system.</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+
+<footer class="main-footer">
+
+  <!-- Top Info -->
+
+  <!-- Business Units -->
+  <div class="footer-units">
+    <h2>Business Units Under Our Group</h2>
+
+    <div class="unit-card">
+      <div>
+        <h3>I.H</h3>
+        <span>AI & Intelligent Solutions</span>
+      </div>
+      <a href="home.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Digital</h3>
+        <span>Enterprise Digital Solutions</span>
+      </div>
+      <a href="digital.html">Know more →</a>
+    </div>
+
+    <div class="unit-card">
+      <div>
+        <h3>Services</h3>
+        <span>Intelligent digital solutions.</span>
+      </div>
+      <a href="service.html">Know more →</a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="about.html">About Us</a>
+    <a href="policy.html">Privacy Policy</a>
+    <a href="contact.html">Contact Us </a>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025–2026 YourCompany. All Rights Reserved.</p>
+
+    <div class="badges">
+      <div class="badge">DMCA<br>Protected</div>
+      <div class="badge">Tech Fast 50</div>
+      <div class="badge">⭐ 4.6/5<br>89 Reviews</div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+    
+    
+    function openMenu() {
+  document.getElementById("sideMenu").classList.add("active");
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("active");
+  document.getElementById("overlay").style.display = "none";
+}
+
+function toggleMenu(element) {
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  allSubmenus.forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+    function openBlog(page) {
+  window.location.href = page;
+}
+
+  }
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+function toggleMenu(element) {
+  let submenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (menu !== submenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (submenu.style.display === "block") {
+    submenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    submenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+function toggleSubMenu(element) {
+  let childMenu = element.nextElementSibling;
+  let arrow = element.querySelector("span");
+
+  document.querySelectorAll(".child-submenu").forEach(menu => {
+    if (menu !== childMenu) {
+      menu.style.display = "none";
+      menu.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+    }
+  });
+
+  if (childMenu.style.display === "block") {
+    childMenu.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    childMenu.style.display = "block";
+    arrow.style.transform = "rotate(180deg)";
+  }
+}
+
+
+
+
+
+
+
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const content = header.nextElementSibling;
+
+    header.classList.toggle("active");
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+
+  
+           /*case-section*/
+  document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll('.slide').forEach(slide => {
+
+    const tabs = slide.querySelectorAll('.tab');
+    const contents = slide.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+
+        const tabName = tab.getAttribute("data-tab").trim();
+
+        // remove active
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // activate tab
+        tab.classList.add('active');
+
+        // find matching content
+        contents.forEach(content => {
+          if (content.getAttribute("data-content").trim() === tabName) {
+            content.classList.add('active');
+          }
+        });
+
+      });
+    });
+
+  });
+
+});
+
+
+    /*ai-accordion*/
+
+
+const items = document.querySelectorAll(".item");
+let current = 0;
+let duration = 4000; // time per item
+
+function activateItem(index) {
+  items.forEach((item, i) => {
+    item.classList.remove("active");
+    item.querySelector(".progress span").style.width = "0%";
+  });
+
+  const activeItem = items[index];
+  activeItem.classList.add("active");
+
+  const bar = activeItem.querySelector(".progress span");
+  let start = null;
+
+  function animate(time) {
+    if (!start) start = time;
+    let progress = time - start;
+    let percent = Math.min((progress / duration) * 100, 100);
+    bar.style.width = percent + "%";
+
+    if (percent < 100) {
+      requestAnimationFrame(animate);
+    } else {
+      current = (current + 1) % items.length;
+      activateItem(current);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+/* Start animation when section enters viewport */
+const observer = new IntersectionObserver(
+  entries => {
+    if (entries[0].isIntersecting) {
+      activateItem(0);
+      observer.disconnect();
+    }
+  },
+  { threshold: 0.4 }
+);
+
+observer.observe(document.getElementById("aiAccordion"));
+
+
+
+
+
+    /*compliance-section */
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slider = document.getElementById("cardSlider");
+  const cards = document.querySelectorAll(".card");
+
+  const totalCards = cards.length;
+  const visibleCards = 4;
+  let index = 0;
+
+  function slideCards() {
+    const cardWidth = cards[0].offsetWidth;
+    slider.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    index++;
+
+    // Infinite loop
+    if (index > totalCards - visibleCards) {
+      index = 0;
+    }
+
+    slideCards();
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    index--;
+
+    if (index < 0) {
+      index = totalCards - visibleCards;
+    }
+
+    slideCards();
+  });
+
+  window.addEventListener("resize", slideCards);
+
+});
+
+     /*ai-partner-section*/
+     
+(function () {
+
+  const section = document.querySelector(".ai-partner-safe");
+  if (!section) return;
+
+  const slides = section.querySelectorAll(".ai-slide");
+  const nextBtn = section.querySelector(".ai-next");
+  const prevBtn = section.querySelector(".ai-prev");
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", function () {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener("click", function () {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+})();
+
+
+     
+     
+     
+         /*ai-capabilities*/
+document.addEventListener("DOMContentLoaded", function () {
+     
+         
+const steps = document.querySelectorAll(".step");
+let current = 0;
+
+function activateStep(index){
+  steps.forEach(step=>{
+    step.classList.remove("active");
+    step.querySelector(".progress").style.animation="none";
+  });
+
+  let step = steps[index];
+  step.classList.add("active");
+
+  let progress = step.querySelector(".progress::after");
+}
+
+function nextStep(){
+  activateStep(current);
+
+  setTimeout(()=>{
+    current++;
+    if(current >= steps.length) current = 0;
+    nextStep();
+  },4000);
+}
+
+nextStep();
+
+ });   
+ 
+ 
+ 
+ 
+        /*tech-stack*/
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const items = document.querySelectorAll(".acc-item");
+
+  items.forEach(item=>{
+    const header = item.querySelector(".acc-header");
+
+    header.addEventListener("click",()=>{
+
+      items.forEach(i=>{
+        if(i!==item){
+          i.classList.remove("active");
+          i.querySelector(".acc-content").style.maxHeight = null;
+        }
+      });
+
+      item.classList.toggle("active");
+      const content = item.querySelector(".acc-content");
+
+      if(item.classList.contains("active")){
+        content.style.maxHeight = content.scrollHeight + "px";
+      }else{
+        content.style.maxHeight = null;
+      }
+
+    });
+  });
+
+});
+
+        /*risk-section*/
+        
+  document.addEventListener("DOMContentLoaded", function(){
+
+const slides = [
+  {
+    num: "[ 1 ]",
+    title: "Hallucination Control",
+    desc: "We implement RAG architectures and factual consistency checks to prevent misinformation, ensuring your model delivers only accurate, verifiable outputs."
+  },
+  {
+    num: "[ 2 ]",
+    title: "Zero-Trust Data Security",
+    desc: "We utilize advanced anonymization protocols before data ever touches a model, ensuring complete data sovereignty and protection against leakage."
+  },
+  {
+    num: "[ 3 ]",
+    title: "Regulatory Compliance by Design",
+    desc: "Our architectures are built to align strictly with the EU AI Act, GDPR, and HIPAA, ensuring your AI solution meets the highest global audit standards."
+  }
+];
+
+let index = 0;
+
+const badge = document.getElementById("badge");
+const title = document.getElementById("title");
+const desc = document.getElementById("desc");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+
+function updateSlide(){
+  badge.textContent = slides[index].num;
+  title.textContent = slides[index].title;
+  desc.textContent = slides[index].desc;
+}
+
+nextBtn.addEventListener("click", function(){
+  index++;
+  if(index >= slides.length) index = 0;
+  updateSlide();
+});
+
+prevBtn.addEventListener("click", function(){
+  index--;
+  if(index < 0) index = slides.length - 1;
+  updateSlide();
+});
+
+});
+
+      /*roadmap*/
+ document.addEventListener("DOMContentLoaded", function(){
+
+     
+const items = document.querySelectorAll('.item');
+const progress = document.getElementById('progress');
+const timeline = document.getElementById('timeline');
+
+function updateProgress(){
+  const rect = timeline.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const start = windowHeight * 0.2;      // start filling when section enters
+  const end = windowHeight * 0.8;        // finish near bottom
+
+  let progressValue = (start - rect.top) / (rect.height);
+  progressValue = Math.max(0, Math.min(1, progressValue));
+
+  progress.style.height = (progressValue * 100) + '%';
+}
+
+window.addEventListener('scroll', updateProgress);
+window.addEventListener('load', updateProgress);
+window.addEventListener('resize', updateProgress);
+
+// activate items animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{
+  threshold:0.4
+});
+
+items.forEach(item => observer.observe(item));
+});
+
+</script>
+
+</body>
+</html>
